@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Orianna</title>
-    <link>https://example.com/</link>
+    <link>https://huangxunyi.github.io/</link>
     <description>Recent content on Orianna</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 02 May 2019 08:46:36 +0800</lastBuildDate>
     
-	<atom:link href="https://example.com/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://huangxunyi.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Hello</title>
-      <link>https://example.com/blog/2019-05/hello/</link>
+      <link>https://huangxunyi.github.io/blog/2019-05/hello/</link>
       <pubDate>Thu, 02 May 2019 08:46:36 +0800</pubDate>
       
-      <guid>https://example.com/blog/2019-05/hello/</guid>
+      <guid>https://huangxunyi.github.io/blog/2019-05/hello/</guid>
       <description></description>
     </item>
     
