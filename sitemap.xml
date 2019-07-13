@@ -3,12 +3,39 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://huangxunyi.github.io/categories/</loc>
+    <loc>https://huangxunyi.github.io/blog/</loc>
+    <lastmod>2019-07-13T17:29:26+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://huangxunyi.github.io/</loc>
+    <lastmod>2019-07-13T17:29:26+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://huangxunyi.github.io/blog/2019-07/%E4%BD%BF%E7%94%A8hugo-github-pages%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/</loc>
+    <lastmod>2019-07-13T17:29:26+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://huangxunyi.github.io/moment/</loc>
+    <lastmod>2019-07-08T21:41:06+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://huangxunyi.github.io/about/</loc>
+    <lastmod>2019-07-08T21:01:35+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://huangxunyi.github.io/blog/2019-07/test/</loc>
+    <lastmod>2019-07-08T20:59:17+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://huangxunyi.github.io/categories/</loc>
     <priority>0</priority>
   </url>
   
