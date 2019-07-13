@@ -17,7 +17,7 @@
       <pubDate>Sat, 13 Jul 2019 17:29:26 +0800</pubDate>
       
       <guid>https://huangxunyi.github.io/blog/2019-07/%E4%BD%BF%E7%94%A8hugo-github-pages%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/</guid>
-      <description>Hugo hugo是由Go语言编写的开源静态站点生成器,是世界上最快的静态网站引擎之一,旨在为网站用户提供最佳的浏览体验，并为网站作者提供理想的写作体验. Install Hugo 由于Hugo是Golang编写,可以在任何能运行Golang编译器工具链的机器上安装Hugo. 因此在MacOS、Windows、Linux、OpenBSD、FreeBSD都能够安装Hugo. Homebrew (macOS) brew install hugo Debian and Ubuntu sudo apt-get install hugo Archlinux sudo pacman -Syu hugo Fedora, Red Hat and CentOS sudo dnf install hugo Windows 从Hu</description>
+      <description>使用hugo生成静态页面,并通过Github Pages部署</description>
     </item>
     
     <item>

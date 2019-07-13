@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Blogs on Huangxuny1</title>
-    <link>https://huangxunyi.github.io/blog/</link>
-    <description>Recent content in Blogs on Huangxuny1</description>
+    <title>杂技浅尝 on Huangxuny1</title>
+    <link>https://huangxunyi.github.io/categories/%E6%9D%82%E6%8A%80%E6%B5%85%E5%B0%9D/</link>
+    <description>Recent content in 杂技浅尝 on Huangxuny1</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sat, 13 Jul 2019 17:29:26 +0800</lastBuildDate>
     
-	<atom:link href="https://huangxunyi.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://huangxunyi.github.io/categories/%E6%9D%82%E6%8A%80%E6%B5%85%E5%B0%9D/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,15 +18,6 @@
       
       <guid>https://huangxunyi.github.io/blog/2019-07/%E4%BD%BF%E7%94%A8hugo-github-pages%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/</guid>
       <description>使用hugo生成静态页面,并通过Github Pages部署</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>https://huangxunyi.github.io/blog/2019-07/test/</link>
-      <pubDate>Mon, 08 Jul 2019 20:59:17 +0800</pubDate>
-      
-      <guid>https://huangxunyi.github.io/blog/2019-07/test/</guid>
-      <description> Hello World blog </description>
     </item>
     
   </channel>
