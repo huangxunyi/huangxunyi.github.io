@@ -14,7 +14,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://huangxunyi.github.io/blog/2019-07/%E4%BD%BF%E7%94%A8hugo-github-pages%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/" />
 <meta property="article:published_time" content="2019-07-13T17:29:26&#43;08:00"/>
-<meta property="article:modified_time" content="2019-07-13T22:57:26&#43;08:00"/>
+<meta property="article:modified_time" content="2019-07-14T03:17:00&#43;08:00"/>
 
 
 
@@ -277,7 +277,7 @@
   <ul class="post-meta li-x">
     
       
-        <li><a href="https://huangxunyi.github.io/categories/%E6%9D%82%E6%8A%80%E6%B5%85%E5%B0%9D"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> 杂技浅尝 </a></li>
+        <li><a href="https://huangxunyi.github.io/categories/%E5%A4%A9%E6%89%8D%E7%AC%AC%E4%B8%80%E6%AD%A5"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> 天才第一步 </a></li>
       
     
     
@@ -296,12 +296,12 @@
 
     
       <li class="middot"></li>
-      <li>3 minutes read</li>
+      <li>4 minutes read</li>
     
   </ul>
   
     <div class="view">
-      <img src="https://huangxunyi.github.io/images/blog/2019-07/tflying-paint.jpg" />
+      <img src="https://huangxunyi.github.io/images/blog/2019-07/flying-paint.jpg" />
     </div>
   
 
@@ -404,6 +404,8 @@
 
 <p><strong>cd themes/AllinOne/</strong> 中会发现有一个 <strong>exampleSite</strong> 这里就是一个Demo,可以从demo的*config.toml*里面copy配置文件到我们的配置文件中.</p>
 
+<p>更多关于config.toml的配置,可以查阅官方文档 <a href="https://gohugo.io/getting-started/configuration/" title="hugo-config">hugo-configuration</a>.</p>
+
 <h3 id="本地测试">本地测试</h3>
 
 <p>Hugo自带服务器，可以用命令行启动：</p>
@@ -411,7 +413,7 @@
 <pre><code>hugo server -D 
 </code></pre>
 
-<p>服务启动后访问 <strong><a href="http://localhost:1313">http://localhost:1313</a></strong>访问,自带的服务器可以热加载文件的改动,监控到文章的改动从而自动去加载.</p>
+<p>服务启动后访问 <strong><a href="http://localhost:1313">http://localhost:1313</a></strong>访问,自带的服务器可以热加载文件的改动,监控文章的改动从而自动去加载.</p>
 
 <h3 id="新建文章">新建文章</h3>
 
@@ -433,7 +435,7 @@
 <p>随后会输出 {BlogBaseDir}/content/blog/helloWord.md created</p>
 </blockquote>
 
-<p>同理我们可以从 <strong>exampleSite</strong> 的<strong>/content/blog</strong> copy一些文章内容信息的tag,例如:</p>
+<p>同理我们可以从 <strong>exampleSite</strong> 的<strong>/content/blog</strong> copy一些文章内容信息,例如:</p>
 
 <pre><code>---
 date: &quot;2018-08-18T20:14:59+08:00&quot;
@@ -465,21 +467,23 @@ toc: true
 
 <p>在Github中新建名为 <strong>{用户名}.github.io</strong> 的仓库</p>
 
-<p>Github Pages 有三种部署方式</p>
+<p>Github Pages 有三种发布方式</p>
 
 <pre><code>You can configure GitHub Pages to publish your site's source files from master, gh-pages, or a /docs folder 
 on your master branch for Project Pages and other Pages sites that meet certain criteria.
 </code></pre>
 
+<p><img src="https://img.guet.site/img/github-pages-publish.png" alt="github-pages-publish" title="github-pages-publish" /></p>
+
 <ul>
-<li><p>master分支</p></li>
+<li><p>master分支   (如果仓库名是 <strong>{用户名}.github.io</strong> 那么只能通过此方式发布)</p></li>
 
 <li><p>gh-pages分支</p></li>
 
 <li><p>master分支的 /docs 目录</p></li>
 </ul>
 
-<p>这里我选择使用master分支部署Github Pages</p>
+<p>由于这里我选择使用master分支发布Github Pages</p>
 
 <p>在站点的根目录, (即 <strong>config.toml</strong> 所在的目录) 执行 :</p>
 
@@ -531,11 +535,43 @@ git push -u origin master
 
 <p>成功之后稍等片刻,访问  <strong>https://{用户名}.github.io</strong> 即可呈现内容</p>
 
+<h5 id="docs-发布方式">/docs 发布方式</h5>
+
+<p><em>使用此方式的前提是 仓库名称不是 {用户名}.github.io</em></p>
+
+<p>修改 <strong>config.toml</strong> 中的 <strong>publishdir</strong></p>
+
+<blockquote>
+<p>publishdir  = &ldquo;docs&rdquo;</p>
+</blockquote>
+
+<p>那么使用 <strong>hugo -D</strong> 生成的静态页面就会在 <strong>docs/</strong> 中生成</p>
+
+<p>在仓库的 Settings-&gt;GitHub Pages-&gt;Source 选择 <strong>master branch /docs folder</strong> 即可</p>
+
+<p><em>页面发布成功后可以通过</em> <strong>https://{用户名}.github.io/{仓库名}</strong> <em>访问</em></p>
+
           </div>
 
           
           <div class="row">
             <div class="col-md-8">
+            
+              <div class="mb-5">
+                
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://huangxunyi.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
+    
+      <li><a href="https://huangxunyi.github.io/tags/blog" role="button">blog </a></li>
+      
+    
+      <li><a href="https://huangxunyi.github.io/tags/githubpages" role="button">GithubPages </a></li>
+      
+    
+  </div>
+</div>
+              </div>
             
             </div>
             

@@ -6,9 +6,28 @@
     <description>Recent content in Tags on Huangxuny1</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
+    <lastBuildDate>Sat, 13 Jul 2019 17:29:26 +0800</lastBuildDate>
     
 	<atom:link href="https://huangxunyi.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>GithubPages</title>
+      <link>https://huangxunyi.github.io/tags/githubpages/</link>
+      <pubDate>Sat, 13 Jul 2019 17:29:26 +0800</pubDate>
+      
+      <guid>https://huangxunyi.github.io/tags/githubpages/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>blog</title>
+      <link>https://huangxunyi.github.io/tags/blog/</link>
+      <pubDate>Sat, 13 Jul 2019 17:29:26 +0800</pubDate>
+      
+      <guid>https://huangxunyi.github.io/tags/blog/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>
