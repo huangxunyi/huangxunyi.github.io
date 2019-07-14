@@ -1,15 +1,34 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on Huangxuny1</title>
+    <title>Tags on Hugo Blog</title>
     <link>https://huangxunyi.github.io/tags/</link>
-    <description>Recent content in Tags on Huangxuny1</description>
+    <description>Recent content in Tags on Hugo Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 13 Jul 2019 17:29:26 +0800</lastBuildDate>
+    <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you wish to quote or reproduce.</copyright>
+    <lastBuildDate>Sun, 14 Jul 2019 12:38:24 +0800</lastBuildDate>
     
 	<atom:link href="https://huangxunyi.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>docker</title>
+      <link>https://huangxunyi.github.io/tags/docker/</link>
+      <pubDate>Sun, 14 Jul 2019 12:38:24 +0800</pubDate>
+      
+      <guid>https://huangxunyi.github.io/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>jenkins</title>
+      <link>https://huangxunyi.github.io/tags/jenkins/</link>
+      <pubDate>Sun, 14 Jul 2019 12:38:24 +0800</pubDate>
+      
+      <guid>https://huangxunyi.github.io/tags/jenkins/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>GithubPages</title>

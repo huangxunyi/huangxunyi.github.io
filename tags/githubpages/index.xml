@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>GithubPages on Huangxuny1</title>
+    <title>GithubPages on Hugo Blog</title>
     <link>https://huangxunyi.github.io/tags/githubpages/</link>
-    <description>Recent content in GithubPages on Huangxuny1</description>
+    <description>Recent content in GithubPages on Hugo Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
+    <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you wish to quote or reproduce.</copyright>
     <lastBuildDate>Sat, 13 Jul 2019 17:29:26 +0800</lastBuildDate>
     
 	<atom:link href="https://huangxunyi.github.io/tags/githubpages/index.xml" rel="self" type="application/rss+xml" />
@@ -13,10 +14,10 @@
     
     <item>
       <title>使用hugo&#43;Github Pages搭建个人静态博客</title>
-      <link>https://huangxunyi.github.io/blog/2019-07/%E4%BD%BF%E7%94%A8hugo-github-pages%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/</link>
+      <link>https://huangxunyi.github.io/post/hugo-github-pages/</link>
       <pubDate>Sat, 13 Jul 2019 17:29:26 +0800</pubDate>
       
-      <guid>https://huangxunyi.github.io/blog/2019-07/%E4%BD%BF%E7%94%A8hugo-github-pages%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/</guid>
+      <guid>https://huangxunyi.github.io/post/hugo-github-pages/</guid>
       <description>使用hugo生成静态页面,并通过Github Pages部署</description>
     </item>
     

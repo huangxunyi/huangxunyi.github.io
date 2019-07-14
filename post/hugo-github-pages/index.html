@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8" />
+
+  
+  <title>使用hugo&#43;Github Pages搭建个人静态博客</title>
+
+  
+  
+  <link href="//cdn.jsdelivr.net" rel="dns-prefetch">
+  <link href="//cdnjs.cloudflare.com" rel="dns-prefetch">
+  
+  <link href="//at.alicdn.com" rel="dns-prefetch">
+  
+  <link href="//fonts.googleapis.com" rel="dns-prefetch">
+  <link href="//fonts.gstatic.com" rel="dns-prefetch">
+  
+  
+  
+  
+  
+
+  
+
+  
+  
+  <meta name="description" content="使用hugo生成静态页面,并通过Github Pages部署">
+
+  
+  
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@gohugoio">
+    <meta name="twitter:title" content="使用hugo&#43;Github Pages搭建个人静态博客">
+    <meta name="twitter:description" content="使用hugo生成静态页面,并通过Github Pages部署">
+    <meta name="twitter:image" content="/images/avatar.png">
+  
+
+  
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="使用hugo&#43;Github Pages搭建个人静态博客">
+  <meta property="og:description" content="使用hugo生成静态页面,并通过Github Pages部署">
+  <meta property="og:url" content="https://huangxunyi.github.io/post/hugo-github-pages/">
+  <meta property="og:image" content="/images/avatar.png">
+
+
+
+
+<meta name="generator" content="Hugo 0.55.4">
+
+
+<link rel="canonical" href="https://huangxunyi.github.io/post/hugo-github-pages/">
+
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="format-detection" content="telephone=no,email=no,adress=no">
+<meta http-equiv="Cache-Control" content="no-transform">
+
+
+<meta name="robots" content="index,follow">
+<meta name="referrer" content="origin-when-cross-origin">
+<meta name="google-site-verification" content="_moDmnnBNVLBN1rzNxyGUGdPHE20YgbmrtzLIbxaWFc">
+<meta name="msvalidate.01" content="22596E34341DD1D17D6022C44647E587">
+
+
+
+
+
+<meta name="theme-color" content="#02b875">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="Hugo Blog">
+<meta name="msapplication-tooltip" content="Hugo Blog">
+<meta name='msapplication-navbutton-color' content="#02b875">
+<meta name="msapplication-TileColor" content="#02b875">
+<meta name="msapplication-TileImage" content="/icons/icon-144x144.png">
+<link rel="icon" href="https://huangxunyi.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://huangxunyi.github.io/icons/icon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://huangxunyi.github.io/icons/icon-32x32.png">
+<link rel="icon" sizes="192x192" href="https://huangxunyi.github.io/icons/icon-192x192.png">
+<link rel="apple-touch-icon" href="https://huangxunyi.github.io/icons/icon-152x152.png">
+<link rel="manifest" href="https://huangxunyi.github.io/manifest.json">
+
+
+<link rel="preload" href="https://huangxunyi.github.io/styles/main-rendered.min.css" as="style">
+
+
+<link rel="preload" href="https://fonts.googleapis.com/css?family=Lobster" as="style">
+<link rel="preload" href="https://huangxunyi.github.io/images/avatar.png" as="image">
+<link rel="preload" href="https://huangxunyi.github.io/images/grey-prism.svg" as="image">
+
+
+<style>
+  body {
+    background: rgb(244, 243, 241) url('/images/grey-prism.svg') repeat fixed;
+  }
+</style>
+<link rel="stylesheet" href="https://huangxunyi.github.io/styles/main-rendered.min.css">
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.2/dist/medium-zoom.min.js"></script>
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/video.js@7.3.0/dist/video-js.min.css">
+
+
+
+  
+  
+<!--[if lte IE 8]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/videojs-ie8@1.1.2/dist/videojs-ie8.min.js"></script>
+<![endif]-->
+
+<!--[if lte IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/eligrey-classlist-js-polyfill@1.2.20180112/classList.min.js"></script>
+<![endif]-->
+
+
+</head>
+  <body>
+    <div class="suspension">
+      <a role="button" aria-label="Go to top" title="Go to top" class="to-top is-hide"><span class="icon icon-up" aria-hidden="true"></span></a>
+      
+        
+      
+    </div>
+    
+    
+  <header class="site-header">
+  <a href="https://huangxunyi.github.io"><img class="avatar" src="https://huangxunyi.github.io/images/avatar.png" alt="Avatar"></a>
+  
+  <h2 class="title"><a href="https://huangxunyi.github.io">Hugo Blog</a></h2>
+  
+  <p class="subtitle">~ Keep It Simple &amp; Stupid ~</p>
+  <button class="menu-toggle" type="button" aria-label="Main Menu" aria-expanded="false" tab-index="0">
+    <span class="icon icon-menu" aria-hidden="true"></span>
+  </button>
+
+  <nav class="site-menu collapsed">
+    <h2 class="offscreen">Main Menu</h2>
+    <ul class="menu-list">
+      
+      
+      
+      
+        <li class="menu-item
+          
+          
+           is-active">
+          <a href="https://huangxunyi.github.io/">Home</a>
+        </li>
+      
+        <li class="menu-item
+          
+          
+          ">
+          <a href="https://github.com/laozhu">Works</a>
+        </li>
+      
+        <li class="menu-item
+          
+          
+          ">
+          <a href="https://huangxunyi.github.io/tags/">Tags</a>
+        </li>
+      
+        <li class="menu-item
+          
+          
+          ">
+          <a href="https://huangxunyi.github.io/about/">About</a>
+        </li>
+      
+    </ul>
+  </nav>
+  <nav class="social-menu collapsed">
+    <h2 class="offscreen">Social Networks</h2>
+    <ul class="social-list"><li class="social-item">
+          <a href="mailto://ghuangxunyi@gmail.com" title="Email" aria-label="Email">
+            <span class="icon icon-email" aria-hidden="true"></span>
+          </a>
+        </li><li class="social-item">
+          <a href="//github.com/huangxunyi" rel="me" title="GitHub" aria-label="GitHub">
+	    <span class="icon icon-github" aria-hidden="true"></span>
+          </a>
+        </li><li class="social-item">
+          <a href="//weibo.com/weibo_username" rel="me" title="Weibo" aria-label="Weibo">
+            <span class="icon icon-weibo" aria-hidden="true"></span>
+          </a>
+        </li><li class="social-item">
+          <a href="https://huangxunyi.github.io/images/qrcode.jpg" rel="me" title="Wechat" aria-label="Wechat">
+            <span class="icon icon-wechat" aria-hidden="true"></span>
+          </a>
+        </li></ul>
+  </nav>
+</header>
+
+  <section class="main post-detail">
+    <header class="post-header">
+      <h1 class="post-title">使用hugo&#43;Github Pages搭建个人静态博客</h1>
+      <p class="post-meta">@Ritchie Zhu · Jul 13, 2019 · 2 min read</p>
+    </header>
+    <article class="post-content">
+
+<h1 id="hugo">Hugo</h1>
+
+<p><img src="https://img.guet.site/img/hugo-logg.png" alt="hugo-logo" title="hugo-logo" /></p>
+
+<blockquote>
+<p><a href="https://gohugo.io/" title="Hugo">hugo</a>是由<a href="https://golang.org/" title="Golang">Go语言</a>编写的开源静态站点生成器,是世界上最快的静态网站引擎之一,旨在为网站用户提供最佳的浏览体验，并为网站作者提供理想的写作体验.</p>
+</blockquote>
+
+<h3 id="install-hugo">Install Hugo</h3>
+
+<p>由于<strong>Hugo</strong>是<strong>Golang</strong>编写,可以在任何能运行Golang编译器工具链的机器上安装Hugo.</p>
+
+<p>因此在MacOS、Windows、Linux、OpenBSD、FreeBSD都能够安装Hugo.</p>
+
+<h6 id="homebrew-macos-https-brew-sh-homebrew"><a href="https://brew.sh/" title="Homebrew">Homebrew (macOS)</a></h6>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew install hugo</code></pre></div>
+<h6 id="debian-and-ubuntu">Debian and Ubuntu</h6>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt-get install hugo</code></pre></div>
+<h6 id="archlinux">Archlinux</h6>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo pacman -Syu hugo</code></pre></div>
+<h6 id="fedora-red-hat-and-centos">Fedora, Red Hat and CentOS</h6>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo dnf install hugo</code></pre></div>
+<h6 id="windows">Windows</h6>
+
+<p>从<a href="https://github.com/gohugoio/hugo/releases">Hugo Release</a>中下载对应的编译好的Windows版本的Hugo可执行文件,然后将其/bin目录添加到 <strong>环境变量</strong> 即可.</p>
+
+<p>安装完成后, 执行命令 <strong>hugo version</strong> 如果安装成功会输入类似信息:</p>
+
+<blockquote>
+<p>Hugo Static Site Generator v0.55.4/extended darwin/amd64 BuildDate: unknown</p>
+</blockquote>
+
+<h2 id="创建个人博客">创建个人博客</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hugo new site <span style="color:#f92672">{</span>BlogName<span style="color:#f92672">}</span>   </code></pre></div>
+<p>其中 <em>{YourBlogName}</em> 可以是 <strong>&lt;用户名&gt;.github.io</strong> 也可以 随意</p>
+
+<p>然后 :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd <span style="color:#f92672">{</span>BlogName<span style="color:#f92672">}</span> </code></pre></div>
+<p>会看见如下目录结构:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">.
+├── archetypes        
+│   └── default.md  <span style="color:#75715e"># 使用hugo new命令在hugo中创建新的内容模板</span>
+├── config.toml     <span style="color:#75715e"># 配置文件,里面有丰富的配置信息</span>
+├── content         <span style="color:#75715e"># 博客文章的 markdown文件</span>
+├── data            <span style="color:#75715e"># 此目录用于存储生成网站时雨果可以使用的配置文件。</span>
+├── layouts         <span style="color:#75715e"># 以.html文件的形式存储模板，指定如何将内容视图呈现到静态网站中。</span>
+├── static          <span style="color:#75715e"># 静态资源包括 images, CSS, JavaScript 等</span>
+└── themes          <span style="color:#75715e"># 主题文件</span></code></pre></div>
+<h2 id="设置主题">设置主题</h2>
+
+<h3 id="选主题">选主题</h3>
+
+<p>可以在<a href="https://themes.gohugo.io/" title="hugo-theme">hugo-theme</a> 中选择心仪的主题,个人比较喜欢<a href="https://themes.gohugo.io/allinone/" title="AllinOne-theme">AllinOne</a>,以 <strong>AllinOne</strong> 为例 :</p>
+
+<ul>
+<li>使用 git clone 到themes/下,这样可以自定义主题.</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone https://github.com/orianna-zzo/AllinOne.git themes/AllinOne</code></pre></div>
+<ul>
+<li>使用 git submodule 这样对自动部署比较方面  ( 前提是在cd <BlogName> 的时候 git init)</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git submodule add https://github.com/orianna-zzo/AllinOne.git themes/AllinOne</code></pre></div>
+<h3 id="配置主题">配置主题</h3>
+
+<p><strong>cd themes/AllinOne/</strong> 中会发现有一个 <strong>exampleSite</strong> 这里就是一个Demo,可以从demo的 <em>config.toml</em> 里面copy配置文件到我们的配置文件中.</p>
+
+<p>更多关于config.toml的配置,可以查阅官方文档 <a href="https://gohugo.io/getting-started/configuration/" title="hugo-config">hugo-configuration</a>.</p>
+
+<h3 id="本地测试">本地测试</h3>
+
+<p>Hugo自带服务器，可以用命令行启动：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hugo server -D </code></pre></div>
+<p>服务启动后访问 <strong><a href="http://localhost:1313">http://localhost:1313</a></strong>访问,自带的服务器可以热加载文件的改动,监控文章的改动从而自动去加载.</p>
+
+<h3 id="新建文章">新建文章</h3>
+
+<p>根据config.toml中的</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[[</span>menu.main<span style="color:#f92672">]]</span>
+     name                   <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Blog&#34;</span>
+     weight                 <span style="color:#f92672">=</span> -120
+     identifier             <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;blog&#34;</span>
+     url                    <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;blog/&#34;</span></code></pre></div>
+<p>可知Blog是存放在 <strong>blog/</strong> 下,因此执行:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hugo new blog/HelloWorld.md</code></pre></div>
+<blockquote>
+<p>随后会输出 {BlogBaseDir}/content/blog/helloWord.md created</p>
+</blockquote>
+
+<p>同理我们可以从 <strong>exampleSite</strong> 的<strong>/content/blog</strong> copy一些文章内容信息,例如:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">---
+date: <span style="color:#e6db74">&#34;2018-08-18T20:14:59+08:00&#34;</span>
+publishdate: <span style="color:#e6db74">&#34;2018-08-19+08:00&#34;</span>
+lastmod: <span style="color:#e6db74">&#34;2018-08-18+08:00&#34;</span>
+draft: false
+title: <span style="color:#e6db74">&#34;Blog养成记(14) 让同页滚动更平滑&#34;</span>
+tags: <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;前端&#34;</span>, <span style="color:#e6db74">&#34;js&#34;</span>, <span style="color:#e6db74">&#34;blog&#34;</span><span style="color:#f92672">]</span>
+series: <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;Blog养成记&#34;</span><span style="color:#f92672">]</span>
+categories: <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;杂技浅尝&#34;</span><span style="color:#f92672">]</span>
+img: <span style="color:#e6db74">&#34;images/blog/2018-08/test1.jpg&#34;</span>
+toc: true
+---</code></pre></div>
+<p>然后就可以愉快的写作了.</p>
+
+<h2 id="部署到-github-pages">部署到 Github Pages</h2>
+
+<h4 id="github-pages">Github Pages</h4>
+
+<blockquote>
+<p>Github Pages 是面向用户、组织和项目开放的公共静态页面搭建托管服务，站点可以被免费托管在Github 上，
+你可以选择使用Github Pages 默认提供的域名github.io 或者自定义域名来发布站点。</p>
+</blockquote>
+
+<h4 id="新建git-repository">新建git repository</h4>
+
+<p><img src="https://img.guet.site/img/github-new-repo.png" alt="github-new-repo" title="new-repository" /></p>
+
+<p>在Github中新建名为 <strong>{用户名}.github.io</strong> 的仓库</p>
+
+<p>Github Pages 有三种发布方式</p>
+
+<blockquote>
+<p>You can configure GitHub Pages to publish your site&rsquo;s source files from master, gh-pages, or a /docs folder
+on your master branch for Project Pages and other Pages sites that meet certain criteria.</p>
+</blockquote>
+
+<p><img src="https://img.guet.site/img/github-pages-publish.png" alt="github-pages-publish" title="github-pages-publish" /></p>
+
+<ul>
+<li><p>master分支   (如果仓库名是 <strong>{用户名}.github.io</strong> 那么只能通过此方式发布)</p></li>
+
+<li><p>gh-pages分支</p></li>
+
+<li><p>master分支的 /docs 目录</p></li>
+</ul>
+
+<p>由于这里我选择使用master分支发布Github Pages</p>
+
+<p>在站点的根目录, (即 <strong>config.toml</strong> 所在的目录) 执行 :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> hugo</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">                   | EN
++------------------+-----+
+  Pages            |  <span style="color:#ae81ff">80</span>
+  Paginator pages  |   <span style="color:#ae81ff">3</span>
+  Non-page files   |   <span style="color:#ae81ff">0</span>
+  Static files     | <span style="color:#ae81ff">108</span>
+  Processed images |   <span style="color:#ae81ff">0</span>
+  Aliases          |   <span style="color:#ae81ff">1</span>
+  Sitemaps         |   <span style="color:#ae81ff">1</span>
+  Cleaned          |   <span style="color:#ae81ff">0</span>
+
+Total in <span style="color:#ae81ff">137</span> ms</code></pre></div>
+<p>生成静态资源</p>
+
+<p><strong>值得注意的是</strong> 如果 <em>.md</em> 文章中  <strong>draft: true</strong> 那么使用 <strong>hugo</strong>生成静态页面的时候不会生成这篇文章
+如果需要把 <em>草稿</em> 一并生成可以使用
+可以在 <em>hugo -h</em> 中看到</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">-D, --buildDrafts            include content marked as draft</code></pre></div>
+<p>因此使用</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hugo -D</code></pre></div>
+<p>然后</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd public/ 
+
+git init
+
+git add .
+
+git commit -m <span style="color:#e6db74">&#34;first commit&#34;</span>
+
+git remote add origin  <span style="color:#f92672">{</span>GitRepoURL<span style="color:#f92672">}</span>
+
+git push -u origin master</code></pre></div>
+<p>成功之后稍等片刻,访问  <strong>https://{用户名}.github.io</strong> 即可呈现内容</p>
+
+<h4 id="docs-发布方式">/docs 发布方式</h4>
+
+<p><em>使用此方式的前提是 仓库名称不是 {用户名}.github.io</em></p>
+
+<p>修改 <strong>config.toml</strong> 中的 <strong>publishdir</strong></p>
+
+<blockquote>
+<p>publishdir  = &ldquo;docs&rdquo;</p>
+</blockquote>
+
+<p>那么使用 <strong>hugo -D</strong> 生成的静态页面就会在 <strong>docs/</strong> 中生成</p>
+
+<p>在仓库的 Settings-&gt;GitHub Pages-&gt;Source 选择 <strong>master branch /docs folder</strong> 即可</p>
+
+<p><em>页面发布成功后可以通过</em> <strong>https://{用户名}.github.io/{仓库名}</strong> <em>访问</em></p>
+</article>
+    <footer class="post-footer">
+      
+      <ul class="post-tags">
+        
+          <li><a href="https://huangxunyi.github.io/tags/blog"><span class="tag">Blog</span></a></li>
+        
+          <li><a href="https://huangxunyi.github.io/tags/githubpages"><span class="tag">GithubPages</span></a></li>
+        
+      </ul>
+      
+      <p class="post-copyright">
+        © This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you wish to quote or reproduce.
+      </p>
+    </footer>
+    
+      
+    
+  </section>
+  
+<footer class="site-footer">
+  <p>© 2017-2019 Hugo Blog</p>
+  <p>Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> with theme <a href="https://github.com/laozhu/hugo-nuo" target="_blank" rel="noopener">Nuo</a>.</p>
+  
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/smooth-scroll@15.0.0/dist/smooth-scroll.min.js"></script>
+
+
+
+<script async src="https://cdn.jsdelivr.net/npm/video.js@7.3.0/dist/video.min.js"></script>
+
+
+
+
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\\[','\\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+      extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    },
+  });
+</script>
+<script type="text/x-mathjax-config">
+  // Fix <code> tags after MathJax finishes running. This is a
+  // hack to overcome a shortcoming of Markdown. Discussion at
+  // https://github.com/mojombo/jekyll/issues/199
+  MathJax.Hub.Queue(() => {
+    MathJax.Hub.getAllJax().map(v => v.SourceElement().parentNode.className += ' has-jax');
+  });
+</script>
+
+
+
+<script src="https://huangxunyi.github.io/scripts/index.min.js"></script>
+
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('\/service-worker.js').then(function() {
+      console.log('[ServiceWorker] Registered');
+    });
+  }
+</script>
+
+
+
+
+
+
+
+
+  </body>
+</html>
