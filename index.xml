@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Hugo Blog</title>
+    <title>Huangxunyi&#39;s Blog</title>
     <link>https://huangxunyi.github.io/</link>
-    <description>Recent content on Hugo Blog</description>
+    <description>Recent content on Huangxunyi&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you wish to quote or reproduce.</copyright>
@@ -11,6 +11,15 @@
     
 	<atom:link href="https://huangxunyi.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>About</title>
+      <link>https://huangxunyi.github.io/about/</link>
+      <pubDate>Mon, 17 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://huangxunyi.github.io/about/</guid>
+      <description>Huangxuny1</description>
+    </item>
     
     <item>
       <title>Docker Jenkins</title>
