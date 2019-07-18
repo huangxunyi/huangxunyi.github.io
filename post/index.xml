@@ -18,7 +18,7 @@
       <pubDate>Sun, 14 Jul 2019 12:38:24 +0800</pubDate>
       
       <guid>https://huangxunyi.github.io/post/docker-jenkins/</guid>
-      <description>使用Docker搭建Jenkins并通过Github Webhook出发Maven自动构建</description>
+      <description>使用Docker搭建Jenkins并通过Github Webhooks触发Maven自动构建</description>
     </item>
     
     <item>

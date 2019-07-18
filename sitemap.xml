@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://huangxunyi.github.io/todo/</loc>
+    <lastmod>2017-07-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://huangxunyi.github.io/about/</loc>
     <lastmod>2017-07-17T00:00:00+00:00</lastmod>
   </url>
@@ -10,6 +15,12 @@
   <url>
     <loc>https://huangxunyi.github.io/post/docker-jenkins/</loc>
     <lastmod>2019-07-14T12:38:24+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://huangxunyi.github.io/tags/github-webhooks/</loc>
+    <lastmod>2019-07-14T12:38:24+08:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>

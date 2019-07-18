@@ -26,23 +26,23 @@
 
   
   <meta name="author" content="Huangxuny1">
-  <meta name="description" content="使用Docker搭建Jenkins并通过Github Webhook出发Maven自动构建">
+  <meta name="description" content="使用Docker搭建Jenkins并通过Github Webhooks触发Maven自动构建">
 
   
   
-    <meta name="twitter:card" content="summary">
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@gohugoio">
     <meta name="twitter:title" content="Docker Jenkins">
-    <meta name="twitter:description" content="使用Docker搭建Jenkins并通过Github Webhook出发Maven自动构建">
-    <meta name="twitter:image" content="/images/avatar.png">
+    <meta name="twitter:description" content="使用Docker搭建Jenkins并通过Github Webhooks触发Maven自动构建">
+    <meta name="twitter:image" content="https://huangxunyi.github.io/media/docker-jenkins/jenkins.png">
   
 
   
   <meta property="og:type" content="article">
   <meta property="og:title" content="Docker Jenkins">
-  <meta property="og:description" content="使用Docker搭建Jenkins并通过Github Webhook出发Maven自动构建">
+  <meta property="og:description" content="使用Docker搭建Jenkins并通过Github Webhooks触发Maven自动构建">
   <meta property="og:url" content="https://huangxunyi.github.io/post/docker-jenkins/">
-  <meta property="og:image" content="/images/avatar.png">
+  <meta property="og:image" content="https://huangxunyi.github.io/media/docker-jenkins/jenkins.png">
 
 
 
@@ -170,6 +170,13 @@
           
           
           ">
+          <a href="https://huangxunyi.github.io/todo/">TODO</a>
+        </li>
+      
+        <li class="menu-item
+          
+          
+          ">
           <a href="https://huangxunyi.github.io/about/">About</a>
         </li>
       
@@ -204,9 +211,39 @@
   <section class="main post-detail">
     <header class="post-header">
       <h1 class="post-title">Docker Jenkins</h1>
-      <p class="post-meta">@Huangxuny1 · Jul 14, 2019 · 0 min read</p>
+      <p class="post-meta">@Huangxuny1 · Jul 14, 2019 · 1 min read</p>
     </header>
-    <article class="post-content"></article>
+    <article class="post-content">
+
+<p><img src="https://image-1252310512.cos.ap-beijing.myqcloud.com/img/docker-jenkins.png" alt="docker-jenkins" title="docker-jenkins" /></p>
+
+<hr />
+
+<h2 id="jenkins">Jenkins</h2>
+
+<blockquote>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Jenkins是开源CI&amp;CD软件领导者， 提供超过1000个插件来支持构建、部署、自动化， 满足任何项目的需要。
+Jenkins 支持各种运行方式，可通过系统包、Docker 或者通过一个独立的 Java 程序。</p>
+</blockquote>
+
+<h2 id="docker">Docker</h2>
+
+<blockquote>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Docker 是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的镜像中，然后发布到任何流行的 Linux或Windows 机器上，也可以实现虚拟化。容器是完全使用沙箱机制，相互之间不会有任何接口。</p>
+</blockquote>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp; 之所以使用Docker运行Jenkins,是因为即可以通过Docker快速部署,又可以轻松把一个Docker容器里的资料在另一个设备中轻松备份Jenkins环境与配置,还可以隔离物理机环境,使Jenkins构架环境不受本地环境影响,当然还有很重要的一点,可以通过Docker实现快速的配置多Jenkins节点.</p>
+
+<h2 id="github-webhooks">Github Webhooks</h2>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp; Github Webhooks可以理解为代码仓库的钩子,当订阅了Github中的某些事件过,这些事件被触发(如:git push),则将会向配置的URL发送一个HTTP POST请求.通过这个请求,可以利用Jenkins自动建构,部署.  <code>You're only limited by your imagination.</code></p>
+
+<blockquote>
+<p>具体Webhooks介绍以及其所支持的构建方式可以参考 : <a href="https://developer.github.com/webhooks/" title="webhooks">Github Webhooks</a></p>
+</blockquote>
+
+<hr />
+</article>
     <footer class="post-footer">
       
       <ul class="post-tags">
@@ -214,6 +251,8 @@
           <li><a href="https://huangxunyi.github.io/tags/jenkins"><span class="tag">Jenkins</span></a></li>
         
           <li><a href="https://huangxunyi.github.io/tags/docker"><span class="tag">Docker</span></a></li>
+        
+          <li><a href="https://huangxunyi.github.io/tags/github-webhooks"><span class="tag">Github Webhooks</span></a></li>
         
       </ul>
       
