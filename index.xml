@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you wish to quote or reproduce.</copyright>
-    <lastBuildDate>Sun, 14 Jul 2019 12:38:24 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 18 Jul 2019 22:52:05 +0800</lastBuildDate>
     
 	<atom:link href="https://huangxunyi.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -34,12 +34,21 @@ k8s入门记录
     </item>
     
     <item>
-      <title>Docker Jenkins</title>
+      <title>K8s</title>
+      <link>https://huangxunyi.github.io/post/k8s/</link>
+      <pubDate>Thu, 18 Jul 2019 22:52:05 +0800</pubDate>
+      
+      <guid>https://huangxunyi.github.io/post/k8s/</guid>
+      <description>&lt;p&gt;Cut out summary from your post content here.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>使用Docker运行Jenkins,并通过Github Hooks自动构建</title>
       <link>https://huangxunyi.github.io/post/docker-jenkins/</link>
       <pubDate>Sun, 14 Jul 2019 12:38:24 +0800</pubDate>
       
       <guid>https://huangxunyi.github.io/post/docker-jenkins/</guid>
-      <description>使用Docker搭建Jenkins并通过Github Webhooks触发Maven自动构建</description>
+      <description>使用Docker搭建Jenkins并通过Github Webhooks触发Maven自动构建,并通过Jenkins Email Extension Plugin 将构建结果发送的指定邮箱中, Publish Over SSH 实现构建后将所需要的文件通过ssh上传到指定的服务器目录中</description>
     </item>
     
     <item>

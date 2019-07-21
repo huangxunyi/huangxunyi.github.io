@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
 
   
-  <title>Docker Jenkins</title>
+  <title>使用Docker运行Jenkins,并通过Github Hooks自动构建</title>
 
   
   
@@ -26,21 +26,21 @@
 
   
   <meta name="author" content="Huangxuny1">
-  <meta name="description" content="使用Docker搭建Jenkins并通过Github Webhooks触发Maven自动构建">
+  <meta name="description" content="使用Docker搭建Jenkins并通过Github Webhooks触发Maven自动构建,并通过Jenkins Email Extension Plugin 将构建结果发送的指定邮箱中, Publish Over SSH 实现构建后将所需要的文件通过ssh上传到指定的服务器目录中">
 
   
   
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@gohugoio">
-    <meta name="twitter:title" content="Docker Jenkins">
-    <meta name="twitter:description" content="使用Docker搭建Jenkins并通过Github Webhooks触发Maven自动构建">
+    <meta name="twitter:title" content="使用Docker运行Jenkins,并通过Github Hooks自动构建">
+    <meta name="twitter:description" content="使用Docker搭建Jenkins并通过Github Webhooks触发Maven自动构建,并通过Jenkins Email Extension Plugin 将构建结果发送的指定邮箱中, Publish Over SSH 实现构建后将所需要的文件通过ssh上传到指定的服务器目录中">
     <meta name="twitter:image" content="https://huangxunyi.github.io/media/docker-jenkins/jenkins.png">
   
 
   
   <meta property="og:type" content="article">
-  <meta property="og:title" content="Docker Jenkins">
-  <meta property="og:description" content="使用Docker搭建Jenkins并通过Github Webhooks触发Maven自动构建">
+  <meta property="og:title" content="使用Docker运行Jenkins,并通过Github Hooks自动构建">
+  <meta property="og:description" content="使用Docker搭建Jenkins并通过Github Webhooks触发Maven自动构建,并通过Jenkins Email Extension Plugin 将构建结果发送的指定邮箱中, Publish Over SSH 实现构建后将所需要的文件通过ssh上传到指定的服务器目录中">
   <meta property="og:url" content="https://huangxunyi.github.io/post/docker-jenkins/">
   <meta property="og:image" content="https://huangxunyi.github.io/media/docker-jenkins/jenkins.png">
 
@@ -210,21 +210,10 @@
 
   <section class="main post-detail">
     <header class="post-header">
-      <h1 class="post-title">Docker Jenkins</h1>
-      <p class="post-meta">@Huangxuny1 · Jul 14, 2019 · 1 min read</p>
+      <h1 class="post-title">使用Docker运行Jenkins,并通过Github Hooks自动构建</h1>
+      <p class="post-meta">@Huangxuny1 · Jul 14, 2019 · 4 min read</p>
     </header>
     <article class="post-content">
-
-<p><img src="https://image-1252310512.cos.ap-beijing.myqcloud.com/img/docker-jenkins.png" alt="docker-jenkins" title="docker-jenkins" /></p>
-
-<hr />
-
-<h2 id="jenkins">Jenkins</h2>
-
-<blockquote>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;Jenkins是开源CI&amp;CD软件领导者， 提供超过1000个插件来支持构建、部署、自动化， 满足任何项目的需要。
-Jenkins 支持各种运行方式，可通过系统包、Docker 或者通过一个独立的 Java 程序。</p>
-</blockquote>
 
 <h2 id="docker">Docker</h2>
 
@@ -233,6 +222,23 @@ Jenkins 支持各种运行方式，可通过系统包、Docker 或者通过一�
 </blockquote>
 
 <p>&nbsp;&nbsp;&nbsp;&nbsp; 之所以使用Docker运行Jenkins,是因为即可以通过Docker快速部署,又可以轻松把一个Docker容器里的资料在另一个设备中轻松备份Jenkins环境与配置,还可以隔离物理机环境,使Jenkins构架环境不受本地环境影响,当然还有很重要的一点,可以通过Docker实现快速的配置多Jenkins节点.</p>
+
+<h3 id="安装docker">安装Docker</h3>
+
+<p>个人喜欢用官方脚本安装Docker</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ wget -qO- https://get.docker.com/ | sh </code></pre></div>
+<p>安装中会提示输入 <code>root密码</code> ,安装结束后还会提示把 <code>当前用户</code> 添加到docker用户组中</p>
+
+<pre><code>$ sudo usermod -aG docker $USERNAME   # 该命令reboot后生效
+</code></pre>
+
+<p>这样就可以在 <code>当前用户</code> 中使用  <strong>$ docker COMMAND</strong> 而不会出现</p>
+
+<blockquote>
+<p>Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get http://%2Fvar%2Frun%2Fdocker.sock/v1.39/containers/json: dial unix /var/run/docker.sock: connect: permission denied</p>
+</blockquote>
+
+<hr />
 
 <h2 id="github-webhooks">Github Webhooks</h2>
 
@@ -243,6 +249,255 @@ Jenkins 支持各种运行方式，可通过系统包、Docker 或者通过一�
 </blockquote>
 
 <hr />
+
+<h2 id="jenkins">Jenkins</h2>
+
+<p><img src="https://image-1252310512.cos.ap-beijing.myqcloud.com/img/docker-jenkins.png" alt="docker-jenkins" title="docker-jenkins" /></p>
+
+<blockquote>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Jenkins是开源CI&amp;CD软件领导者， 提供超过1000个插件来支持构建、部署、自动化， 满足任何项目的需要。
+Jenkins 支持各种运行方式，可通过系统包、Docker 或者通过一个独立的 Java 程序。</p>
+</blockquote>
+
+<hr />
+
+<h3 id="拉取-jenkins-官方镜像">拉取 Jenkins 官方镜像</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker pull jenkins/jenkins</code></pre></div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; 不推荐使用 <del>docker pull jenkins</del>  因为在<a href="https://hub.docker.com/_/jenkins" title="docker-hub">docker-hub</a> 中 :</p>
+
+<blockquote>
+<p>This image has been deprecated in favor of the jenkins/jenkins:lts image provided and maintained by Jenkins Community as part of project&rsquo;s release process. The images found here will receive no further updates after LTS 2.60.x. Please adjust your usage accordingly.</p>
+</blockquote>
+
+<p><code>即 :</code>  <strong>该镜像已经被弃用,取而代之的是</strong> <a href="https://hub.docker.com/r/jenkins/jenkins" title="jenkins/jenkins:lts">jenkins/jenkins:lts</a> 但文档还是推荐阅读 <a href="https://hub.docker.com/_/jenkins" title="jenkins">jenkins</a></p>
+
+<p>如果镜像拉取较慢,可以使用 <a href="https://cr.console.aliyun.com/cn-hangzhou/instances/mirrors" title="DaoCloud镜像加速">Aliyun镜像加速服务</a> 或者使用 <a href="https://www.daocloud.io/mirror" title=" &quot;DaoCloud镜像加速">DaoCloud镜像加速</a> , 待镜像拉取完毕后执行:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker run -d --name myjenkins -p <span style="color:#ae81ff">8081</span>:8080 -p <span style="color:#ae81ff">50000</span>:50000 -v /<span style="color:#f92672">{</span>local_jenkins_home<span style="color:#f92672">}</span>:/var/jenkins_home jenkins/jenkins</code></pre></div>
+<p>其中 :</p>
+
+<ul>
+<li><p><code>-d</code> 表示后台运行</p></li>
+
+<li><p><code>-p 8081:8080</code> 是将本机的 <code>8081</code> 端口映射到docker <code>容器中的8080</code> 端口,而8080端口是 Jenkins 默认的Web访问端口</p></li>
+
+<li><p><code>-p 50000:50000</code> <code>50000</code>端口将会在Jenkins链接他的 <strong>从节点(slave agent)</strong> 中使用</p></li>
+
+<li><p><code>-v /{local_jenkins_home}:/var/jenkins_home</code>  表示将 <code>{local_jenkins_home}</code> 映射到docker容器中的 <code>/var/jenkins_home</code> ,通过这个映射可以很方便的保存Jenkins的 <strong>备份</strong> 也方便修改一些Jenkins的配置或者配置一些环境</p></li>
+</ul>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;如果直接执行这条命令,通过会发现 <strong>Jenkins容器启动失败</strong> ,通过 <code>$ docker logs myjenkins</code>查看 log 会发现:</p>
+
+<blockquote>
+<p>touch: cannot touch ‘/{local_jenkins_home}/copy_reference_file.log’: Permission denied <br>
+Can not write to /{local_jenkins_home}/copy_reference_file.log. Wrong volume permissions?</p>
+</blockquote>
+
+<p>通过jenkins的 <code>dockerfile</code> 可以看到</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"> ARG uid<span style="color:#f92672">=</span><span style="color:#ae81ff">1000</span> <span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span> ARG gid<span style="color:#f92672">=</span><span style="color:#ae81ff">1000</span> <span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span> ... <span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span> <span style="color:#75715e"># Jenkins is run with user `jenkins`, uid = 1000</span> <span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span> <span style="color:#75715e"># If you bind mount a volume from the host or a data container,</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span> <span style="color:#75715e"># ensure you use the same uid</span> <span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span> RUN groupadd -g <span style="color:#e6db74">${</span>gid<span style="color:#e6db74">}</span> <span style="color:#e6db74">${</span>group<span style="color:#e6db74">}</span> <span style="color:#ae81ff">\ </span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#f92672">&amp;&amp;</span> useradd -d <span style="color:#e6db74">&#34;</span>$JENKINS_HOME<span style="color:#e6db74">&#34;</span> -u <span style="color:#e6db74">${</span>uid<span style="color:#e6db74">}</span> -g <span style="color:#e6db74">${</span>gid<span style="color:#e6db74">}</span> -m -s /bin/bash <span style="color:#e6db74">${</span>user<span style="color:#e6db74">}</span></code></pre></div>
+<p>原来 因为当映射本地数据卷时，<code>容器内的uid和gid为1000</code> , 而本地文件 <code>{local_jenkins_home}</code> 的拥有者为<code>${user}</code>, <strong>因此将{local_jenkins_home}的 gid 和 uid 改为 1000 即可</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo chown -R <span style="color:#ae81ff">1000</span>:1000  <span style="color:#f92672">{</span>local_jenkins_home<span style="color:#f92672">}</span></code></pre></div>
+<p>再次启动即可 <code>$ docker start myjenkins</code></p>
+
+<p>然后访问 <code>https://{ip}:{port}</code>即可看到
+<img src="https://image-1252310512.cos.ap-beijing.myqcloud.com/img/unlock.png" alt="Jenkins-gettingStarted1" /></p>
+
+<p>通过</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker exec -it myjenkins  cat /var/jenkins_home/secrets/initialAdminPassword</code></pre></div>
+<p>拿到密码复制粘贴后,稍等片刻即可看到</p>
+
+<p><img src="https://image-1252310512.cos.ap-beijing.myqcloud.com/img/gettingStarted.png" alt="Jenkins-gettingStarted2" />
+如果想自定义安装插件的话可以选择第二个,这里我们选择 <code>第一个 安装建议插件</code></p>
+
+<p><img src="https://image-1252310512.cos.ap-beijing.myqcloud.com/img/install-plugin.jpg" alt="Jenkins-installing-plugins" /></p>
+
+<p>如果安装过程中出现某些插件安装 <em>失败</em> 可以选择 <code>重试</code> 或者 放弃安装 ,如果有需要可以后面自行安装,如果安装顺利便会提示创建一个账户</p>
+
+<p><img src="https://image-1252310512.cos.ap-beijing.myqcloud.com/img/create-account.jpg" alt="create-account" /></p>
+
+<p>这里的邮箱建议填一个常用的邮箱,因为这个邮箱稍后会被作为构建事件结果的通知邮箱</p>
+
+<p>然后一直下一步即可看到主界面</p>
+
+<p><img src="https://image-1252310512.cos.ap-beijing.myqcloud.com/img/jenkins-index.png" alt="jenkins主界面" /></p>
+
+<hr />
+
+<h3 id="生成-github-access-token">生成 Github Access Token</h3>
+
+<p><code>github</code> -&gt; <code>settings</code> -&gt; <code>Developer settings</code> -&gt; <code>Personal access tokens</code> -&gt; <code>Genarate new token</code></p>
+
+<p><img src="https://image-1252310512.cos.ap-beijing.myqcloud.com/img/generate-new-token.jpg" alt="generate-new-token" /></p>
+
+<p><img src="https://image-1252310512.cos.ap-beijing.myqcloud.com/img/token.jpg" alt="token" /></p>
+
+<p>记得 <strong>一定</strong> 要保存这个 <code>token</code> ,因为一旦丢失,便  <strong><font color=red>无法找回!</font></strong></p>
+
+<hr />
+
+<h3 id="创建github-webhooks">创建Github Webhooks</h3>
+
+<p><code>进入Github项目</code> -&gt; <code>Settings</code> -&gt; <code>Webhooks</code> -&gt; <code>add webhook</code></p>
+
+<p><img src="https://image-1252310512.cos.ap-beijing.myqcloud.com/img/add-webhook.jpg" alt="add-webhook" /></p>
+
+<ul>
+<li><strong>Payload URL</strong> : Jenkins公网地址 http(s)://{ip}:{port}</li>
+<li><strong>Content type</strong> : application/json</li>
+<li><strong>Secret</strong> : (可留空)</li>
+</ul>
+
+<p>然后 <code>add webhook</code></p>
+
+<hr />
+
+<h3 id="配置jenkins-github-plugin">配置Jenkins Github Plugin</h3>
+
+<p><code>系统管理(Manage Jenkins)</code> -&gt; <code>系统设置(Configure System)</code> -&gt; <code>找到 Github</code></p>
+
+<p><img src="https://image-1252310512.cos.ap-beijing.myqcloud.com/img/jenkins-github-server.png" alt="jenkins-github-server" /></p>
+
+<p><code>添加 Github 服务器 (Add Github Server)</code></p>
+
+<ul>
+<li><strong>名称</strong> : 随意</li>
+<li><strong>API URL</strong> : <code>https://api.github.com</code></li>
+<li><strong>凭据</strong> :        <code>添加 ↓</code></li>
+</ul>
+
+<p><img src="https://image-1252310512.cos.ap-beijing.myqcloud.com/img/config-secure-text.png" alt="" /></p>
+
+<ul>
+<li><strong>Domain</strong> :  默认  <code>全局凭据(unrestricted)</code> (<code>Global credentials(unrestricted)</code>)</li>
+<li><strong>类型(Kind)</strong> : 选择  <code>Secure Text</code>
+
+<ul>
+<li><strong>范围</strong> : 默认 <code>全局</code></li>
+<li><strong>Secret</strong> : 刚才 生成的 <code>Github Token</code></li>
+<li><strong>ID</strong> : 可为空</li>
+<li><strong>描述(Description)</strong> : 随意</li>
+</ul></li>
+</ul>
+
+<p>设置完成后可以选择 <code>测试连接(Test connection)</code> ,如果配置无误,则会出现 :</p>
+
+<p><img src="https://image-1252310512.cos.ap-beijing.myqcloud.com/img/test-connection.jpg" alt="Test connection" /></p>
+
+<p><code>应用</code> 设置后回到主界面</p>
+
+<hr />
+
+<h3 id="配置java环境">配置JAVA环境</h3>
+
+<p><code>系统管理(Manage Jenkins)</code> -&gt; <code>全局工具配置(Global Tool Configuration)</code> -&gt; <code>JDK</code> -&gt; <code>JDK安装</code></p>
+
+<ul>
+<li>可以选择 自动安装
+<img src="https://image-1252310512.cos.ap-beijing.myqcloud.com/img/install-jdk.png" alt="" /></li>
+</ul>
+
+<p>手动安装将会从Oracle官网下载JDK,几乎支持所有Oracle官方上提供的JDK下载,但是需要输出Oracle账号密码.</p>
+
+<ul>
+<li>也可以手动指定JAVA_HOME</li>
+</ul>
+
+<p><img src="https://image-1252310512.cos.ap-beijing.myqcloud.com/img/install-jdk-manual.png" alt="" /></p>
+
+<p>这时候前面-v 映射的目录就派上用场了,把下载好的JDK解压到映射的路径中:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ tar -zxvf <span style="color:#f92672">{</span>jdk-*-linux-*.tar.gz<span style="color:#f92672">}</span> -C <span style="color:#f92672">{</span>local_jenkins_home<span style="color:#f92672">}</span></code></pre></div>
+<p><strong>别名</strong> 填 <code>java+版本号</code> , <strong>JAVA_HOME</strong> 填  <code>/var/jenkins_home/{JDK文件夹名}</code> ,因为本地 <code>{local_jenkins_home}</code> 映射的是容器中的 <code>/var/jenkins_home</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#75715e"># Jenkins home directory is a volume, so configuration and build history </span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># can be persisted and survive image upgrades</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">VOLUME</span><span style="color:#e6db74"> /var/jenkins_home</span></code></pre></div>
+<hr />
+
+<h3 id="安装maven">安装MAVEN</h3>
+
+<p><code>系统管理(Manage Jenkins)</code> -&gt; <code>全局工具配置(Global Tool Configuration)</code> -&gt; <code>MAVEN</code> -&gt; <code>新增MAVEN</code></p>
+
+<p>与安装JDK同理,可以选择自动安装,也可以自己手动安装.</p>
+
+<p>如果没有特殊的需求,可以选择自动安装,简单省事</p>
+
+<p><strong>值得注意的是</strong> <code>系统管理(Manage Jenkins)</code> -&gt; <code>全局工具配置(Global Tool Configuration)</code> -&gt; <code>MAVEN</code> -&gt; <code>MAVEN 配置</code> 中可以指定 Setting文件,可以通过 <code>{local_jenkins_home} + /var/jenkins_home</code> 的 方式指定</p>
+
+<hr />
+
+<h3 id="安装-maven-integration">安装 Maven Integration</h3>
+
+<p><code>系统管理(Manage Jenkins)</code> -&gt; <code>插件管理(ManagePlugins)</code> -&gt; <code>可选插件(available)</code>  -&gt;  <code>Maven Integration</code>
+<img src="https://image-1252310512.cos.ap-beijing.myqcloud.com/img/maven-plugin.png" alt="maven-plugin" /></p>
+
+<p><em>建议</em> : 下载待重启后安装</p>
+
+<p><img src="https://image-1252310512.cos.ap-beijing.myqcloud.com/img/install.png" alt="install-plugin" /></p>
+
+<p>然后勾选  <code>安装完成后重启Jenkins(空闲时)</code> , 待Jenkins重启完成即可</p>
+
+<p><em>ps:重启后中文的翻译似乎完整了许多,第一次启动Jenkins汉化没完全,所以有些步骤中文后会有一个英文括号</em></p>
+
+<h3 id="新建任务">新建任务</h3>
+
+<p>主界面选择 <code>新建任务(newJob)</code> -&gt; 输入项目名称然后选择 <code>建构一个maven项目</code>, 确定</p>
+
+<p><img src="https://image-1252310512.cos.ap-beijing.myqcloud.com/img/project-config1.png" alt="" />
+<br></p>
+
+<hr />
+
+<p><br>
+<img src="https://image-1252310512.cos.ap-beijing.myqcloud.com/img/project-config2.png" alt="" /></p>
+
+<h2 id="jenkins-升级">Jenkins 升级</h2>
+
+<p>由于Docker容器的jenkins_home已经映射到本地目录,因此升级Jenkins非常简单</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> docker pull jenkins/jenkins:latest  <span style="color:#75715e"># 拉取最新的jenkins镜像</span>
+ docker stop myjenkins    <span style="color:#75715e"># 停止jenkins容器</span>
+ docker rm myjenkins      <span style="color:#75715e"># 删除jenkins容器</span>
+ docker run -d --name myjenkins -p <span style="color:#ae81ff">8081</span>:8080 -p <span style="color:#ae81ff">50000</span>:50000 -v /<span style="color:#f92672">{</span>local_jenkins_home<span style="color:#f92672">}</span>:/var/jenkins_home jenkins/jenkins</code></pre></div>
+<p>稍等jenkins启动完成,重新访问即可</p>
+
+<p>至于没有映射本地目录的</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker inspect --format <span style="color:#e6db74">&#39;{{ (index (index .Mounts) 0).Source }}&#39;</span></code></pre></div>
+<p>输出的就是 默认 Volume 所在的位置,把 <code>_data</code> <code>cp</code> 出来并命名为jenkins_home</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo -s
+cd ..
+cp _data -r  <span style="color:#f92672">{</span>local_jenkins_home<span style="color:#f92672">}</span>  <span style="color:#75715e"># 改成自己的路径</span>
+sudo chown -R <span style="color:#ae81ff">1000</span>:1000 <span style="color:#f92672">{</span>local_jenkins_home<span style="color:#f92672">}</span>  <span style="color:#75715e"># 改成自己的路径</span>
+docker stop myjenkins
+docker rm myjenkins
+docker run -d --name myjenkins -p <span style="color:#ae81ff">8081</span>:8080 -p <span style="color:#ae81ff">50000</span>:50000 -v /<span style="color:#f92672">{</span>local_jenkins_home<span style="color:#f92672">}</span>:/var/jenkins_home jenkins/jenkins</code></pre></div>
+<p><em>这是我自己研究出来的 &ldquo;野路子&rdquo;, 如果有更好的方法请赐教</em></p>
+
+<p>值得注意的是 docker rm {容器ID} 后 <code>/var/lib/docker/volumn</code> 中的卷是不会删除的
+要删除的话有两种方法,一种是在删除容器的时候使用</p>
+
+<blockquote>
+<p>$  docker rm -v {容器ID}</p>
+</blockquote>
+
+<p>但是我个人不太喜欢这种方式,如果数据删错了就凉了</p>
+
+<p>另一种是</p>
+
+<blockquote>
+<p>$ docker volume prune</p>
+</blockquote>
+
+<p>这种方式会删除 <strong>所有</strong> 未被引用的volume,如果想只删除特定的卷可以使用</p>
+
+<blockquote>
+<p>$ docker volume {容器id}</p>
+</blockquote>
+
+<p>待续 &hellip;</p>
 </article>
     <footer class="post-footer">
       
