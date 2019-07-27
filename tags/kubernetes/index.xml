@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Huangxunyi&#39;s Blog</title>
-    <link>https://huangxunyi.github.io/post/</link>
-    <description>Recent content in Posts on Huangxunyi&#39;s Blog</description>
+    <title>kubernetes on Huangxunyi&#39;s Blog</title>
+    <link>https://huangxunyi.github.io/tags/kubernetes/</link>
+    <description>Recent content in kubernetes on Huangxunyi&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you wish to quote or reproduce.</copyright>
     <lastBuildDate>Thu, 18 Jul 2019 22:52:05 +0800</lastBuildDate>
     
-	<atom:link href="https://huangxunyi.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://huangxunyi.github.io/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -23,24 +23,6 @@ kubectl  kubelet Kubelet负责每个节点的运行状态（即确保节点上�
 Kubelet会监视pod的状态，如果不处于所需状态，则pod将被重新部署到同一个节点。节点状态每隔几秒就会传递消息至中继主机。主控器检测到节点故障后，复制控制器将观察此状态更改，并在其他健康节点上启动pod。
 Pod Kubernetes的基本调度单元称为“pod”。通过该种抽象类别可以把更高级别的抽象内容增加到容器化组件。一个pod一般包含一个或多个容器，这样可以保证它们一直位于主机上，并且可以共享资源。
 minikube </description>
-    </item>
-    
-    <item>
-      <title>Docker Jenkins自动构建</title>
-      <link>https://huangxunyi.github.io/post/docker-jenkins/</link>
-      <pubDate>Sun, 14 Jul 2019 12:38:24 +0800</pubDate>
-      
-      <guid>https://huangxunyi.github.io/post/docker-jenkins/</guid>
-      <description>使用Docker搭建Jenkins并通过Github Webhooks触发Maven自动构建,并通过Jenkins Email Extension Plugin 将构建结果发送的指定邮箱中, Publish Over SSH 实现构建后将所需要的文件通过ssh上传到指定的服务器目录中</description>
-    </item>
-    
-    <item>
-      <title>使用hugo&#43;Github Pages搭建个人静态博客</title>
-      <link>https://huangxunyi.github.io/post/hugo-github-pages/</link>
-      <pubDate>Sat, 13 Jul 2019 17:29:26 +0800</pubDate>
-      
-      <guid>https://huangxunyi.github.io/post/hugo-github-pages/</guid>
-      <description>使用hugo生成静态页面,并通过Github Pages部署</description>
     </item>
     
   </channel>

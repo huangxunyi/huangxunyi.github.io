@@ -166,7 +166,7 @@
           
           
           ">
-          <a href="https://huangxunyi.github.io/todo/">TODO</a>
+          <a href="https://huangxunyi.github.io/miscellanea/">Miscellanea</a>
         </li>
       
         <li class="menu-item
@@ -214,11 +214,14 @@
         <article class="post-entry">
   <header class="post-header">
     <h3 class="post-title"><a href="https://huangxunyi.github.io/post/k8s/" class="post-link">K8s</a></h3>
-    <p class="post-meta">@Author Name · Jul 18, 2019 · 1 min read</p>
+    <p class="post-meta">@Huangxuny1 · Jul 18, 2019 · 1 min read</p>
   </header>
   
-  <p class="post-summary">Cut out summary from your post content here.
-</p>
+  <p class="post-summary">  Kubernetes（常简称为K8s）是用于自动部署、扩展和管理容器化（containerized）应用程序的开源系统。 它旨在提供“跨主机集群的自动部署、扩展以及运行应用程序容器的平台”。它支持一系列容器工具, 包括Docker等。
+kubectl  kubelet Kubelet负责每个节点的运行状态（即确保节点上的所有容器都正常运行）。它按照控制面板的指示来处理启动，停止和维护应用程序容器。
+Kubelet会监视pod的状态，如果不处于所需状态，则pod将被重新部署到同一个节点。节点状态每隔几秒就会传递消息至中继主机。主控器检测到节点故障后，复制控制器将观察此状态更改，并在其他健康节点上启动pod。
+Pod Kubernetes的基本调度单元称为“pod”。通过该种抽象类别可以把更高级别的抽象内容增加到容器化组件。一个pod一般包含一个或多个容器，这样可以保证它们一直位于主机上，并且可以共享资源。
+minikube </p>
   <footer class="post-footer">
     <a class="read-more" href="https://huangxunyi.github.io/post/k8s/">Read More →</a>
   </footer>
@@ -227,11 +230,11 @@
       
         <article class="post-entry">
   <header class="post-header">
-    <h3 class="post-title"><a href="https://huangxunyi.github.io/post/docker-jenkins/" class="post-link">使用Docker运行Jenkins,并通过Github Hooks自动构建</a></h3>
+    <h3 class="post-title"><a href="https://huangxunyi.github.io/post/docker-jenkins/" class="post-link">Docker Jenkins自动构建</a></h3>
     <p class="post-meta">@Huangxuny1 · Jul 14, 2019 · 4 min read</p>
   </header>
   
-    <img class="post-cover" src="https://huangxunyi.github.io/media/docker-jenkins/jenkins.png" alt="使用Docker运行Jenkins,并通过Github Hooks自动构建" lazyload="on">
+    <img class="post-cover" src="https://huangxunyi.github.io/media/docker-jenkins/jenkins.png" alt="Docker Jenkins自动构建" lazyload="on">
   
   <p class="post-summary">使用Docker搭建Jenkins并通过Github Webhooks触发Maven自动构建,并通过Jenkins Email Extension Plugin 将构建结果发送的指定邮箱中, Publish Over SSH 实现构建后将所需要的文件通过ssh上传到指定的服务器目录中</p>
   <footer class="post-footer">

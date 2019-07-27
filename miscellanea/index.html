@@ -6,9 +6,7 @@
 
   
   <title>
-  Tag → jenkins
-  
-   | Huangxuny1&#39;s Blog
+  Miscellanea | Huangxuny1&#39;s Blog
 </title>
 
   
@@ -43,7 +41,7 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="Huangxuny1&#39;s Blog">
   <meta property="og:description" content="Huangxuny1&#39;s Blog  AthosZhou">
-  <meta property="og:url" content="https://huangxunyi.github.io/tags/jenkins/">
+  <meta property="og:url" content="https://huangxunyi.github.io/miscellanea/">
   <meta property="og:image" content="/images/avatar.png">
 
 
@@ -52,8 +50,7 @@
 <meta name="generator" content="Hugo 0.55.6">
 
 
-<link rel="canonical" href="https://huangxunyi.github.io/tags/jenkins/">
-<link rel="alternate" type="application/rss+xml" href="https://huangxunyi.github.io/tags/jenkins/index.xml" title="Huangxunyi's Blog">
+<link rel="canonical" href="https://huangxunyi.github.io/miscellanea/">
 
 <meta name="renderer" content="webkit">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -158,13 +155,13 @@
       
         <li class="menu-item
           
-           is-active
+          
           ">
           <a href="https://huangxunyi.github.io/tags/">Tags</a>
         </li>
       
         <li class="menu-item
-          
+           is-active
           
           ">
           <a href="https://huangxunyi.github.io/miscellanea/">Miscellanea</a>
@@ -205,29 +202,66 @@
   </nav>
 </header>
 
-  <section class="main post-list">
-    <header class="list-header offscreen">
-      <h2 class="list-label">Posts List</h2>
+  <section class="main post-detail">
+    <header class="post-header">
+      <h1 class="post-title">Miscellanea</h1>
     </header>
-    
-    
-      
-        <article class="post-entry">
-  <header class="post-header">
-    <h3 class="post-title"><a href="https://huangxunyi.github.io/post/docker-jenkins/" class="post-link">Docker Jenkins自动构建</a></h3>
-    <p class="post-meta">@Huangxuny1 · Jul 14, 2019 · 4 min read</p>
-  </header>
-  
-    <img class="post-cover" src="https://huangxunyi.github.io/media/docker-jenkins/jenkins.png" alt="Docker Jenkins自动构建" lazyload="on">
-  
-  <p class="post-summary">使用Docker搭建Jenkins并通过Github Webhooks触发Maven自动构建,并通过Jenkins Email Extension Plugin 将构建结果发送的指定邮箱中, Publish Over SSH 实现构建后将所需要的文件通过ssh上传到指定的服务器目录中</p>
-  <footer class="post-footer">
-    <a class="read-more" href="https://huangxunyi.github.io/post/docker-jenkins/">Read More →</a>
-  </footer>
-</article>
+    <article class="post-content">
 
-      
+<blockquote>
+<p>类似Gist记录一些常用的小坑或者小技巧 或者发一些牢骚 &hellip;</p>
+</blockquote>
+
+<hr />
+
+<h3 id="mysql-远程访问">MySQL 远程访问</h3>
+
+<blockquote>
+<p>$ mysql -u {username} -p  -h {ip}  -P {port}</p>
+
+<p>mysql&gt; select host,user,plugin from user;     # use mysql</p>
+</blockquote>
+
+<pre><code>+-----------+------------------+-----------------------+
+| host      | user             | plugin                |
++-----------+------------------+-----------------------+
+| localhost | mysql.infoschema | caching_sha2_password |
+| localhost | mysql.session    | caching_sha2_password |
+| localhost | mysql.sys        | caching_sha2_password |
+| localhost | root             | caching_sha2_password |
++-----------+------------------+-----------------------+
+
+</code></pre>
+
+<p>可以看到 host : 只能是 <code>localhost</code> ,要更加的话</p>
+
+<blockquote>
+<p>mysql&gt; GRANT ALL PRIVILEGES ON *.* TO &lsquo;root&rsquo;@&lsquo;%&lsquo;IDENTIFIED BY &lsquo;your-password&rsquo; WITH GRANT OPTION;</p>
+
+<p>mysql&gt; flush privileges;     #更新授权</p>
+</blockquote>
+
+<p>此时查看 user表 应该是</p>
+
+<pre><code>+-----------+------------------+-----------------------+
+| host      | user             | plugin                |
++-----------+------------------+-----------------------+
+| %         | root             | caching_sha2_password |
+| localhost | mysql.infoschema | caching_sha2_password |
+| localhost | mysql.session    | caching_sha2_password |
+| localhost | mysql.sys        | caching_sha2_password |
+| localhost | root             | caching_sha2_password |
++-----------+------------------+-----------------------+
+</code></pre>
+
+<p>其中 <code>%</code> 表示 所有 类似 <code>0.0.0.0</code> , 这样远程连接就可以通过 <code>username=root</code> <code>password=your-password</code> 访问数据库了.</p>
+
+<p>如果还不能远程连接的话,可以看一下 mysql的 <code>.cnf</code> 文件(<code>/etc/mysql/</code>)中的 <code>bind-address</code> 是不是  <code>127.0.0.1</code> 如果是改成你ip或者 <code>0.0.0.0</code>(表示所有ip) 即可</p>
+
+<hr />
+</article>
     
+      
     
   </section>
   

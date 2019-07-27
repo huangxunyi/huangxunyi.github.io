@@ -25,25 +25,34 @@
   
 
   
-  <meta name="author" content="Author Name">
-  <meta name="description" content="Cut out summary from your post content here.
-">
+  <meta name="author" content="Huangxuny1">
+  <meta name="description" content="  Kubernetes（常简称为K8s）是用于自动部署、扩展和管理容器化（containerized）应用程序的开源系统。 它旨在提供“跨主机集群的自动部署、扩展以及运行应用程序容器的平台”。它支持一系列容器工具, 包括Docker等。
+kubectl  kubelet Kubelet负责每个节点的运行状态（即确保节点上的所有容器都正常运行）。它按照控制面板的指示来处理启动，停止和维护应用程序容器。
+Kubelet会监视pod的状态，如果不处于所需状态，则pod将被重新部署到同一个节点。节点状态每隔几秒就会传递消息至中继主机。主控器检测到节点故障后，复制控制器将观察此状态更改，并在其他健康节点上启动pod。
+Pod Kubernetes的基本调度单元称为“pod”。通过该种抽象类别可以把更高级别的抽象内容增加到容器化组件。一个pod一般包含一个或多个容器，这样可以保证它们一直位于主机上，并且可以共享资源。
+minikube ">
 
   
   
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@gohugoio">
     <meta name="twitter:title" content="K8s">
-    <meta name="twitter:description" content="Cut out summary from your post content here.
-">
+    <meta name="twitter:description" content="  Kubernetes（常简称为K8s）是用于自动部署、扩展和管理容器化（containerized）应用程序的开源系统。 它旨在提供“跨主机集群的自动部署、扩展以及运行应用程序容器的平台”。它支持一系列容器工具, 包括Docker等。
+kubectl  kubelet Kubelet负责每个节点的运行状态（即确保节点上的所有容器都正常运行）。它按照控制面板的指示来处理启动，停止和维护应用程序容器。
+Kubelet会监视pod的状态，如果不处于所需状态，则pod将被重新部署到同一个节点。节点状态每隔几秒就会传递消息至中继主机。主控器检测到节点故障后，复制控制器将观察此状态更改，并在其他健康节点上启动pod。
+Pod Kubernetes的基本调度单元称为“pod”。通过该种抽象类别可以把更高级别的抽象内容增加到容器化组件。一个pod一般包含一个或多个容器，这样可以保证它们一直位于主机上，并且可以共享资源。
+minikube ">
     <meta name="twitter:image" content="/images/avatar.png">
   
 
   
   <meta property="og:type" content="article">
   <meta property="og:title" content="K8s">
-  <meta property="og:description" content="Cut out summary from your post content here.
-">
+  <meta property="og:description" content="  Kubernetes（常简称为K8s）是用于自动部署、扩展和管理容器化（containerized）应用程序的开源系统。 它旨在提供“跨主机集群的自动部署、扩展以及运行应用程序容器的平台”。它支持一系列容器工具, 包括Docker等。
+kubectl  kubelet Kubelet负责每个节点的运行状态（即确保节点上的所有容器都正常运行）。它按照控制面板的指示来处理启动，停止和维护应用程序容器。
+Kubelet会监视pod的状态，如果不处于所需状态，则pod将被重新部署到同一个节点。节点状态每隔几秒就会传递消息至中继主机。主控器检测到节点故障后，复制控制器将观察此状态更改，并在其他健康节点上启动pod。
+Pod Kubernetes的基本调度单元称为“pod”。通过该种抽象类别可以把更高级别的抽象内容增加到容器化组件。一个pod一般包含一个或多个容器，这样可以保证它们一直位于主机上，并且可以共享资源。
+minikube ">
   <meta property="og:url" content="https://huangxunyi.github.io/post/k8s/">
   <meta property="og:image" content="/images/avatar.png">
 
@@ -173,7 +182,7 @@
           
           
           ">
-          <a href="https://huangxunyi.github.io/todo/">TODO</a>
+          <a href="https://huangxunyi.github.io/miscellanea/">Miscellanea</a>
         </li>
       
         <li class="menu-item
@@ -214,18 +223,36 @@
   <section class="main post-detail">
     <header class="post-header">
       <h1 class="post-title">K8s</h1>
-      <p class="post-meta">@Author Name · Jul 18, 2019 · 1 min read</p>
+      <p class="post-meta">@Huangxuny1 · Jul 18, 2019 · 1 min read</p>
     </header>
-    <article class="post-content"><p>Cut out summary from your post content here.</p>
+    <article class="post-content">
 
-<p>The remaining content of your post.</p></article>
+<blockquote>
+<p>Kubernetes（常简称为K8s）是用于自动部署、扩展和管理容器化（containerized）应用程序的开源系统。
+它旨在提供“跨主机集群的自动部署、扩展以及运行应用程序容器的平台”。它支持一系列容器工具, 包括Docker等。</p>
+
+<h3 id="kubectl">kubectl</h3>
+</blockquote>
+
+<h3 id="kubelet">kubelet</h3>
+
+<p>Kubelet负责每个节点的运行状态（即确保节点上的所有容器都正常运行）。它按照控制面板的指示来处理启动，停止和维护应用程序容器。</p>
+
+<p>Kubelet会监视pod的状态，如果不处于所需状态，则pod将被重新部署到同一个节点。节点状态每隔几秒就会传递消息至中继主机。主控器检测到节点故障后，复制控制器将观察此状态更改，并在其他健康节点上启动pod。</p>
+
+<h3 id="pod">Pod</h3>
+
+<p>Kubernetes的基本调度单元称为“pod”。通过该种抽象类别可以把更高级别的抽象内容增加到容器化组件。一个pod一般包含一个或多个容器，这样可以保证它们一直位于主机上，并且可以共享资源。</p>
+
+<h3 id="minikube">minikube</h3>
+</article>
     <footer class="post-footer">
       
       <ul class="post-tags">
         
-          <li><a href="https://huangxunyi.github.io/tags/taga"><span class="tag">TagA</span></a></li>
+          <li><a href="https://huangxunyi.github.io/tags/k8s"><span class="tag">K8s</span></a></li>
         
-          <li><a href="https://huangxunyi.github.io/tags/tagb"><span class="tag">TagB</span></a></li>
+          <li><a href="https://huangxunyi.github.io/tags/kubernetes"><span class="tag">Kubernetes</span></a></li>
         
       </ul>
       

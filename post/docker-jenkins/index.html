@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
 
   
-  <title>使用Docker运行Jenkins,并通过Github Hooks自动构建</title>
+  <title>Docker Jenkins自动构建</title>
 
   
   
@@ -32,14 +32,14 @@
   
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@gohugoio">
-    <meta name="twitter:title" content="使用Docker运行Jenkins,并通过Github Hooks自动构建">
+    <meta name="twitter:title" content="Docker Jenkins自动构建">
     <meta name="twitter:description" content="使用Docker搭建Jenkins并通过Github Webhooks触发Maven自动构建,并通过Jenkins Email Extension Plugin 将构建结果发送的指定邮箱中, Publish Over SSH 实现构建后将所需要的文件通过ssh上传到指定的服务器目录中">
     <meta name="twitter:image" content="https://huangxunyi.github.io/media/docker-jenkins/jenkins.png">
   
 
   
   <meta property="og:type" content="article">
-  <meta property="og:title" content="使用Docker运行Jenkins,并通过Github Hooks自动构建">
+  <meta property="og:title" content="Docker Jenkins自动构建">
   <meta property="og:description" content="使用Docker搭建Jenkins并通过Github Webhooks触发Maven自动构建,并通过Jenkins Email Extension Plugin 将构建结果发送的指定邮箱中, Publish Over SSH 实现构建后将所需要的文件通过ssh上传到指定的服务器目录中">
   <meta property="og:url" content="https://huangxunyi.github.io/post/docker-jenkins/">
   <meta property="og:image" content="https://huangxunyi.github.io/media/docker-jenkins/jenkins.png">
@@ -170,7 +170,7 @@
           
           
           ">
-          <a href="https://huangxunyi.github.io/todo/">TODO</a>
+          <a href="https://huangxunyi.github.io/miscellanea/">Miscellanea</a>
         </li>
       
         <li class="menu-item
@@ -210,7 +210,7 @@
 
   <section class="main post-detail">
     <header class="post-header">
-      <h1 class="post-title">使用Docker运行Jenkins,并通过Github Hooks自动构建</h1>
+      <h1 class="post-title">Docker Jenkins自动构建</h1>
       <p class="post-meta">@Huangxuny1 · Jul 14, 2019 · 4 min read</p>
     </header>
     <article class="post-content">
@@ -455,6 +455,10 @@ Can not write to /{local_jenkins_home}/copy_reference_file.log. Wrong volume per
 <p><br>
 <img src="https://image-1252310512.cos.ap-beijing.myqcloud.com/img/project-config2.png" alt="" /></p>
 
+<hr />
+
+<p>// TODO</p>
+
 <h2 id="jenkins-升级">Jenkins 升级</h2>
 
 <p>由于Docker容器的jenkins_home已经映射到本地目录,因此升级Jenkins非常简单</p>
@@ -476,6 +480,8 @@ docker rm myjenkins
 docker run -d --name myjenkins -p <span style="color:#ae81ff">8081</span>:8080 -p <span style="color:#ae81ff">50000</span>:50000 -v /<span style="color:#f92672">{</span>local_jenkins_home<span style="color:#f92672">}</span>:/var/jenkins_home jenkins/jenkins</code></pre></div>
 <p><em>这是我自己研究出来的 &ldquo;野路子&rdquo;, 如果有更好的方法请赐教</em></p>
 
+<h4 id="volumn清理">Volumn清理</h4>
+
 <p>值得注意的是 docker rm {容器ID} 后 <code>/var/lib/docker/volumn</code> 中的卷是不会删除的
 要删除的话有两种方法,一种是在删除容器的时候使用</p>
 
@@ -494,7 +500,7 @@ docker run -d --name myjenkins -p <span style="color:#ae81ff">8081</span>:8080 -
 <p>这种方式会删除 <strong>所有</strong> 未被引用的volume,如果想只删除特定的卷可以使用</p>
 
 <blockquote>
-<p>$ docker volume {容器id}</p>
+<p>$ docker volume  rm {id}</p>
 </blockquote>
 
 <p>待续 &hellip;</p>
