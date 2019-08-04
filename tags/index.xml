@@ -7,10 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you wish to quote or reproduce.</copyright>
-    <lastBuildDate>Thu, 18 Jul 2019 22:52:05 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 04 Aug 2019 20:16:23 +0800</lastBuildDate>
     
 	<atom:link href="https://huangxunyi.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>tagA</title>
+      <link>https://huangxunyi.github.io/tags/taga/</link>
+      <pubDate>Sun, 04 Aug 2019 20:16:23 +0800</pubDate>
+      
+      <guid>https://huangxunyi.github.io/tags/taga/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tagB</title>
+      <link>https://huangxunyi.github.io/tags/tagb/</link>
+      <pubDate>Sun, 04 Aug 2019 20:16:23 +0800</pubDate>
+      
+      <guid>https://huangxunyi.github.io/tags/tagb/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>k8s</title>

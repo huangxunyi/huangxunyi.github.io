@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you wish to quote or reproduce.</copyright>
-    <lastBuildDate>Thu, 18 Jul 2019 22:52:05 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 04 Aug 2019 20:16:23 +0800</lastBuildDate>
     
 	<atom:link href="https://huangxunyi.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -31,6 +31,24 @@ mysql&amp;gt; select host,user,plugin from user; # use mysql
       
       <guid>https://huangxunyi.github.io/about/</guid>
       <description>Huangxuny1</description>
+    </item>
+    
+    <item>
+      <title>Red Black Tree</title>
+      <link>https://huangxunyi.github.io/post/red-black-tree/</link>
+      <pubDate>Sun, 04 Aug 2019 20:16:23 +0800</pubDate>
+      
+      <guid>https://huangxunyi.github.io/post/red-black-tree/</guid>
+      <description>&lt;p&gt;Cut out summary from your post content here.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Kafka</title>
+      <link>https://huangxunyi.github.io/post/kafka/</link>
+      <pubDate>Sun, 04 Aug 2019 20:15:15 +0800</pubDate>
+      
+      <guid>https://huangxunyi.github.io/post/kafka/</guid>
+      <description>&lt;p&gt;Cut out summary from your post content here.&lt;/p&gt;</description>
     </item>
     
     <item>

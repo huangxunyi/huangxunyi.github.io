@@ -14,25 +14,47 @@
   
   <url>
     <loc>https://huangxunyi.github.io/</loc>
-    <lastmod>2019-07-18T22:52:05+08:00</lastmod>
+    <lastmod>2019-08-04T20:16:23+08:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://huangxunyi.github.io/post/</loc>
+    <lastmod>2019-08-04T20:16:23+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://huangxunyi.github.io/post/red-black-tree/</loc>
+    <lastmod>2019-08-04T20:16:23+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://huangxunyi.github.io/tags/</loc>
+    <lastmod>2019-08-04T20:16:23+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://huangxunyi.github.io/tags/taga/</loc>
+    <lastmod>2019-08-04T20:16:23+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://huangxunyi.github.io/tags/tagb/</loc>
+    <lastmod>2019-08-04T20:16:23+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://huangxunyi.github.io/post/kafka/</loc>
+    <lastmod>2019-08-04T20:15:15+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://huangxunyi.github.io/post/k8s/</loc>
     <lastmod>2019-07-18T22:52:05+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://huangxunyi.github.io/post/</loc>
-    <lastmod>2019-07-18T22:52:05+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://huangxunyi.github.io/tags/</loc>
-    <lastmod>2019-07-18T22:52:05+08:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>

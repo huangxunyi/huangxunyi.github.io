@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
 
   
-  <title>Huangxuny1&#39;s Blog</title>
+  <title>Kafka</title>
 
   
   
@@ -25,22 +25,27 @@
   
 
   
-  <meta name="author" content="Ritchie Zhu">
-  <meta name="description" content="Huangxuny1&#39;s Blog  AthosZhou">
+  <meta name="author" content="Author Name">
+  <meta name="description" content="Cut out summary from your post content here.
+">
 
   
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:site" content="@gohugoio">
-  <meta name="twitter:title" content="Huangxuny1&#39;s Blog">
-  <meta name="twitter:description" content="Huangxuny1&#39;s Blog  AthosZhou">
-  <meta name="twitter:image" content="/images/avatar.png">
+  
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@gohugoio">
+    <meta name="twitter:title" content="Kafka">
+    <meta name="twitter:description" content="Cut out summary from your post content here.
+">
+    <meta name="twitter:image" content="https://huangxunyi.github.io/images/cover.jpg">
+  
 
   
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Huangxuny1&#39;s Blog">
-  <meta property="og:description" content="Huangxuny1&#39;s Blog  AthosZhou">
-  <meta property="og:url" content="https://huangxunyi.github.io/">
-  <meta property="og:image" content="/images/avatar.png">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Kafka">
+  <meta property="og:description" content="Cut out summary from your post content here.
+">
+  <meta property="og:url" content="https://huangxunyi.github.io/post/kafka/">
+  <meta property="og:image" content="https://huangxunyi.github.io/images/cover.jpg">
 
 
 
@@ -48,8 +53,7 @@
 <meta name="generator" content="Hugo 0.55.6">
 
 
-<link rel="canonical" href="https://huangxunyi.github.io/">
-<link rel="alternate" type="application/rss+xml" href="https://huangxunyi.github.io/index.xml" title="Huangxunyi's Blog">
+<link rel="canonical" href="https://huangxunyi.github.io/post/kafka/">
 
 <meta name="renderer" content="webkit">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -102,8 +106,12 @@
 
 
 
+<script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.2/dist/medium-zoom.min.js"></script>
 
 
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/video.js@7.3.0/dist/video-js.min.css">
 
 
 
@@ -125,12 +133,15 @@
     <div class="suspension">
       <a role="button" aria-label="Go to top" title="Go to top" class="to-top is-hide"><span class="icon icon-up" aria-hidden="true"></span></a>
       
+        
+      
     </div>
     
-     <header class="site-header">
+    
+  <header class="site-header">
   <a href="https://huangxunyi.github.io"><img class="avatar" src="https://huangxunyi.github.io/images/avatar.png" alt="Avatar"></a>
   
-  <h1 class="title"><a href="https://huangxunyi.github.io">Huangxunyi&#39;s Blog</a></h1>
+  <h2 class="title"><a href="https://huangxunyi.github.io">Huangxunyi&#39;s Blog</a></h2>
   
   <p class="subtitle">~ Keep It Simple &amp; Stupid ~</p>
   <button class="menu-toggle" type="button" aria-label="Main Menu" aria-expanded="false" tab-index="0">
@@ -145,9 +156,9 @@
       
       
         <li class="menu-item
-           is-active
           
-          ">
+          
+           is-active">
           <a href="https://huangxunyi.github.io/">Home</a>
         </li>
       
@@ -200,85 +211,33 @@
   </nav>
 </header>
 
-<section class="main post-list">
-  <header class="list-header offscreen">
-    <h2 class="list-label">All Posts</h2>
-  </header>
-  
-  
-   <article class="post-entry">
-  <header class="post-header">
-    <h3 class="post-title"><a href="https://huangxunyi.github.io/post/red-black-tree/" class="post-link">Red Black Tree</a></h3>
-    <p class="post-meta">@Author Name · Aug 4, 2019 · 1 min read</p>
-  </header>
-  
-    <img class="post-cover" src="https://huangxunyi.github.io/images/cover.jpg" alt="Red Black Tree" lazyload="on">
-  
-  <p class="post-summary">Cut out summary from your post content here.
-</p>
-  <footer class="post-footer">
-    <a class="read-more" href="https://huangxunyi.github.io/post/red-black-tree/">Read More →</a>
-  </footer>
-</article>
-  <article class="post-entry">
-  <header class="post-header">
-    <h3 class="post-title"><a href="https://huangxunyi.github.io/post/kafka/" class="post-link">Kafka</a></h3>
-    <p class="post-meta">@Author Name · Aug 4, 2019 · 1 min read</p>
-  </header>
-  
-    <img class="post-cover" src="https://huangxunyi.github.io/images/cover.jpg" alt="Kafka" lazyload="on">
-  
-  <p class="post-summary">Cut out summary from your post content here.
-</p>
-  <footer class="post-footer">
-    <a class="read-more" href="https://huangxunyi.github.io/post/kafka/">Read More →</a>
-  </footer>
-</article>
-  <article class="post-entry">
-  <header class="post-header">
-    <h3 class="post-title"><a href="https://huangxunyi.github.io/post/k8s/" class="post-link">K8s</a></h3>
-    <p class="post-meta">@Huangxuny1 · Jul 18, 2019 · 1 min read</p>
-  </header>
-  
-  <p class="post-summary">  Kubernetes（常简称为K8s）是用于自动部署、扩展和管理容器化（containerized）应用程序的开源系统。 它旨在提供“跨主机集群的自动部署、扩展以及运行应用程序容器的平台”。它支持一系列容器工具, 包括Docker等。
-kubectl  kubelet Kubelet负责每个节点的运行状态（即确保节点上的所有容器都正常运行）。它按照控制面板的指示来处理启动，停止和维护应用程序容器。
-Kubelet会监视pod的状态，如果不处于所需状态，则pod将被重新部署到同一个节点。节点状态每隔几秒就会传递消息至中继主机。主控器检测到节点故障后，复制控制器将观察此状态更改，并在其他健康节点上启动pod。
-Pod Kubernetes的基本调度单元称为“pod”。通过该种抽象类别可以把更高级别的抽象内容增加到容器化组件。一个pod一般包含一个或多个容器，这样可以保证它们一直位于主机上，并且可以共享资源。
-minikube </p>
-  <footer class="post-footer">
-    <a class="read-more" href="https://huangxunyi.github.io/post/k8s/">Read More →</a>
-  </footer>
-</article>
-  <article class="post-entry">
-  <header class="post-header">
-    <h3 class="post-title"><a href="https://huangxunyi.github.io/post/docker-jenkins/" class="post-link">Docker Jenkins自动构建</a></h3>
-    <p class="post-meta">@Huangxuny1 · Jul 14, 2019 · 4 min read</p>
-  </header>
-  
-    <img class="post-cover" src="https://huangxunyi.github.io/media/docker-jenkins/jenkins.png" alt="Docker Jenkins自动构建" lazyload="on">
-  
-  <p class="post-summary">使用Docker搭建Jenkins并通过Github Webhooks触发Maven自动构建,并通过Jenkins Email Extension Plugin 将构建结果发送的指定邮箱中, Publish Over SSH 实现构建后将所需要的文件通过ssh上传到指定的服务器目录中</p>
-  <footer class="post-footer">
-    <a class="read-more" href="https://huangxunyi.github.io/post/docker-jenkins/">Read More →</a>
-  </footer>
-</article>
-  <article class="post-entry">
-  <header class="post-header">
-    <h3 class="post-title"><a href="https://huangxunyi.github.io/post/hugo-github-pages/" class="post-link">使用hugo&#43;Github Pages搭建个人静态博客</a></h3>
-    <p class="post-meta">@Huangxuny1 · Jul 13, 2019 · 2 min read</p>
-  </header>
-  
-    <img class="post-cover" src="https://huangxunyi.github.io/media/hugo-github-pages/flying-paint.jpg" alt="使用hugo&#43;Github Pages搭建个人静态博客" lazyload="on">
-  
-  <p class="post-summary">使用hugo生成静态页面,并通过Github Pages部署</p>
-  <footer class="post-footer">
-    <a class="read-more" href="https://huangxunyi.github.io/post/hugo-github-pages/">Read More →</a>
-  </footer>
-</article>
- 
-   
-</section>
+  <section class="main post-detail">
+    <header class="post-header">
+      <h1 class="post-title">Kafka</h1>
+      <p class="post-meta">@Author Name · Aug 4, 2019 · 1 min read</p>
+    </header>
+    <article class="post-content"><p>Cut out summary from your post content here.</p>
 
+<p>The remaining content of your post.</p></article>
+    <footer class="post-footer">
+      
+      <ul class="post-tags">
+        
+          <li><a href="https://huangxunyi.github.io/tags/taga"><span class="tag">TagA</span></a></li>
+        
+          <li><a href="https://huangxunyi.github.io/tags/tagb"><span class="tag">TagB</span></a></li>
+        
+      </ul>
+      
+      <p class="post-copyright">
+        © This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you wish to quote or reproduce.
+      </p>
+    </footer>
+    
+      
+    
+  </section>
+  
 <footer class="site-footer">
   <p>© 2017-2019 Huangxunyi&#39;s Blog</p>
   <p>Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> with theme <a href="https://github.com/laozhu/hugo-nuo" target="_blank" rel="noopener">Nuo</a>.</p>
@@ -290,8 +249,33 @@ minikube </p>
 
 
 
+<script async src="https://cdn.jsdelivr.net/npm/video.js@7.3.0/dist/video.min.js"></script>
 
 
+
+
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\\[','\\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+      extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    },
+  });
+</script>
+<script type="text/x-mathjax-config">
+  // Fix <code> tags after MathJax finishes running. This is a
+  // hack to overcome a shortcoming of Markdown. Discussion at
+  // https://github.com/mojombo/jekyll/issues/199
+  MathJax.Hub.Queue(() => {
+    MathJax.Hub.getAllJax().map(v => v.SourceElement().parentNode.className += ' has-jax');
+  });
+</script>
 
 
 
@@ -323,6 +307,7 @@ if (!doNotTrack) {
 
 
 
- 
+
+
   </body>
 </html>
