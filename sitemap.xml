@@ -14,25 +14,54 @@
   
   <url>
     <loc>https://huangxunyi.github.io/</loc>
-    <lastmod>2019-08-04T20:16:23+08:00</lastmod>
+    <lastmod>2019-08-18T19:10:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
+    <loc>https://huangxunyi.github.io/post/netty-sticky-pack/</loc>
+    <lastmod>2019-08-18T19:10:00+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://huangxunyi.github.io/post/</loc>
-    <lastmod>2019-08-04T20:16:23+08:00</lastmod>
+    <lastmod>2019-08-18T19:10:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://huangxunyi.github.io/tags/</loc>
+    <lastmod>2019-08-18T19:10:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://huangxunyi.github.io/tags/java/</loc>
+    <lastmod>2019-08-18T19:10:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://huangxunyi.github.io/tags/netty/</loc>
+    <lastmod>2019-08-18T19:10:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://huangxunyi.github.io/tags/sticky-pack/</loc>
+    <lastmod>2019-08-18T19:10:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://huangxunyi.github.io/tags/%E7%B2%98%E5%8C%85/</loc>
+    <lastmod>2019-08-18T19:10:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://huangxunyi.github.io/post/red-black-tree/</loc>
     <lastmod>2019-08-04T20:16:23+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://huangxunyi.github.io/tags/</loc>
-    <lastmod>2019-08-04T20:16:23+08:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
