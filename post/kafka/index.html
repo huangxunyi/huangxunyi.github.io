@@ -26,26 +26,32 @@
 
   
   <meta name="author" content="Author Name">
-  <meta name="description" content="Cut out summary from your post content here.
-">
+  <meta name="description" content="kafka  Kafka是一个由Scala和Java编写的易于拓展的分布式流计算平台,目的是为处理实时数据提供一个统一、高吞吐、低延迟的平台。其持久化层本质上是一个&amp;rdquo;按照分布式事务日志架构的大规模发布/订阅消息队列&amp;rdquo;
+ 相关术语  Topic 用来对消息进行分类，每个进入到Kafka的信息都会被放到一个Topic下 Broker 用来实现数据存储的主机服务器,即kafka节点,一个或多个Broker可以组成kafka集群 Partition 每个Topic中的消息会被分为若干个Partition，以提高消息的处理效率,每个Partition的内部是有序的 Producer 消息的生产者,向Broker发送消息 Consumer 消息的消费者,向Broker拉取消息 Consumer Group 消息的消费群组 replicas：partition 的副本，保障 partition 的高可用 leader：replicas 中的一个角色， producer 和 consumer 只跟 leader 交互 follower：replicas 中的一个角色，从 leader 中复制数据，作为副本，一旦 leader 挂掉，会从它的 followers 中选举出一个新的 leader 继续提供服务 controller：Kafka 集群中的其中一个服务器，用来进行 leader election 以及 各种 failover ZooKeeper：Kafka 通过 ZooKeeper 来存储集群的 meta 信息等  ZooKeeper  ZooKeeper 是一个开源的分布式协调服务,其设计目标是将那些复杂且容易出错的分布式一致性服务封装起来，构成一个高效可靠的原语集，并以一系列简单易用的接口提供给用户使用。
+ZooKeeper 是一个典型的分布式数据一致性解决方案，分布式应用程序可以基于 ZooKeeper 实现诸如数据发布/订阅、负载均衡、命名服务、分布式协调/通知、集群管理、Master 选举、分布式锁和分布式队列等功能。
+ kafka分布式环境搭建  node1 -&amp;gt; ubuntu server 18.">
 
   
   
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@gohugoio">
     <meta name="twitter:title" content="Kafka">
-    <meta name="twitter:description" content="Cut out summary from your post content here.
-">
-    <meta name="twitter:image" content="https://huangxunyi.github.io/images/cover.jpg">
+    <meta name="twitter:description" content="kafka  Kafka是一个由Scala和Java编写的易于拓展的分布式流计算平台,目的是为处理实时数据提供一个统一、高吞吐、低延迟的平台。其持久化层本质上是一个&amp;rdquo;按照分布式事务日志架构的大规模发布/订阅消息队列&amp;rdquo;
+ 相关术语  Topic 用来对消息进行分类，每个进入到Kafka的信息都会被放到一个Topic下 Broker 用来实现数据存储的主机服务器,即kafka节点,一个或多个Broker可以组成kafka集群 Partition 每个Topic中的消息会被分为若干个Partition，以提高消息的处理效率,每个Partition的内部是有序的 Producer 消息的生产者,向Broker发送消息 Consumer 消息的消费者,向Broker拉取消息 Consumer Group 消息的消费群组 replicas：partition 的副本，保障 partition 的高可用 leader：replicas 中的一个角色， producer 和 consumer 只跟 leader 交互 follower：replicas 中的一个角色，从 leader 中复制数据，作为副本，一旦 leader 挂掉，会从它的 followers 中选举出一个新的 leader 继续提供服务 controller：Kafka 集群中的其中一个服务器，用来进行 leader election 以及 各种 failover ZooKeeper：Kafka 通过 ZooKeeper 来存储集群的 meta 信息等  ZooKeeper  ZooKeeper 是一个开源的分布式协调服务,其设计目标是将那些复杂且容易出错的分布式一致性服务封装起来，构成一个高效可靠的原语集，并以一系列简单易用的接口提供给用户使用。
+ZooKeeper 是一个典型的分布式数据一致性解决方案，分布式应用程序可以基于 ZooKeeper 实现诸如数据发布/订阅、负载均衡、命名服务、分布式协调/通知、集群管理、Master 选举、分布式锁和分布式队列等功能。
+ kafka分布式环境搭建  node1 -&amp;gt; ubuntu server 18.">
+    <meta name="twitter:image" content="https://huangxunyi.github.io/media/kafka/kafka.jpg">
   
 
   
   <meta property="og:type" content="article">
   <meta property="og:title" content="Kafka">
-  <meta property="og:description" content="Cut out summary from your post content here.
-">
+  <meta property="og:description" content="kafka  Kafka是一个由Scala和Java编写的易于拓展的分布式流计算平台,目的是为处理实时数据提供一个统一、高吞吐、低延迟的平台。其持久化层本质上是一个&amp;rdquo;按照分布式事务日志架构的大规模发布/订阅消息队列&amp;rdquo;
+ 相关术语  Topic 用来对消息进行分类，每个进入到Kafka的信息都会被放到一个Topic下 Broker 用来实现数据存储的主机服务器,即kafka节点,一个或多个Broker可以组成kafka集群 Partition 每个Topic中的消息会被分为若干个Partition，以提高消息的处理效率,每个Partition的内部是有序的 Producer 消息的生产者,向Broker发送消息 Consumer 消息的消费者,向Broker拉取消息 Consumer Group 消息的消费群组 replicas：partition 的副本，保障 partition 的高可用 leader：replicas 中的一个角色， producer 和 consumer 只跟 leader 交互 follower：replicas 中的一个角色，从 leader 中复制数据，作为副本，一旦 leader 挂掉，会从它的 followers 中选举出一个新的 leader 继续提供服务 controller：Kafka 集群中的其中一个服务器，用来进行 leader election 以及 各种 failover ZooKeeper：Kafka 通过 ZooKeeper 来存储集群的 meta 信息等  ZooKeeper  ZooKeeper 是一个开源的分布式协调服务,其设计目标是将那些复杂且容易出错的分布式一致性服务封装起来，构成一个高效可靠的原语集，并以一系列简单易用的接口提供给用户使用。
+ZooKeeper 是一个典型的分布式数据一致性解决方案，分布式应用程序可以基于 ZooKeeper 实现诸如数据发布/订阅、负载均衡、命名服务、分布式协调/通知、集群管理、Master 选举、分布式锁和分布式队列等功能。
+ kafka分布式环境搭建  node1 -&amp;gt; ubuntu server 18.">
   <meta property="og:url" content="https://huangxunyi.github.io/post/kafka/">
-  <meta property="og:image" content="https://huangxunyi.github.io/images/cover.jpg">
+  <meta property="og:image" content="https://huangxunyi.github.io/media/kafka/kafka.jpg">
 
 
 
@@ -216,16 +222,67 @@
       <h1 class="post-title">Kafka</h1>
       <p class="post-meta">@Author Name · Aug 4, 2019 · 1 min read</p>
     </header>
-    <article class="post-content"><p>Cut out summary from your post content here.</p>
+    <article class="post-content">
 
-<p>The remaining content of your post.</p></article>
+<p><img src="../media/kafka/kafka-architecture.png" alt="kafka架构" /></p>
+
+<h3 id="kafka">kafka</h3>
+
+<blockquote>
+<p>Kafka是一个由Scala和Java编写的易于拓展的分布式流计算平台,目的是为处理实时数据提供一个统一、高吞吐、低延迟的平台。其持久化层本质上是一个&rdquo;按照分布式事务日志架构的大规模发布/订阅消息队列&rdquo;</p>
+</blockquote>
+
+<h4 id="相关术语">相关术语</h4>
+
+<ul>
+<li>Topic 用来对消息进行分类，每个进入到Kafka的信息都会被放到一个Topic下</li>
+<li>Broker 用来实现数据存储的主机服务器,即kafka节点,一个或多个Broker可以组成kafka集群</li>
+<li>Partition 每个Topic中的消息会被分为若干个Partition，以提高消息的处理效率,每个Partition的内部是有序的</li>
+<li>Producer 消息的生产者,向Broker发送消息</li>
+<li>Consumer 消息的消费者,向Broker拉取消息</li>
+<li>Consumer Group 消息的消费群组</li>
+<li>replicas：partition 的副本，保障 partition 的高可用</li>
+<li>leader：replicas 中的一个角色， producer 和 consumer 只跟 leader 交互</li>
+<li>follower：replicas 中的一个角色，从 leader 中复制数据，作为副本，一旦 leader 挂掉，会从它的 followers 中选举出一个新的 leader 继续提供服务</li>
+<li>controller：Kafka 集群中的其中一个服务器，用来进行 leader election 以及 各种 failover</li>
+<li>ZooKeeper：Kafka 通过 ZooKeeper 来存储集群的 meta 信息等</li>
+</ul>
+
+<h4 id="zookeeper">ZooKeeper</h4>
+
+<blockquote>
+<p>ZooKeeper 是一个开源的分布式协调服务,其设计目标是将那些复杂且容易出错的分布式一致性服务封装起来，构成一个高效可靠的原语集，并以一系列简单易用的接口提供给用户使用。</p>
+
+<p>ZooKeeper 是一个典型的分布式数据一致性解决方案，分布式应用程序可以基于 ZooKeeper 实现诸如数据发布/订阅、负载均衡、命名服务、分布式协调/通知、集群管理、Master 选举、分布式锁和分布式队列等功能。</p>
+</blockquote>
+
+<h3 id="kafka分布式环境搭建">kafka分布式环境搭建</h3>
+
+<ul>
+<li>node1 -&gt; ubuntu server 18.04.3LTS ip : 172.16.80.138</li>
+<li>node2 -&gt; ubuntu server 18.04.3LTS ip : 172.16.80.139</li>
+<li>node3 -&gt; ubuntu server 18.04.3LTS ip : 172.16.80.140</li>
+</ul>
+
+<p><a href="https://zookeeper.apache.org/releases.html#download">下载Zookeeper</a>
+<a href="https://kafka.apache.org/downloads">下载kafka</a></p>
+
+<p><em>[参考资料]</em></p>
+
+<ol>
+<li><a href="https://gitbook.cn/books/5ae1e77197c22f130e67ec4e/index.html">深入浅出理解基于 Kafka 和 ZooKeeper 的分布式消息队列</a></li>
+<li><a href="https://juejin.im/post/5b59c6055188257bcc16738c">阿里大牛实战归纳——Kafka架构原理</a></li>
+<li><a href="https://juejin.im/post/5cbf247f5188250aaa3720ce">Kafka 常用命令总结</a></li>
+<li><a href="https://juejin.im/post/5ceb951ae51d45775555084c">Kafka 单机和分布式环境搭建与案例使用</a></li>
+</ol>
+</article>
     <footer class="post-footer">
       
       <ul class="post-tags">
         
-          <li><a href="https://huangxunyi.github.io/tags/taga"><span class="tag">TagA</span></a></li>
+          <li><a href="https://huangxunyi.github.io/tags/kafka"><span class="tag">Kafka</span></a></li>
         
-          <li><a href="https://huangxunyi.github.io/tags/tagb"><span class="tag">TagB</span></a></li>
+          <li><a href="https://huangxunyi.github.io/tags/zookeeper"><span class="tag">Zookeeper</span></a></li>
         
       </ul>
       

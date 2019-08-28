@@ -82,6 +82,18 @@
   </url>
   
   <url>
+    <loc>https://huangxunyi.github.io/tags/kafka/</loc>
+    <lastmod>2019-08-04T20:15:15+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://huangxunyi.github.io/tags/zookeeper/</loc>
+    <lastmod>2019-08-04T20:15:15+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://huangxunyi.github.io/post/k8s/</loc>
     <lastmod>2019-07-18T22:52:05+08:00</lastmod>
   </url>

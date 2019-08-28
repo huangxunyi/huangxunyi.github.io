@@ -214,12 +214,12 @@
         <article class="post-entry">
   <header class="post-header">
     <h3 class="post-title"><a href="https://huangxunyi.github.io/post/netty-sticky-pack/" class="post-link">Netty 粘包解决</a></h3>
-    <p class="post-meta">@Huangxuny1 · Aug 18, 2019 · 0 min read</p>
+    <p class="post-meta">@Huangxuny1 · Aug 18, 2019 · 1 min read</p>
   </header>
   
     <img class="post-cover" src="https://huangxunyi.github.io/images/cover.jpg" alt="Netty 粘包解决" lazyload="on">
   
-  <p class="post-summary"></p>
+  <p class="post-summary"> 什么是粘包? </p>
   <footer class="post-footer">
     <a class="read-more" href="https://huangxunyi.github.io/post/netty-sticky-pack/">Read More →</a>
   </footer>
@@ -248,10 +248,12 @@
     <p class="post-meta">@Author Name · Aug 4, 2019 · 1 min read</p>
   </header>
   
-    <img class="post-cover" src="https://huangxunyi.github.io/images/cover.jpg" alt="Kafka" lazyload="on">
+    <img class="post-cover" src="https://huangxunyi.github.io/media/kafka/kafka.jpg" alt="Kafka" lazyload="on">
   
-  <p class="post-summary">Cut out summary from your post content here.
-</p>
+  <p class="post-summary">kafka  Kafka是一个由Scala和Java编写的易于拓展的分布式流计算平台,目的是为处理实时数据提供一个统一、高吞吐、低延迟的平台。其持久化层本质上是一个”按照分布式事务日志架构的大规模发布/订阅消息队列”
+ 相关术语  Topic 用来对消息进行分类，每个进入到Kafka的信息都会被放到一个Topic下 Broker 用来实现数据存储的主机服务器,即kafka节点,一个或多个Broker可以组成kafka集群 Partition 每个Topic中的消息会被分为若干个Partition，以提高消息的处理效率,每个Partition的内部是有序的 Producer 消息的生产者,向Broker发送消息 Consumer 消息的消费者,向Broker拉取消息 Consumer Group 消息的消费群组 replicas：partition 的副本，保障 partition 的高可用 leader：replicas 中的一个角色， producer 和 consumer 只跟 leader 交互 follower：replicas 中的一个角色，从 leader 中复制数据，作为副本，一旦 leader 挂掉，会从它的 followers 中选举出一个新的 leader 继续提供服务 controller：Kafka 集群中的其中一个服务器，用来进行 leader election 以及 各种 failover ZooKeeper：Kafka 通过 ZooKeeper 来存储集群的 meta 信息等  ZooKeeper  ZooKeeper 是一个开源的分布式协调服务,其设计目标是将那些复杂且容易出错的分布式一致性服务封装起来，构成一个高效可靠的原语集，并以一系列简单易用的接口提供给用户使用。
+ZooKeeper 是一个典型的分布式数据一致性解决方案，分布式应用程序可以基于 ZooKeeper 实现诸如数据发布/订阅、负载均衡、命名服务、分布式协调/通知、集群管理、Master 选举、分布式锁和分布式队列等功能。
+ kafka分布式环境搭建  node1 -&gt; ubuntu server 18.</p>
   <footer class="post-footer">
     <a class="read-more" href="https://huangxunyi.github.io/post/kafka/">Read More →</a>
   </footer>
