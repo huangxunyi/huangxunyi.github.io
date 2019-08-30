@@ -219,7 +219,7 @@
   
     <img class="post-cover" src="https://huangxunyi.github.io/images/cover.jpg" alt="Netty 粘包解决" lazyload="on">
   
-  <p class="post-summary"> 什么是粘包? </p>
+  <p class="post-summary">什么是粘包? TCP是基于字节流的，虽然应用层和TCP传输层之间的数据交互是大小不等的数据块，但是TCP把这些数据块仅仅看成一连串无结构的字节流，没有边界；另外从TCP的帧结构也可以看出，在TCP的首部没有表示数据长度的字段，基于上面两点，在使用TCP传输数据时，才有粘包或者拆包现象发生的可能</p>
   <footer class="post-footer">
     <a class="read-more" href="https://huangxunyi.github.io/post/netty-sticky-pack/">Read More →</a>
   </footer>
