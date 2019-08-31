@@ -26,21 +26,30 @@
 
   
   <meta name="author" content="Huangxuny1">
-  <meta name="description" content="什么是粘包? TCP是基于字节流的，虽然应用层和TCP传输层之间的数据交互是大小不等的数据块，但是TCP把这些数据块仅仅看成一连串无结构的字节流，没有边界；另外从TCP的帧结构也可以看出，在TCP的首部没有表示数据长度的字段，基于上面两点，在使用TCP传输数据时，才有粘包或者拆包现象发生的可能">
+  <meta name="description" content="什么是粘包? TCP是基于字节流的，虽然应用层和TCP传输层之间的数据交互是大小不等的数据块，但是TCP把这些数据块仅仅看成一连串无结构的字节流，没有边界；另外从TCP的帧结构也可以看出，在TCP的首部没有表示数据长度的字段，基于上面两点，在使用TCP传输数据时，才有粘包或者拆包现象发生的可能
+通过一个例子来了解粘包 ServerHandler.java
+public class ServerHandler extends ChannelInboundHandlerAdapter { @Override public void channelRead(ChannelHandlerContext ctx, Object msg) { ByteBuf byteBuf = (ByteBuf) msg; System.out.println( &amp;#34;Server Read -&amp;gt;&amp;#34; &#43; byteBuf.toString(StandardCharsets.UTF_8)); } } ClientHandler.java
+public class ClientHandler extends ChannelInboundHandlerAdapter { @Override public void channelActive(ChannelHandlerContext ctx) { for (int i = 0; i &amp;lt; 1000; i&#43;&#43;) { ByteBuf buffer = getByteBuf(ctx); ctx.channel().writeAndFlush(buffer); } } private ByteBuf getByteBuf(ChannelHandlerContext ctx) { byte[] bytes = &amp;#34;粘包Rua~&amp;#34;.">
 
   
   
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@gohugoio">
     <meta name="twitter:title" content="Netty 粘包解决">
-    <meta name="twitter:description" content="什么是粘包? TCP是基于字节流的，虽然应用层和TCP传输层之间的数据交互是大小不等的数据块，但是TCP把这些数据块仅仅看成一连串无结构的字节流，没有边界；另外从TCP的帧结构也可以看出，在TCP的首部没有表示数据长度的字段，基于上面两点，在使用TCP传输数据时，才有粘包或者拆包现象发生的可能">
+    <meta name="twitter:description" content="什么是粘包? TCP是基于字节流的，虽然应用层和TCP传输层之间的数据交互是大小不等的数据块，但是TCP把这些数据块仅仅看成一连串无结构的字节流，没有边界；另外从TCP的帧结构也可以看出，在TCP的首部没有表示数据长度的字段，基于上面两点，在使用TCP传输数据时，才有粘包或者拆包现象发生的可能
+通过一个例子来了解粘包 ServerHandler.java
+public class ServerHandler extends ChannelInboundHandlerAdapter { @Override public void channelRead(ChannelHandlerContext ctx, Object msg) { ByteBuf byteBuf = (ByteBuf) msg; System.out.println( &amp;#34;Server Read -&amp;gt;&amp;#34; &#43; byteBuf.toString(StandardCharsets.UTF_8)); } } ClientHandler.java
+public class ClientHandler extends ChannelInboundHandlerAdapter { @Override public void channelActive(ChannelHandlerContext ctx) { for (int i = 0; i &amp;lt; 1000; i&#43;&#43;) { ByteBuf buffer = getByteBuf(ctx); ctx.channel().writeAndFlush(buffer); } } private ByteBuf getByteBuf(ChannelHandlerContext ctx) { byte[] bytes = &amp;#34;粘包Rua~&amp;#34;.">
     <meta name="twitter:image" content="https://huangxunyi.github.io/images/cover.jpg">
   
 
   
   <meta property="og:type" content="article">
   <meta property="og:title" content="Netty 粘包解决">
-  <meta property="og:description" content="什么是粘包? TCP是基于字节流的，虽然应用层和TCP传输层之间的数据交互是大小不等的数据块，但是TCP把这些数据块仅仅看成一连串无结构的字节流，没有边界；另外从TCP的帧结构也可以看出，在TCP的首部没有表示数据长度的字段，基于上面两点，在使用TCP传输数据时，才有粘包或者拆包现象发生的可能">
+  <meta property="og:description" content="什么是粘包? TCP是基于字节流的，虽然应用层和TCP传输层之间的数据交互是大小不等的数据块，但是TCP把这些数据块仅仅看成一连串无结构的字节流，没有边界；另外从TCP的帧结构也可以看出，在TCP的首部没有表示数据长度的字段，基于上面两点，在使用TCP传输数据时，才有粘包或者拆包现象发生的可能
+通过一个例子来了解粘包 ServerHandler.java
+public class ServerHandler extends ChannelInboundHandlerAdapter { @Override public void channelRead(ChannelHandlerContext ctx, Object msg) { ByteBuf byteBuf = (ByteBuf) msg; System.out.println( &amp;#34;Server Read -&amp;gt;&amp;#34; &#43; byteBuf.toString(StandardCharsets.UTF_8)); } } ClientHandler.java
+public class ClientHandler extends ChannelInboundHandlerAdapter { @Override public void channelActive(ChannelHandlerContext ctx) { for (int i = 0; i &amp;lt; 1000; i&#43;&#43;) { ByteBuf buffer = getByteBuf(ctx); ctx.channel().writeAndFlush(buffer); } } private ByteBuf getByteBuf(ChannelHandlerContext ctx) { byte[] bytes = &amp;#34;粘包Rua~&amp;#34;.">
   <meta property="og:url" content="https://huangxunyi.github.io/post/netty-sticky-pack/">
   <meta property="og:image" content="https://huangxunyi.github.io/images/cover.jpg">
 
@@ -218,7 +227,34 @@
 <h3 id="什么是粘包">什么是粘包?</h3>
 
 <p>TCP是基于字节流的，虽然应用层和TCP传输层之间的数据交互是大小不等的数据块，但是TCP把这些数据块仅仅看成一连串无结构的字节流，没有边界；另外从TCP的帧结构也可以看出，在TCP的首部没有表示数据长度的字段，基于上面两点，在使用TCP传输数据时，才有粘包或者拆包现象发生的可能</p>
-</article>
+
+<h4 id="通过一个例子来了解粘包">通过一个例子来了解粘包</h4>
+
+<p><em>ServerHandler.java</em></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ServerHandler</span> <span style="color:#66d9ef">extends</span> ChannelInboundHandlerAdapter <span style="color:#f92672">{</span>
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">channelRead</span><span style="color:#f92672">(</span>ChannelHandlerContext ctx<span style="color:#f92672">,</span> Object msg<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        ByteBuf byteBuf <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>ByteBuf<span style="color:#f92672">)</span> msg<span style="color:#f92672">;</span>
+        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span> <span style="color:#e6db74">&#34;Server Read -&gt;&#34;</span> <span style="color:#f92672">+</span> byteBuf<span style="color:#f92672">.</span><span style="color:#a6e22e">toString</span><span style="color:#f92672">(</span>StandardCharsets<span style="color:#f92672">.</span><span style="color:#a6e22e">UTF_8</span><span style="color:#f92672">));</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span></code></pre></div>
+<p><em>ClientHandler.java</em></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ClientHandler</span> <span style="color:#66d9ef">extends</span> ChannelInboundHandlerAdapter <span style="color:#f92672">{</span>
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">channelActive</span><span style="color:#f92672">(</span>ChannelHandlerContext ctx<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;</span> 1000<span style="color:#f92672">;</span> i<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
+            ByteBuf buffer <span style="color:#f92672">=</span> getByteBuf<span style="color:#f92672">(</span>ctx<span style="color:#f92672">);</span>
+            ctx<span style="color:#f92672">.</span><span style="color:#a6e22e">channel</span><span style="color:#f92672">().</span><span style="color:#a6e22e">writeAndFlush</span><span style="color:#f92672">(</span>buffer<span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+    <span style="color:#66d9ef">private</span> ByteBuf <span style="color:#a6e22e">getByteBuf</span><span style="color:#f92672">(</span>ChannelHandlerContext ctx<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">byte</span><span style="color:#f92672">[]</span> bytes <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;粘包Rua~&#34;</span><span style="color:#f92672">.</span><span style="color:#a6e22e">getBytes</span><span style="color:#f92672">(</span>StandardCharsets<span style="color:#f92672">.</span><span style="color:#a6e22e">UTF_8</span><span style="color:#f92672">);</span>
+        ByteBuf buffer <span style="color:#f92672">=</span> ctx<span style="color:#f92672">.</span><span style="color:#a6e22e">alloc</span><span style="color:#f92672">().</span><span style="color:#a6e22e">buffer</span><span style="color:#f92672">();</span>
+        buffer<span style="color:#f92672">.</span><span style="color:#a6e22e">writeBytes</span><span style="color:#f92672">(</span>bytes<span style="color:#f92672">);</span>
+
+        <span style="color:#66d9ef">return</span> buffer<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span></code></pre></div></article>
     <footer class="post-footer">
       
       <ul class="post-tags">
