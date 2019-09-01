@@ -254,7 +254,16 @@ public class ClientHandler extends ChannelInboundHandlerAdapter { @Override publ
 
         <span style="color:#66d9ef">return</span> buffer<span style="color:#f92672">;</span>
     <span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span></code></pre></div></article>
+<span style="color:#f92672">}</span></code></pre></div>
+<p>理论上这段代码执行结果应该是 :</p>
+
+<pre><code>Server Read -&gt;粘包Rua~
+ ... x98
+Server Read -&gt;粘包Rua~
+</code></pre>
+
+<p>但实际上执行结果</p>
+</article>
     <footer class="post-footer">
       
       <ul class="post-tags">

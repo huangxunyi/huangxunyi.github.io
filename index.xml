@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you wish to quote or reproduce.</copyright>
-    <lastBuildDate>Sun, 18 Aug 2019 19:10:00 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 01 Sep 2019 18:50:43 +0800</lastBuildDate>
     
 	<atom:link href="https://huangxunyi.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -31,6 +31,21 @@ mysql&amp;gt; select host,user,plugin from user; # use mysql
       
       <guid>https://huangxunyi.github.io/about/</guid>
       <description>Huangxuny1</description>
+    </item>
+    
+    <item>
+      <title>Compile Jdk11 and Debug Use Clion</title>
+      <link>https://huangxunyi.github.io/post/compile-jdk11-and-debug-use-clion/</link>
+      <pubDate>Sun, 01 Sep 2019 18:50:43 +0800</pubDate>
+      
+      <guid>https://huangxunyi.github.io/post/compile-jdk11-and-debug-use-clion/</guid>
+      <description>下载jdk源码 使用 Mercurial 下载jdk源码 Mercurial是一个分布式版本控制系统, 可以把它理解成git
+$ sudo apt install mercurial $ hg clone https://hg.openjdk.java.net/jdk/jdk11/ $ cd jdk11 $ chmod u+x get_source.sh $ ./get_source.sh ## 开始下载源码  使用 docker 下载jdk源码  $ docker run &amp;ndash;rm -it -v {download_dir}:/output bolingcavalry/openjdksrc11:0.0.1
+ 其中{download_dir}表示下载的位置,需提前创建, 然后cd {download_dir}, tar -zxvf 解压即可得到源码
+编译准备  $ sudo apt-get install autoconf
+$ sudo apt-get install libx11-dev libxext-dev libxrender-dev libxtst-dev libxt-dev
+$ sudo apt-get install libcups2-dev
+$ sudo apt-get install libfontconfig1-dev</description>
     </item>
     
     <item>

@@ -213,6 +213,25 @@
       
         <article class="post-entry">
   <header class="post-header">
+    <h3 class="post-title"><a href="https://huangxunyi.github.io/post/compile-jdk11-and-debug-use-clion/" class="post-link">Compile Jdk11 and Debug Use Clion</a></h3>
+    <p class="post-meta">@Ritchie Zhu · Sep 1, 2019 · 2 min read</p>
+  </header>
+  
+  <p class="post-summary">下载jdk源码 使用 Mercurial 下载jdk源码 Mercurial是一个分布式版本控制系统, 可以把它理解成git
+$ sudo apt install mercurial $ hg clone https://hg.openjdk.java.net/jdk/jdk11/ $ cd jdk11 $ chmod u&#43;x get_source.sh $ ./get_source.sh ## 开始下载源码  使用 docker 下载jdk源码  $ docker run –rm -it -v {download_dir}:/output bolingcavalry/openjdksrc11:0.0.1
+ 其中{download_dir}表示下载的位置,需提前创建, 然后cd {download_dir}, tar -zxvf 解压即可得到源码
+编译准备  $ sudo apt-get install autoconf
+$ sudo apt-get install libx11-dev libxext-dev libxrender-dev libxtst-dev libxt-dev
+$ sudo apt-get install libcups2-dev
+$ sudo apt-get install libfontconfig1-dev</p>
+  <footer class="post-footer">
+    <a class="read-more" href="https://huangxunyi.github.io/post/compile-jdk11-and-debug-use-clion/">Read More →</a>
+  </footer>
+</article>
+
+      
+        <article class="post-entry">
+  <header class="post-header">
     <h3 class="post-title"><a href="https://huangxunyi.github.io/post/netty-sticky-pack/" class="post-link">Netty 粘包解决</a></h3>
     <p class="post-meta">@Huangxuny1 · Aug 18, 2019 · 1 min read</p>
   </header>

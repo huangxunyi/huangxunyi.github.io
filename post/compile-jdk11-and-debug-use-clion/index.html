@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8" />
+
+  
+  <title>Compile Jdk11 and Debug Use Clion</title>
+
+  
+  
+  <link href="//cdn.jsdelivr.net" rel="dns-prefetch">
+  <link href="//cdnjs.cloudflare.com" rel="dns-prefetch">
+  
+  <link href="//at.alicdn.com" rel="dns-prefetch">
+  
+  <link href="//fonts.googleapis.com" rel="dns-prefetch">
+  <link href="//fonts.gstatic.com" rel="dns-prefetch">
+  
+  
+  
+  <link href="//www.google-analytics.com" rel="dns-prefetch">
+  
+
+  
+
+  
+  
+  <meta name="description" content="下载jdk源码 使用 Mercurial 下载jdk源码 Mercurial是一个分布式版本控制系统, 可以把它理解成git
+$ sudo apt install mercurial $ hg clone https://hg.openjdk.java.net/jdk/jdk11/ $ cd jdk11 $ chmod u&#43;x get_source.sh $ ./get_source.sh ## 开始下载源码  使用 docker 下载jdk源码  $ docker run &amp;ndash;rm -it -v {download_dir}:/output bolingcavalry/openjdksrc11:0.0.1
+ 其中{download_dir}表示下载的位置,需提前创建, 然后cd {download_dir}, tar -zxvf 解压即可得到源码
+编译准备  $ sudo apt-get install autoconf
+$ sudo apt-get install libx11-dev libxext-dev libxrender-dev libxtst-dev libxt-dev
+$ sudo apt-get install libcups2-dev
+$ sudo apt-get install libfontconfig1-dev">
+
+  
+  
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@gohugoio">
+    <meta name="twitter:title" content="Compile Jdk11 and Debug Use Clion">
+    <meta name="twitter:description" content="下载jdk源码 使用 Mercurial 下载jdk源码 Mercurial是一个分布式版本控制系统, 可以把它理解成git
+$ sudo apt install mercurial $ hg clone https://hg.openjdk.java.net/jdk/jdk11/ $ cd jdk11 $ chmod u&#43;x get_source.sh $ ./get_source.sh ## 开始下载源码  使用 docker 下载jdk源码  $ docker run &amp;ndash;rm -it -v {download_dir}:/output bolingcavalry/openjdksrc11:0.0.1
+ 其中{download_dir}表示下载的位置,需提前创建, 然后cd {download_dir}, tar -zxvf 解压即可得到源码
+编译准备  $ sudo apt-get install autoconf
+$ sudo apt-get install libx11-dev libxext-dev libxrender-dev libxtst-dev libxt-dev
+$ sudo apt-get install libcups2-dev
+$ sudo apt-get install libfontconfig1-dev">
+    <meta name="twitter:image" content="/images/avatar.png">
+  
+
+  
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Compile Jdk11 and Debug Use Clion">
+  <meta property="og:description" content="下载jdk源码 使用 Mercurial 下载jdk源码 Mercurial是一个分布式版本控制系统, 可以把它理解成git
+$ sudo apt install mercurial $ hg clone https://hg.openjdk.java.net/jdk/jdk11/ $ cd jdk11 $ chmod u&#43;x get_source.sh $ ./get_source.sh ## 开始下载源码  使用 docker 下载jdk源码  $ docker run &amp;ndash;rm -it -v {download_dir}:/output bolingcavalry/openjdksrc11:0.0.1
+ 其中{download_dir}表示下载的位置,需提前创建, 然后cd {download_dir}, tar -zxvf 解压即可得到源码
+编译准备  $ sudo apt-get install autoconf
+$ sudo apt-get install libx11-dev libxext-dev libxrender-dev libxtst-dev libxt-dev
+$ sudo apt-get install libcups2-dev
+$ sudo apt-get install libfontconfig1-dev">
+  <meta property="og:url" content="https://huangxunyi.github.io/post/compile-jdk11-and-debug-use-clion/">
+  <meta property="og:image" content="/images/avatar.png">
+
+
+
+
+<meta name="generator" content="Hugo 0.55.6">
+
+
+<link rel="canonical" href="https://huangxunyi.github.io/post/compile-jdk11-and-debug-use-clion/">
+
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="format-detection" content="telephone=no,email=no,adress=no">
+<meta http-equiv="Cache-Control" content="no-transform">
+
+
+<meta name="robots" content="index,follow">
+<meta name="referrer" content="origin-when-cross-origin">
+<meta name="google-site-verification" content="_vNyE12cUaojp893wOA36F2yHRavNTQX7IoKS4d30TU">
+<meta name="msvalidate.01" content="208B0E2A12DBAA8C0567BAC71B613813">
+
+
+
+
+
+<meta name="theme-color" content="#02b875">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="Huangxunyi&#39;s Blog">
+<meta name="msapplication-tooltip" content="Huangxunyi&#39;s Blog">
+<meta name='msapplication-navbutton-color' content="#02b875">
+<meta name="msapplication-TileColor" content="#02b875">
+<meta name="msapplication-TileImage" content="/icons/icon-144x144.png">
+<link rel="icon" href="https://huangxunyi.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://huangxunyi.github.io/icons/icon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://huangxunyi.github.io/icons/icon-32x32.png">
+<link rel="icon" sizes="192x192" href="https://huangxunyi.github.io/icons/icon-192x192.png">
+<link rel="apple-touch-icon" href="https://huangxunyi.github.io/icons/icon-152x152.png">
+<link rel="manifest" href="https://huangxunyi.github.io/manifest.json">
+
+
+<link rel="preload" href="https://huangxunyi.github.io/styles/main-rendered.min.css" as="style">
+
+
+<link rel="preload" href="https://fonts.googleapis.com/css?family=Lobster" as="style">
+<link rel="preload" href="https://huangxunyi.github.io/images/avatar.png" as="image">
+<link rel="preload" href="https://huangxunyi.github.io/images/grey-prism.svg" as="image">
+
+
+<style>
+  body {
+    background: rgb(244, 243, 241) url('/images/grey-prism.svg') repeat fixed;
+  }
+</style>
+<link rel="stylesheet" href="https://huangxunyi.github.io/styles/main-rendered.min.css">
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.2/dist/medium-zoom.min.js"></script>
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/video.js@7.3.0/dist/video-js.min.css">
+
+
+
+  
+  
+<!--[if lte IE 8]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/videojs-ie8@1.1.2/dist/videojs-ie8.min.js"></script>
+<![endif]-->
+
+<!--[if lte IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/eligrey-classlist-js-polyfill@1.2.20180112/classList.min.js"></script>
+<![endif]-->
+
+
+</head>
+  <body>
+    <div class="suspension">
+      <a role="button" aria-label="Go to top" title="Go to top" class="to-top is-hide"><span class="icon icon-up" aria-hidden="true"></span></a>
+      
+        
+      
+    </div>
+    
+    
+  <header class="site-header">
+  <a href="https://huangxunyi.github.io"><img class="avatar" src="https://huangxunyi.github.io/images/avatar.png" alt="Avatar"></a>
+  
+  <h2 class="title"><a href="https://huangxunyi.github.io">Huangxunyi&#39;s Blog</a></h2>
+  
+  <p class="subtitle">~ Keep It Simple &amp; Stupid ~</p>
+  <button class="menu-toggle" type="button" aria-label="Main Menu" aria-expanded="false" tab-index="0">
+    <span class="icon icon-menu" aria-hidden="true"></span>
+  </button>
+
+  <nav class="site-menu collapsed">
+    <h2 class="offscreen">Main Menu</h2>
+    <ul class="menu-list">
+      
+      
+      
+      
+        <li class="menu-item
+          
+          
+           is-active">
+          <a href="https://huangxunyi.github.io/">Home</a>
+        </li>
+      
+        <li class="menu-item
+          
+          
+          ">
+          <a href="https://huangxunyi.github.io/tags/">Tags</a>
+        </li>
+      
+        <li class="menu-item
+          
+          
+          ">
+          <a href="https://huangxunyi.github.io/miscellanea/">Miscellanea</a>
+        </li>
+      
+        <li class="menu-item
+          
+          
+          ">
+          <a href="https://huangxunyi.github.io/about/">About</a>
+        </li>
+      
+    </ul>
+  </nav>
+  <nav class="social-menu collapsed">
+    <h2 class="offscreen">Social Networks</h2>
+    <ul class="social-list"><li class="social-item">
+          <a href="mailto:ghuangxunyi@gmail.com" title="Email" aria-label="Email">
+            <span class="icon icon-email" aria-hidden="true"></span>
+          </a>
+        </li><li class="social-item">
+          <a href="//github.com/huangxunyi"target="_blank" rel="me" title="GitHub" aria-label="GitHub">
+	    <span class="icon icon-github" aria-hidden="true"></span>
+          </a>
+        </li><li class="social-item">
+          <a href="//www.instagram.com/huangxunyi" rel="me" title="Instagram" aria-label="Instagram">
+            <span class="icon icon-instagram" aria-hidden="true"></span>
+          </a>
+        </li><li class="social-item">
+          <a href="//weibo.com/weibo_username" rel="me" title="Weibo" aria-label="Weibo">
+            <span class="icon icon-weibo" aria-hidden="true"></span>
+          </a>
+        </li><li class="social-item">
+          <a href="https://huangxunyi.github.io/images/qrcode.jpg" target="_blank" rel="me" title="Wechat" aria-label="Wechat">
+            <span class="icon icon-wechat" aria-hidden="true"></span>
+          </a>
+        </li></ul>
+  </nav>
+</header>
+
+  <section class="main post-detail">
+    <header class="post-header">
+      <h1 class="post-title">Compile Jdk11 and Debug Use Clion</h1>
+      <p class="post-meta">@Ritchie Zhu · Sep 1, 2019 · 2 min read</p>
+    </header>
+    <article class="post-content">
+
+<h3 id="下载jdk源码">下载jdk源码</h3>
+
+<h4 id="使用-mercurial-下载jdk源码">使用 Mercurial 下载jdk源码</h4>
+
+<p><code>Mercurial</code>是一个分布式版本控制系统, 可以把它理解成<code>git</code></p>
+
+<pre><code>$ sudo apt install mercurial
+$ hg clone https://hg.openjdk.java.net/jdk/jdk11/ 
+$ cd jdk11
+$ chmod u+x get_source.sh 
+$ ./get_source.sh  ## 开始下载源码    
+</code></pre>
+
+<h4 id="使用-docker-下载jdk源码">使用 docker 下载jdk源码</h4>
+
+<blockquote>
+<p>$ docker run &ndash;rm -it -v {download_dir}:/output bolingcavalry/openjdksrc11:0.0.1</p>
+</blockquote>
+
+<p><code>其中{download_dir}表示下载的位置,需提前创建</code>, 然后<code>cd {download_dir}</code>, <code>tar -zxvf</code> 解压即可得到源码</p>
+
+<h3 id="编译准备">编译准备</h3>
+
+<blockquote>
+<p>$ sudo apt-get install autoconf</p>
+
+<p>$ sudo apt-get install libx11-dev libxext-dev libxrender-dev libxtst-dev libxt-dev</p>
+
+<p>$ sudo apt-get install libcups2-dev</p>
+
+<p>$ sudo apt-get install libfontconfig1-dev</p>
+
+<p>$ sudo apt-get install libasound2-dev</p>
+</blockquote>
+
+<p>然后</p>
+
+<blockquote>
+<p>$ chmod u+x config
+$ ./configure &ndash;disable-warnings-as-errors</p>
+</blockquote>
+
+<pre><code>Configuration summary:
+* Debug level:    release
+* HS debug level: product
+* JVM variants:   server
+* JVM features:   server: 'aot cds cmsgc compiler1 compiler2 epsilongc g1gc graal jfr jni-check jvmci jvmti management nmt parallelgc serialgc services vm-structs' 
+* OpenJDK target: OS: linux, CPU architecture: x86, address length: 64
+* Version string: 11-internal+0-adhoc.parallels.jdk11 (11-internal)
+
+Tools summary:
+* Boot JDK:       openjdk version &quot;10.0.2&quot; 2018-07-17 OpenJDK Runtime Environment 18.3 (build 10.0.2+13) OpenJDK 64-Bit Server VM 18.3 (build 10.0.2+13, mixed mode)  (at /opt/jdk-10.0.2)
+* Toolchain:      gcc (GNU Compiler Collection)
+* C Compiler:     Version 7.3.0 (at /usr/bin/gcc)
+* C++ Compiler:   Version 7.3.0 (at /usr/bin/g++)
+
+Build performance summary:
+* Cores to use:   4
+* Memory limit:   5955 MB
+
+
+因为JDK10没有带`jre`,因此编译时会报  ERROR: `{JDK_HOME}/jre/lib No such file or directory`
+</code></pre>
+
+<p>cd {JDK_HOME}
+mkdir jre
+然后 然后 cp -r lib jre/</p>
+
+<pre><code>
+然后 `make` 
+
+Creating support/modules_cmds/jdk.pack/pack200 from 1 file(s)
+Creating support/modules_cmds/jdk.pack/unpack200 from 7 file(s)
+Creating support/modules_cmds/jdk.rmic/rmic from 1 file(s)
+Creating support/modules_cmds/jdk.scripting.nashorn.shell/jjs from 1 file(s)
+Creating support/modules_libs/jdk.sctp/libsctp.so from 3 file(s)
+Creating support/modules_libs/jdk.security.auth/libjaas.so from 1 file(s)
+Compiling 4 files for BUILD_JIGSAW_TOOLS
+Stopping sjavac server
+Finished building target 'default (exploded-image)' in configuration 'linux-x86_64-normal-server-release'
+</code></pre>
+
+<p>编译好的东西就在 <code>jdk11/build/linux-x86_64-normal-server-release</code></p>
+
+<pre><code>$ ls
+bin  conf  include  lib  modules  _packages_attribute.done  release
+</code></pre>
+
+<p>然后 <code>cd bin &amp;&amp; ./java --version</code></p>
+
+<h3 id="使用clion调试jdk源码">使用Clion调试JDK源码</h3>
+
+<p>出错</p>
+
+<pre><code>gcc: error trying to exec 'cc1obj': execvp: No such file or directory
+</code></pre>
+
+<blockquote>
+<p>$ sudo apt-get install gobjc++</p>
+
+<pre><code>-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/parallels/athos/jdk11/jdk11/src/cmake-build-debug
+</code></pre>
+</blockquote>
+
+<h3 id="与java程序联合调试">与java程序联合调试</h3>
+</article>
+    <footer class="post-footer">
+      
+      <p class="post-copyright">
+        © This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License，please give source if you wish to quote or reproduce.
+      </p>
+    </footer>
+    
+      
+    
+  </section>
+  
+<footer class="site-footer">
+  <p>© 2017-2019 Huangxunyi&#39;s Blog</p>
+  <p>Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> with theme <a href="https://github.com/laozhu/hugo-nuo" target="_blank" rel="noopener">Nuo</a>.</p>
+  
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/smooth-scroll@15.0.0/dist/smooth-scroll.min.js"></script>
+
+
+
+<script async src="https://cdn.jsdelivr.net/npm/video.js@7.3.0/dist/video.min.js"></script>
+
+
+
+
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\\[','\\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+      extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    },
+  });
+</script>
+<script type="text/x-mathjax-config">
+  // Fix <code> tags after MathJax finishes running. This is a
+  // hack to overcome a shortcoming of Markdown. Discussion at
+  // https://github.com/mojombo/jekyll/issues/199
+  MathJax.Hub.Queue(() => {
+    MathJax.Hub.getAllJax().map(v => v.SourceElement().parentNode.className += ' has-jax');
+  });
+</script>
+
+
+
+<script src="https://huangxunyi.github.io/scripts/index.min.js"></script>
+
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('\/service-worker.js').then(function() {
+      console.log('[ServiceWorker] Registered');
+    });
+  }
+</script>
+
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-143867762-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+  </body>
+</html>
