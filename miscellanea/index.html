@@ -259,6 +259,79 @@
 <p>如果还不能远程连接的话,可以看一下 mysql的 <code>.cnf</code> 文件(<code>/etc/mysql/</code>)中的 <code>bind-address</code> 是不是  <code>127.0.0.1</code> 如果是改成你ip或者 <code>0.0.0.0</code>(表示所有ip) 即可</p>
 
 <hr />
+
+<h3 id="模拟将cpu使用率打满">模拟将CPU使用率打满</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
+</span><span style="color:#75715e"></span>
+cat <span style="color:#e6db74">&lt;&lt; EOF &gt; /tmp/infiniteburn.sh
+</span><span style="color:#e6db74">#!/bin/bash
+</span><span style="color:#e6db74">while true;
+</span><span style="color:#e6db74">    do openssl speed;
+</span><span style="color:#e6db74">done
+</span><span style="color:#e6db74">EOF</span>
+
+<span style="color:#66d9ef">for</span> i in <span style="color:#f92672">{</span><span style="color:#ae81ff">1</span>..32<span style="color:#f92672">}</span>
+<span style="color:#66d9ef">do</span>
+    nohup /bin/bash /tmp/infiniteburn.sh &amp;
+<span style="color:#66d9ef">done</span></code></pre></div>
+<h3 id="模拟将磁盘io打满">模拟将磁盘IO打满</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
+</span><span style="color:#75715e"></span>
+cat <span style="color:#e6db74">&lt;&lt; EOF &gt; /tmp/infiniteburn.sh
+</span><span style="color:#e6db74">#!/bin/bash
+</span><span style="color:#e6db74">while true;
+</span><span style="color:#e6db74">    do openssl speed;
+</span><span style="color:#e6db74">done
+</span><span style="color:#e6db74">EOF</span>
+
+<span style="color:#66d9ef">for</span> i in <span style="color:#f92672">{</span><span style="color:#ae81ff">1</span>..32<span style="color:#f92672">}</span>
+<span style="color:#66d9ef">do</span>
+    nohup /bin/bash /tmp/infiniteburn.sh &amp;
+<span style="color:#66d9ef">done</span></code></pre></div>
+<h3 id="scp-ssh">scp ssh</h3>
+
+<blockquote>
+<p>$ scp  {源} {目的}
+如果是 目录加上 <code>-r</code></p>
+</blockquote>
+
+<ul>
+<li>发送文件到远程服务器</li>
+</ul>
+
+<blockquote>
+<p>$ scp 本地文件   user@host:/home/user/{target_dir}</p>
+</blockquote>
+
+<ul>
+<li>发送目录到远程服务器</li>
+</ul>
+
+<blockquote>
+<p>$ scp -r 本地文件   user@host:/home/user/{target_dir}</p>
+</blockquote>
+
+<ul>
+<li>下载远程服务器文件</li>
+</ul>
+
+<blockquote>
+<p>$ scp  user@host:/home/user/{target_dir}  {local_dir}</p>
+</blockquote>
+
+<ul>
+<li>下载远程服务器目录</li>
+</ul>
+
+<blockquote>
+<p>$ scp -r user@host:/home/user/{target_dir}  {local_dir}</p>
+</blockquote>
+
+<h3 id="vim-没写入权限">vim 没写入权限?</h3>
+
+<p><code>: w ! sudo tee %</code></p>
+
+<p>意思就是 使用<code>tee</code> 把当前文档的所有内容(%)写入文件中</p>
 </article>
     
       
