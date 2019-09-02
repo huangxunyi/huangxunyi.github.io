@@ -40,12 +40,12 @@ mysql&amp;gt; select host,user,plugin from user; # use mysql
       
       <guid>https://huangxunyi.github.io/post/compile-jdk11-and-debug-use-clion/</guid>
       <description>下载jdk源码 使用 Mercurial 下载jdk源码 Mercurial是一个分布式版本控制系统, 可以把它理解成git
-$ sudo apt install mercurial $ hg clone https://hg.openjdk.java.net/jdk/jdk11/ $ cd jdk11 $ chmod u+x get_source.sh $ ./get_source.sh ## 开始下载源码  使用 docker 下载jdk源码  $ docker run &amp;ndash;rm -it -v {download_dir}:/output bolingcavalry/openjdksrc11:0.0.1
+$ sudo apt install mercurial $ hg clone https://hg.openjdk.java.net/jdk/jdk11/ $ cd jdk11 $ chmod u+x get_source.sh $ ./get_source.sh ## 开始下载源码  如果网络不稳定建议多试几次,get_source.sh是支持断点续传的
+直到不出现如下提示即下载完整了
+WARNING: langtools exited abnormally (255) WARNING: nashorn exited abnormally (255)  使用 docker 下载jdk源码  $ docker run &amp;ndash;rm -it -v {download_dir}:/output bolingcavalry/openjdksrc11:0.0.1
  其中{download_dir}表示下载的位置,需提前创建, 然后cd {download_dir}, tar -zxvf 解压即可得到源码
 编译准备  $ sudo apt-get install autoconf
-$ sudo apt-get install libx11-dev libxext-dev libxrender-dev libxtst-dev libxt-dev
-$ sudo apt-get install libcups2-dev
-$ sudo apt-get install libfontconfig1-dev</description>
+$ sudo apt-get install libx11-dev libxext-dev libxrender-dev libxtst-dev libxt-dev</description>
     </item>
     
     <item>
