@@ -213,17 +213,13 @@
       
         <article class="post-entry">
   <header class="post-header">
-    <h3 class="post-title"><a href="https://huangxunyi.github.io/post/compile-jdk11-and-debug-use-clion/" class="post-link">Compile Jdk11 and Debug Use Clion</a></h3>
-    <p class="post-meta">@Ritchie Zhu · Sep 1, 2019 · 2 min read</p>
+    <h3 class="post-title"><a href="https://huangxunyi.github.io/post/compile-jdk11-and-debug-use-clion/" class="post-link">源码编译OpenJdk11并使用Clion调试</a></h3>
+    <p class="post-meta">@Huangxuny1 · Sep 1, 2019 · 2 min read</p>
   </header>
   
-  <p class="post-summary">下载jdk源码 使用 Mercurial 下载jdk源码 Mercurial是一个分布式版本控制系统, 可以把它理解成git
-$ sudo apt install mercurial $ hg clone https://hg.openjdk.java.net/jdk/jdk11/ $ cd jdk11 $ chmod u&#43;x get_source.sh $ ./get_source.sh ## 开始下载源码  如果网络不稳定建议多试几次,get_source.sh是支持断点续传的
-直到不出现如下提示即下载完整了
-WARNING: langtools exited abnormally (255) WARNING: nashorn exited abnormally (255)  使用 docker 下载jdk源码  $ docker run –rm -it -v {download_dir}:/output bolingcavalry/openjdksrc11:0.0.1
- 其中{download_dir}表示下载的位置,需提前创建, 然后cd {download_dir}, tar -zxvf 解压即可得到源码
-编译准备  $ sudo apt-get install autoconf
-$ sudo apt-get install libx11-dev libxext-dev libxrender-dev libxtst-dev libxt-dev</p>
+    <img class="post-cover" src="https://huangxunyi.github.io/media/openjdk/OpenJdkLogo.png" alt="源码编译OpenJdk11并使用Clion调试" lazyload="on">
+  
+  <p class="post-summary">在Ubuntu中使用Docker/Mercurial下载JDK11的源码并编译,然后使用 JetBrains Clion调试JDK源码,甚至修改源码与Java源程序联合调试</p>
   <footer class="post-footer">
     <a class="read-more" href="https://huangxunyi.github.io/post/compile-jdk11-and-debug-use-clion/">Read More →</a>
   </footer>
@@ -236,12 +232,9 @@ $ sudo apt-get install libx11-dev libxext-dev libxrender-dev libxtst-dev libxt-d
     <p class="post-meta">@Huangxuny1 · Aug 18, 2019 · 1 min read</p>
   </header>
   
-    <img class="post-cover" src="https://huangxunyi.github.io/images/cover.jpg" alt="Netty 粘包解决" lazyload="on">
+    <img class="post-cover" src="https://huangxunyi.github.io/media/netty/netty.png" alt="Netty 粘包解决" lazyload="on">
   
-  <p class="post-summary">什么是粘包? TCP是基于字节流的，虽然应用层和TCP传输层之间的数据交互是大小不等的数据块，但是TCP把这些数据块仅仅看成一连串无结构的字节流，没有边界；另外从TCP的帧结构也可以看出，在TCP的首部没有表示数据长度的字段，基于上面两点，在使用TCP传输数据时，才有粘包或者拆包现象发生的可能
-通过一个例子来了解粘包 ServerHandler.java
-public class ServerHandler extends ChannelInboundHandlerAdapter { @Override public void channelRead(ChannelHandlerContext ctx, Object msg) { ByteBuf byteBuf = (ByteBuf) msg; System.out.println( &#34;Server Read -&gt;&#34; &#43; byteBuf.toString(StandardCharsets.UTF_8)); } } ClientHandler.java
-public class ClientHandler extends ChannelInboundHandlerAdapter { @Override public void channelActive(ChannelHandlerContext ctx) { for (int i = 0; i &lt; 1000; i&#43;&#43;) { ByteBuf buffer = getByteBuf(ctx); ctx.channel().writeAndFlush(buffer); } } private ByteBuf getByteBuf(ChannelHandlerContext ctx) { byte[] bytes = &#34;粘包Rua~&#34;.</p>
+  <p class="post-summary">Netty的TCP传输过程粘包分析以及如何解决粘包</p>
   <footer class="post-footer">
     <a class="read-more" href="https://huangxunyi.github.io/post/netty-sticky-pack/">Read More →</a>
   </footer>
@@ -250,11 +243,11 @@ public class ClientHandler extends ChannelInboundHandlerAdapter { @Override publ
       
         <article class="post-entry">
   <header class="post-header">
-    <h3 class="post-title"><a href="https://huangxunyi.github.io/post/red-black-tree/" class="post-link">Red Black Tree</a></h3>
+    <h3 class="post-title"><a href="https://huangxunyi.github.io/post/red-black-tree/" class="post-link">红黑树学习</a></h3>
     <p class="post-meta">@Author Name · Aug 4, 2019 · 1 min read</p>
   </header>
   
-    <img class="post-cover" src="https://huangxunyi.github.io/images/cover.jpg" alt="Red Black Tree" lazyload="on">
+    <img class="post-cover" src="https://huangxunyi.github.io/media/red-black-tree/red-black-tree.png" alt="红黑树学习" lazyload="on">
   
   <p class="post-summary">Cut out summary from your post content here.
 </p>
@@ -266,16 +259,13 @@ public class ClientHandler extends ChannelInboundHandlerAdapter { @Override publ
       
         <article class="post-entry">
   <header class="post-header">
-    <h3 class="post-title"><a href="https://huangxunyi.github.io/post/kafka/" class="post-link">Kafka</a></h3>
+    <h3 class="post-title"><a href="https://huangxunyi.github.io/post/kafka/" class="post-link">Kafka分布式环境搭建以及学习kafka</a></h3>
     <p class="post-meta">@Author Name · Aug 4, 2019 · 1 min read</p>
   </header>
   
-    <img class="post-cover" src="https://huangxunyi.github.io/media/kafka/kafka.jpg" alt="Kafka" lazyload="on">
+    <img class="post-cover" src="https://huangxunyi.github.io/media/kafka/kafka.jpg" alt="Kafka分布式环境搭建以及学习kafka" lazyload="on">
   
-  <p class="post-summary">kafka  Kafka是一个由Scala和Java编写的易于拓展的分布式流计算平台,目的是为处理实时数据提供一个统一、高吞吐、低延迟的平台。其持久化层本质上是一个”按照分布式事务日志架构的大规模发布/订阅消息队列”
- 相关术语  Topic 用来对消息进行分类，每个进入到Kafka的信息都会被放到一个Topic下 Broker 用来实现数据存储的主机服务器,即kafka节点,一个或多个Broker可以组成kafka集群 Partition 每个Topic中的消息会被分为若干个Partition，以提高消息的处理效率,每个Partition的内部是有序的 Producer 消息的生产者,向Broker发送消息 Consumer 消息的消费者,向Broker拉取消息 Consumer Group 消息的消费群组 replicas：partition 的副本，保障 partition 的高可用 leader：replicas 中的一个角色， producer 和 consumer 只跟 leader 交互 follower：replicas 中的一个角色，从 leader 中复制数据，作为副本，一旦 leader 挂掉，会从它的 followers 中选举出一个新的 leader 继续提供服务 controller：Kafka 集群中的其中一个服务器，用来进行 leader election 以及 各种 failover ZooKeeper：Kafka 通过 ZooKeeper 来存储集群的 meta 信息等  ZooKeeper  ZooKeeper 是一个开源的分布式协调服务,其设计目标是将那些复杂且容易出错的分布式一致性服务封装起来，构成一个高效可靠的原语集，并以一系列简单易用的接口提供给用户使用。
-ZooKeeper 是一个典型的分布式数据一致性解决方案，分布式应用程序可以基于 ZooKeeper 实现诸如数据发布/订阅、负载均衡、命名服务、分布式协调/通知、集群管理、Master 选举、分布式锁和分布式队列等功能。
- kafka分布式环境搭建  node1 -&gt; ubuntu server 18.</p>
+  <p class="post-summary">Kafka分布式环境搭建,以及kafka架构知识</p>
   <footer class="post-footer">
     <a class="read-more" href="https://huangxunyi.github.io/post/kafka/">Read More →</a>
   </footer>
@@ -288,7 +278,10 @@ ZooKeeper 是一个典型的分布式数据一致性解决方案，分布式应�
     <p class="post-meta">@Huangxuny1 · Jul 18, 2019 · 1 min read</p>
   </header>
   
-  <p class="post-summary">  Kubernetes（常简称为K8s）是用于自动部署、扩展和管理容器化（containerized）应用程序的开源系统。 它旨在提供“跨主机集群的自动部署、扩展以及运行应用程序容器的平台”。它支持一系列容器工具, 包括Docker等。
+    <img class="post-cover" src="https://huangxunyi.github.io/media/k8s/kubernetes.png" alt="K8s" lazyload="on">
+  
+  <p class="post-summary"> 未完成
+ Kubernetes（常简称为K8s）是用于自动部署、扩展和管理容器化（containerized）应用程序的开源系统。 它旨在提供“跨主机集群的自动部署、扩展以及运行应用程序容器的平台”。它支持一系列容器工具, 包括Docker等。
 kubectl  kubelet Kubelet负责每个节点的运行状态（即确保节点上的所有容器都正常运行）。它按照控制面板的指示来处理启动，停止和维护应用程序容器。
 Kubelet会监视pod的状态，如果不处于所需状态，则pod将被重新部署到同一个节点。节点状态每隔几秒就会传递消息至中继主机。主控器检测到节点故障后，复制控制器将观察此状态更改，并在其他健康节点上启动pod。
 Pod Kubernetes的基本调度单元称为“pod”。通过该种抽象类别可以把更高级别的抽象内容增加到容器化组件。一个pod一般包含一个或多个容器，这样可以保证它们一直位于主机上，并且可以共享资源。
@@ -322,7 +315,7 @@ minikube </p>
   
     <img class="post-cover" src="https://huangxunyi.github.io/media/hugo-github-pages/flying-paint.jpg" alt="使用hugo&#43;Github Pages搭建个人静态博客" lazyload="on">
   
-  <p class="post-summary">使用hugo生成静态页面,并通过Github Pages部署</p>
+  <p class="post-summary">安装hugo并使用hugo生成静态页面,并通过Github Pages部署,可以更换喜欢的主题并且根据个人喜好自定义</p>
   <footer class="post-footer">
     <a class="read-more" href="https://huangxunyi.github.io/post/hugo-github-pages/">Read More →</a>
   </footer>

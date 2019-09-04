@@ -13,11 +13,6 @@
   </url>
   
   <url>
-    <loc>https://huangxunyi.github.io/post/compile-jdk11-and-debug-use-clion/</loc>
-    <lastmod>2019-09-01T18:50:43+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://huangxunyi.github.io/</loc>
     <lastmod>2019-09-01T18:50:43+08:00</lastmod>
     <priority>0</priority>
@@ -27,6 +22,11 @@
     <loc>https://huangxunyi.github.io/post/</loc>
     <lastmod>2019-09-01T18:50:43+08:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://huangxunyi.github.io/post/compile-jdk11-and-debug-use-clion/</loc>
+    <lastmod>2019-09-01T18:50:43+08:00</lastmod>
   </url>
   
   <url>
@@ -65,20 +65,20 @@
   </url>
   
   <url>
+    <loc>https://huangxunyi.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
+    <lastmod>2019-08-04T20:16:23+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://huangxunyi.github.io/tags/%E7%BA%A2%E9%BB%91%E6%A0%91/</loc>
+    <lastmod>2019-08-04T20:16:23+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://huangxunyi.github.io/post/red-black-tree/</loc>
     <lastmod>2019-08-04T20:16:23+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://huangxunyi.github.io/tags/taga/</loc>
-    <lastmod>2019-08-04T20:16:23+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://huangxunyi.github.io/tags/tagb/</loc>
-    <lastmod>2019-08-04T20:16:23+08:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>

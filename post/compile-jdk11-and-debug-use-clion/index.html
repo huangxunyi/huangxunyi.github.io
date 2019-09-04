@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
 
   
-  <title>Compile Jdk11 and Debug Use Clion</title>
+  <title>源码编译OpenJdk11并使用Clion调试</title>
 
   
   
@@ -25,42 +25,24 @@
   
 
   
-  
-  <meta name="description" content="下载jdk源码 使用 Mercurial 下载jdk源码 Mercurial是一个分布式版本控制系统, 可以把它理解成git
-$ sudo apt install mercurial $ hg clone https://hg.openjdk.java.net/jdk/jdk11/ $ cd jdk11 $ chmod u&#43;x get_source.sh $ ./get_source.sh ## 开始下载源码  如果网络不稳定建议多试几次,get_source.sh是支持断点续传的
-直到不出现如下提示即下载完整了
-WARNING: langtools exited abnormally (255) WARNING: nashorn exited abnormally (255)  使用 docker 下载jdk源码  $ docker run &amp;ndash;rm -it -v {download_dir}:/output bolingcavalry/openjdksrc11:0.0.1
- 其中{download_dir}表示下载的位置,需提前创建, 然后cd {download_dir}, tar -zxvf 解压即可得到源码
-编译准备  $ sudo apt-get install autoconf
-$ sudo apt-get install libx11-dev libxext-dev libxrender-dev libxtst-dev libxt-dev">
+  <meta name="author" content="Huangxuny1">
+  <meta name="description" content="在Ubuntu中使用Docker/Mercurial下载JDK11的源码并编译,然后使用 JetBrains Clion调试JDK源码,甚至修改源码与Java源程序联合调试">
 
   
   
-    <meta name="twitter:card" content="summary">
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@gohugoio">
-    <meta name="twitter:title" content="Compile Jdk11 and Debug Use Clion">
-    <meta name="twitter:description" content="下载jdk源码 使用 Mercurial 下载jdk源码 Mercurial是一个分布式版本控制系统, 可以把它理解成git
-$ sudo apt install mercurial $ hg clone https://hg.openjdk.java.net/jdk/jdk11/ $ cd jdk11 $ chmod u&#43;x get_source.sh $ ./get_source.sh ## 开始下载源码  如果网络不稳定建议多试几次,get_source.sh是支持断点续传的
-直到不出现如下提示即下载完整了
-WARNING: langtools exited abnormally (255) WARNING: nashorn exited abnormally (255)  使用 docker 下载jdk源码  $ docker run &amp;ndash;rm -it -v {download_dir}:/output bolingcavalry/openjdksrc11:0.0.1
- 其中{download_dir}表示下载的位置,需提前创建, 然后cd {download_dir}, tar -zxvf 解压即可得到源码
-编译准备  $ sudo apt-get install autoconf
-$ sudo apt-get install libx11-dev libxext-dev libxrender-dev libxtst-dev libxt-dev">
-    <meta name="twitter:image" content="/images/avatar.png">
+    <meta name="twitter:title" content="源码编译OpenJdk11并使用Clion调试">
+    <meta name="twitter:description" content="在Ubuntu中使用Docker/Mercurial下载JDK11的源码并编译,然后使用 JetBrains Clion调试JDK源码,甚至修改源码与Java源程序联合调试">
+    <meta name="twitter:image" content="https://huangxunyi.github.io/media/openjdk/OpenJdkLogo.png">
   
 
   
   <meta property="og:type" content="article">
-  <meta property="og:title" content="Compile Jdk11 and Debug Use Clion">
-  <meta property="og:description" content="下载jdk源码 使用 Mercurial 下载jdk源码 Mercurial是一个分布式版本控制系统, 可以把它理解成git
-$ sudo apt install mercurial $ hg clone https://hg.openjdk.java.net/jdk/jdk11/ $ cd jdk11 $ chmod u&#43;x get_source.sh $ ./get_source.sh ## 开始下载源码  如果网络不稳定建议多试几次,get_source.sh是支持断点续传的
-直到不出现如下提示即下载完整了
-WARNING: langtools exited abnormally (255) WARNING: nashorn exited abnormally (255)  使用 docker 下载jdk源码  $ docker run &amp;ndash;rm -it -v {download_dir}:/output bolingcavalry/openjdksrc11:0.0.1
- 其中{download_dir}表示下载的位置,需提前创建, 然后cd {download_dir}, tar -zxvf 解压即可得到源码
-编译准备  $ sudo apt-get install autoconf
-$ sudo apt-get install libx11-dev libxext-dev libxrender-dev libxtst-dev libxt-dev">
+  <meta property="og:title" content="源码编译OpenJdk11并使用Clion调试">
+  <meta property="og:description" content="在Ubuntu中使用Docker/Mercurial下载JDK11的源码并编译,然后使用 JetBrains Clion调试JDK源码,甚至修改源码与Java源程序联合调试">
   <meta property="og:url" content="https://huangxunyi.github.io/post/compile-jdk11-and-debug-use-clion/">
-  <meta property="og:image" content="/images/avatar.png">
+  <meta property="og:image" content="https://huangxunyi.github.io/media/openjdk/OpenJdkLogo.png">
 
 
 
@@ -228,8 +210,8 @@ $ sudo apt-get install libx11-dev libxext-dev libxrender-dev libxtst-dev libxt-d
 
   <section class="main post-detail">
     <header class="post-header">
-      <h1 class="post-title">Compile Jdk11 and Debug Use Clion</h1>
-      <p class="post-meta">@Ritchie Zhu · Sep 1, 2019 · 2 min read</p>
+      <h1 class="post-title">源码编译OpenJdk11并使用Clion调试</h1>
+      <p class="post-meta">@Huangxuny1 · Sep 1, 2019 · 2 min read</p>
     </header>
     <article class="post-content">
 
