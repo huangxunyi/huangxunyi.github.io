@@ -276,17 +276,18 @@ cat <span style="color:#e6db74">&lt;&lt; EOF &gt; /tmp/infiniteburn.sh
 <span style="color:#66d9ef">done</span></code></pre></div>
 <h3 id="模拟将磁盘io打满">模拟将磁盘IO打满</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
-</span><span style="color:#75715e"></span><span style="color:#75715e"># Script for BurnIO Chaos Monkey</span>
-
-cat <span style="color:#e6db74">&lt;&lt; EOF &gt; /tmp/loopburnio.sh
+</span><span style="color:#75715e"></span>
+cat <span style="color:#e6db74">&lt;&lt; EOF &gt; /tmp/infiniteburn.sh
 </span><span style="color:#e6db74">#!/bin/bash
 </span><span style="color:#e6db74">while true;
-</span><span style="color:#e6db74">do
-</span><span style="color:#e6db74">    dd if=/dev/urandom of=/burn bs=1M count=1024 iflag=fullblock
+</span><span style="color:#e6db74">    do openssl speed;
 </span><span style="color:#e6db74">done
 </span><span style="color:#e6db74">EOF</span>
 
-nohup /bin/bash /tmp/loopburnio.sh &amp;</code></pre></div>
+<span style="color:#66d9ef">for</span> i in <span style="color:#f92672">{</span><span style="color:#ae81ff">1</span>..32<span style="color:#f92672">}</span>
+<span style="color:#66d9ef">do</span>
+    nohup /bin/bash /tmp/infiniteburn.sh &amp;
+<span style="color:#66d9ef">done</span></code></pre></div>
 <h3 id="scp-ssh">scp ssh</h3>
 
 <blockquote>
@@ -359,7 +360,43 @@ nohup /bin/bash /tmp/loopburnio.sh &amp;</code></pre></div>
 <li><code>invokespecial</code>:调用实例构造器方法、私有方法和父类方法</li>
 <li><code>invokevirtual</code>:调用实例方法，基于类进行分发</li>
 </ul>
-</article>
+
+<h3 id="git-lg">git lg</h3>
+
+<blockquote>
+<p>git config &ndash;global alias.lg &ldquo;log &ndash;graph &ndash;pretty=format:&lsquo;%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset&rsquo; &ndash;abbrev-commit &ndash;date=relative&rdquo;</p>
+</blockquote>
+
+<h3 id="运行指令直至成功">运行指令直至成功</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">repeat<span style="color:#f92672">(){</span>
+  <span style="color:#66d9ef">while</span> true
+  <span style="color:#66d9ef">do</span>
+    $@  <span style="color:#f92672">&amp;&amp;</span> <span style="color:#66d9ef">return</span>
+  <span style="color:#66d9ef">done</span>
+<span style="color:#f92672">}</span>
+<span style="color:#75715e"># 原理：该函数通过$@接收传参。如果命令执行成功，则返回并退出循环，否则一直循环</span>
+
+<span style="color:#75715e"># Tips：将该函数加入的shell的rc文件中，方便我们使用</span>
+
+<span style="color:#75715e"># 示例：使用repeat（）从网上下载一个文件，直至成功</span>
+repeat <span style="color:#e6db74">`</span>COMMAND<span style="color:#e6db74">`</span></code></pre></div>
+<h3 id="运行指令直至失败">运行指令直至失败</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#66d9ef">while</span> <span style="color:#e6db74">`</span>COMMAND<span style="color:#e6db74">`</span>; <span style="color:#66d9ef">do</span> :; <span style="color:#66d9ef">done</span></code></pre></div>
+<h3 id="配置文件复制">配置文件复制</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 设置侦听套接字</span>
+$ nc -l <span style="color:#ae81ff">1234</span>
+
+<span style="color:#75715e"># 在另一终端或主机中连接到该套接字</span>
+$ nc <span style="color:#ae81ff">127</span>.0.0.1 <span style="color:#ae81ff">1234</span>
+message_test
+
+<span style="color:#75715e"># 连接到套接字后就可以在终端中输入信息回车就会发送</span>
+
+<span style="color:#75715e"># 文件复制</span>
+在接收端执行以下命令：
+$ nc -l <span style="color:#ae81ff">1234</span> &gt; destination_filename
+在发送端执行下列命令：
+$ nc <span style="color:#ae81ff">127</span>.0.0.1 <span style="color:#ae81ff">1234</span> &lt; source_filename</code></pre></div></article>
     
       
     
