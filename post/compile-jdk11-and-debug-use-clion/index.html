@@ -211,7 +211,7 @@
   <section class="main post-detail">
     <header class="post-header">
       <h1 class="post-title">源码编译OpenJdk11并使用Clion调试</h1>
-      <p class="post-meta">@Huangxuny1 · Sep 1, 2019 · 2 min read</p>
+      <p class="post-meta">@Huangxuny1 · Sep 1, 2019 · 3 min read</p>
     </header>
     <article class="post-content">
 
@@ -258,12 +258,32 @@ WARNING: nashorn exited abnormally (255)
 <p>$ sudo apt-get install libasound2-dev</p>
 </blockquote>
 
-<p>然后</p>
+<p>由于jdk的编译需要前一个版本jdk参与
+因此需要先安装<code>openjdk-10</code>
+<a href="https://download.java.net/openjdk/jdk10/ri/jdk-10_linux-x64_bin_ri.tar.gz">下载openjdk10</a></p>
+
+<p>解压<code>jdk-10_linux-x64_bin_ri.tar.gz</code>
+&gt; $ tar -zxvf jdk-10_linux-x64_bin_ri.tar.gz
+然后在 <code>~/.bashrc</code>末尾添加 (这里我经常看到有教程喜欢把配置写在<code>/etc/profile</code>或者<code>/etc/environment</code> 个人不喜欢把这种配置写在全局生效的地方,而且写在这种地方很容易重启后出问题)</p>
+
+<pre><code>export JAVA_HOME= {openjdk10目录}
+export JRE_HOME=$JAVA_HOME/lib
+export PATH=$JAVA_HOME/bin:$PATH
+</code></pre>
 
 <blockquote>
-<p>$ chmod u+x config
-$ ./configure &ndash;disable-warnings-as-errors</p>
+<p>$ source ~/.bashrc</p>
 </blockquote>
+
+<pre><code>openjdk version &quot;10&quot; 2018-03-20
+OpenJDK Runtime Environment 18.3 (build 10+44)
+OpenJDK 64-Bit Server VM 18.3 (build 10+44, mixed mode)
+</code></pre>
+
+<p>然后
+&gt; $ cd {jdk11源码目录}
+&gt; $ chmod u+x config
+&gt; $ ./configure &ndash;disable-warnings-as-errors</p>
 
 <pre><code>Configuration summary:
 * Debug level:    release
@@ -286,18 +306,17 @@ Build performance summary:
 
 <p><img src="https://image-1252310512.cos.ap-beijing.myqcloud.com/img/config-jdk11.jpg" alt="" /></p>
 
-<p>因为JDK10没有带<code>jre</code>,因此编译时会报  ERROR: <code>{JDK_HOME}/jre/lib No such file or directory</code></p>
+<p>因为JDK10没有带<code>jre</code>,因此编译时可能会报  ERROR: <code>{JDK_HOME}/jre/lib No such file or directory</code></p>
 
-<p>cd {JDK_HOME}
-mkdir jre
-然后 然后 <code>cp -r lib jre/</code></p>
+<pre><code>$ cd {JDK_HOME}
+$ mkdir jre
+$ `cp -r lib jre/`
 
-<p>然后 <code>make</code></p>
+</code></pre>
 
-<pre><code>
+<p>然后就可以在jdk源码目录 <code>$ make</code></p>
 
-
-Creating support/modules_cmds/jdk.pack/pack200 from 1 file(s)
+<pre><code>Creating support/modules_cmds/jdk.pack/pack200 from 1 file(s)
 Creating support/modules_cmds/jdk.pack/unpack200 from 7 file(s)
 Creating support/modules_cmds/jdk.rmic/rmic from 1 file(s)
 Creating support/modules_cmds/jdk.scripting.nashorn.shell/jjs from 1 file(s)
@@ -375,7 +394,55 @@ bin  conf  include  lib  modules  _packages_attribute.done  release
 
 <p>如果要 <strong>修改</strong> jdk源码进行调试</p>
 
-<p>&lt;下回再写&gt;</p>
+<pre><code>Java 11 版本中最令人兴奋的功能之一是增强 Java 启动器，使之能够运行单一文件的 Java 源代码。此功能允许使用 Java 解释器直接执行 Java 源代码。源代码在内存中编译，然后由解释器执行。唯一的约束在于所有相关的类必须定义在同一个 Java 文件中。
+
+此功能对于开始学习 Java 并希望尝试简单程序的人特别有用，并且能与 jshell 一起使用，将成为任何初学者学习语言的一个很好的工具集。不仅初学者会受益，专业人员还可以利用这些工具来探索新的语言更改或尝试未知的 API。
+
+如今单文件程序在编写小实用程序时很常见，特别是脚本语言领域。从中开发者可以省去用 Java 编译程序等不必要工作，以及减少新手的入门障碍。在基于 Java 10 的程序实现中可以通过三种方式启动：
+
+作为 * .class 文件
+作为 * .jar 文件中的主类
+作为模块中的主类
+而在最新的 Java 11 中新增了一个启动方式，即可以在源代码中声明类，例如：如果名为 HelloWorld.java 的文件包含一个名为 hello.World 的类，那么该命令：
+
+$ java HelloWorld.java
+
+也等同于：
+
+$ javac HelloWorld.java
+$ java -cp . hello.World
+
+</code></pre>
+
+<ul>
+<li>选择 <code>Edit Configuations</code></li>
+<li>点击<code>+</code>号 -&gt; <code>Cmake Application</code></li>
+<li><code>Executable</code> 选择 <em>build/linux-x86_64-normal-server-release/jdk/bin/</em> 下的<code>java</code></li>
+
+<li><p><code>Project Arguments</code> 填 <code>.java</code> 文件<br />
+<img src="https://image-1252310512.cos.ap-beijing.myqcloud.com/img/cmake-application.png" alt="cmake" /></p></li>
+
+<li><p><strong>增加一个 External tool</strong>
+<strong>build jvm</strong>
+<img src="https://image-1252310512.cos.ap-beijing.myqcloud.com/img/external-tool.jpg" alt="build-jvm" /></p></li>
+</ul>
+
+<p>然后修改源码, 例如我在修改 <code>jvm.cpp :  475 行</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">JVM_ENTRY_NO_ENV(jlong, JVM_TotalMemory(<span style="color:#66d9ef">void</span>))
+  JVMWrapper(<span style="color:#e6db74">&#34;JVM_TotalMemory&#34;</span>);
+  size_t n <span style="color:#f92672">=</span> Universe<span style="color:#f92672">::</span>heap()<span style="color:#f92672">-&gt;</span>capacity();
+  <span style="color:#75715e">//return convert_size_t_to_jlong(n);
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">10086</span>;
+</code></pre></div>
+<p><code>hello.java</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span>  <span style="color:#a6e22e">hello</span><span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">){</span>
+        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>Runtime<span style="color:#f92672">.</span><span style="color:#a6e22e">getRuntime</span><span style="color:#f92672">().</span><span style="color:#a6e22e">totalMemory</span><span style="color:#f92672">());</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span></code></pre></div>
+<p><code>debug</code></p>
+
+<p><img src="https://image-1252310512.cos.ap-beijing.myqcloud.com/img/total-memory.png" alt="debug" /></p>
 
 <p><strong>参考:</strong></p>
 
