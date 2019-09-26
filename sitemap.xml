@@ -99,11 +99,6 @@
   </url>
   
   <url>
-    <loc>https://huangxunyi.github.io/post/k8s/</loc>
-    <lastmod>2019-07-18T22:52:05+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://huangxunyi.github.io/tags/k8s/</loc>
     <lastmod>2019-07-18T22:52:05+08:00</lastmod>
     <priority>0</priority>
@@ -111,6 +106,17 @@
   
   <url>
     <loc>https://huangxunyi.github.io/tags/kubernetes/</loc>
+    <lastmod>2019-07-18T22:52:05+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://huangxunyi.github.io/post/k8s/</loc>
+    <lastmod>2019-07-18T22:52:05+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://huangxunyi.github.io/tags/%E9%98%BF%E9%87%8C%E4%BA%91%E9%95%9C%E5%83%8F/</loc>
     <lastmod>2019-07-18T22:52:05+08:00</lastmod>
     <priority>0</priority>
   </url>
