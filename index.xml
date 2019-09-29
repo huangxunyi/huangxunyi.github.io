@@ -19,6 +19,7 @@
       
       <guid>https://huangxunyi.github.io/miscellanea/</guid>
       <description>类似Gist记录一些常用的小坑或者小技巧 或者发一些牢骚 &amp;hellip;
+curl -fsSL https://get.docker.com | bash -s docker &amp;ndash;mirror Aliyun
  MySQL 远程访问  $ mysql -u {username} -p -h {ip} -P {port}
 mysql&amp;gt; select host,user,plugin from user; # use mysql
  +-----------+------------------+-----------------------+ | host | user | plugin | +-----------+------------------+-----------------------+ | localhost | mysql.infoschema | caching_sha2_password | | localhost | mysql.session | caching_sha2_password | | localhost | mysql.sys | caching_sha2_password | | localhost | root | caching_sha2_password | +-----------+------------------+-----------------------+  可以看到 host : 只能是 localhost ,要更加的话</description>

@@ -210,6 +210,8 @@
 
 <blockquote>
 <p>类似Gist记录一些常用的小坑或者小技巧 或者发一些牢骚 &hellip;</p>
+
+<p>curl -fsSL <a href="https://get.docker.com">https://get.docker.com</a> | bash -s docker &ndash;mirror Aliyun</p>
 </blockquote>
 
 <hr />
@@ -274,6 +276,8 @@ cat <span style="color:#e6db74">&lt;&lt; EOF &gt; /tmp/infiniteburn.sh
 <span style="color:#66d9ef">do</span>
     nohup /bin/bash /tmp/infiniteburn.sh &amp;
 <span style="color:#66d9ef">done</span></code></pre></div>
+<hr />
+
 <h3 id="模拟将磁盘io打满">模拟将磁盘IO打满</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
 </span><span style="color:#75715e"></span>
@@ -288,6 +292,8 @@ cat <span style="color:#e6db74">&lt;&lt; EOF &gt; /tmp/infiniteburn.sh
 <span style="color:#66d9ef">do</span>
     nohup /bin/bash /tmp/infiniteburn.sh &amp;
 <span style="color:#66d9ef">done</span></code></pre></div>
+<hr />
+
 <h3 id="scp-ssh">scp ssh</h3>
 
 <blockquote>
@@ -327,11 +333,15 @@ cat <span style="color:#e6db74">&lt;&lt; EOF &gt; /tmp/infiniteburn.sh
 <p>$ scp -r user@host:/home/user/{target_dir}  {local_dir}</p>
 </blockquote>
 
+<hr />
+
 <h3 id="vim-没写入权限">vim 没写入权限?</h3>
 
 <p><code>: w ! sudo tee %</code></p>
 
 <p>意思就是 使用<code>tee</code> 把当前文档的所有内容(%)写入文件中</p>
+
+<hr />
 
 <h3 id="javap">javap</h3>
 
@@ -361,11 +371,15 @@ cat <span style="color:#e6db74">&lt;&lt; EOF &gt; /tmp/infiniteburn.sh
 <li><code>invokevirtual</code>:调用实例方法，基于类进行分发</li>
 </ul>
 
+<hr />
+
 <h3 id="git-lg">git lg</h3>
 
 <blockquote>
 <p>git config &ndash;global alias.lg &ldquo;log &ndash;graph &ndash;pretty=format:&lsquo;%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset&rsquo; &ndash;abbrev-commit &ndash;date=relative&rdquo;</p>
 </blockquote>
+
+<hr />
 
 <h3 id="运行指令直至成功">运行指令直至成功</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">repeat<span style="color:#f92672">(){</span>
@@ -380,8 +394,12 @@ cat <span style="color:#e6db74">&lt;&lt; EOF &gt; /tmp/infiniteburn.sh
 
 <span style="color:#75715e"># 示例：使用repeat（）从网上下载一个文件，直至成功</span>
 repeat <span style="color:#e6db74">`</span>COMMAND<span style="color:#e6db74">`</span></code></pre></div>
+<hr />
+
 <h3 id="运行指令直至失败">运行指令直至失败</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#66d9ef">while</span> <span style="color:#e6db74">`</span>COMMAND<span style="color:#e6db74">`</span>; <span style="color:#66d9ef">do</span> :; <span style="color:#66d9ef">done</span></code></pre></div>
+<hr />
+
 <h3 id="配置文件复制">配置文件复制</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 设置侦听套接字</span>
 $ nc -l <span style="color:#ae81ff">1234</span>
