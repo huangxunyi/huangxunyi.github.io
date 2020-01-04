@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="未完成
+
+Kubernetes（常简称为K8s）是用于自动部署、扩展和管理容器化（containerized）应用程序的开源系统。它旨在提供“跨主机集群的自动部署、扩展以及运行应用程序容器的平台”。它支持一系列容器工具, 包括Docker等。
+
+PodKubernetes的基本调度单元称为“pod”">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="John Doe">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="ubuntu 18.04 搭建K8s集群"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Hexo"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>ubuntu 18.04 搭建K8s集群 - Hexo</title>
+
+    <!-- Tachyons Core CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+<!-- Main Content -->
+<!-- Banner -->
+<!-- Banner -->
+<div class="w-100 bg-1 ph5-ns ph3 text-light">
+    
+    <nav class="db dt-l w-100 mw8 center border-box pv3">
+        <a class="db dtc-l v-mid link dim w-100 w-25-l tc tl-l mb2 mb0-l white" href="/" title="Hexo">
+            <img src="http://www.codeblocq.com/assets/projects/hexo-theme-anodyne/assets/anodyne.svg" class="dib h3" alt="Hexo">
+        </a>
+        <div class="db dtc-l v-mid w-100 w-75-l tc tr-l">
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/" 
+                    title="Home">
+                    Home
+                </a>
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/archives" 
+                    title="Archives">
+                    Archives
+                </a>
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/tags" 
+                    title="Tags">
+                    Tags
+                </a>
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/categories" 
+                    title="Categories">
+                    Categories
+                </a>
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/about.html" 
+                    title="About">
+                    About
+                </a>
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/contact.html" 
+                    title="Contact">
+                    Contact
+                </a>
+            
+        </div>
+    </nav>
+
+    <!-- Title -->
+    <div class="w-100 mw8 center vh-40 dt">
+        <div class="dtc v-mid white">
+            <h1 class="f1-l f2-m tc tc-m tl-ns">ubuntu 18.04 搭建K8s集群</h1>
+            <p class="f4 fw3 pab-100px tc tc-m tl-ns">2019-07-18</p>
+        </div>
+    </div>
+
+    <!-- Icon -->
+    <div class="relative w-100 mw8 center white dn dn-m db-ns">
+        <i class="header-icon fa fa-file-text-o"></i>
+    </div>
+</div>
+
+<!-- Content -->
+<div class="w-100 ph2 ph4-m ph5-l mv5 mv6-l">
+    <div class="content">
+        <div class="mw8 center">
+            <div class="cf">
+                <div class="fl w-100 w-70-l mw7 left fw3 lh-copy pr4-ns pr0-m post-content">
+                    <!-- Tags Vertical -->
+                    
+                        <div class="tags-container-vertical">
+                            <div class="tags-sub-container">
+                                <a class="fw3 ph1 dib" href="/tags/k8s/">#k8s</a> <a class="fw3 ph1 dib" href="/tags/kubernetes/">#kubernetes</a> <a class="fw3 ph1 dib" href="/tags/阿里云镜像/">#阿里云镜像</a>
+                            </div>
+                        </div>
+                    
+
+                    <!-- Main Post Content -->
+                    <p> 未完成</p>
+<blockquote>
+<p>Kubernetes（常简称为K8s）是用于自动部署、扩展和管理容器化（containerized）应用程序的开源系统。<br>它旨在提供“跨主机集群的自动部署、扩展以及运行应用程序容器的平台”。它支持一系列容器工具, 包括Docker等。</p>
+</blockquote>
+<h3 id="Pod"><a href="#Pod" class="headerlink" title="Pod"></a>Pod</h3><p>Kubernetes的基本调度单元称为“pod”。通过该种抽象类别可以把更高级别的抽象内容增加到容器化组件。一个pod一般包含一个或多个容器，这样可以保证它们一直位于主机上，并且可以共享资源。</p>
+<h3 id="Node"><a href="#Node" class="headerlink" title="Node"></a>Node</h3><p>Node是Kubernetes中的工作节点，最开始被称为minion。一个Node可以是VM或物理机。每个Node（节点）具有运行pod的一些必要服务，并由Master组件进行管理，Node节点上的服务包括Docker、kubelet和kube-proxy。</p>
+<h3 id="Service"><a href="#Service" class="headerlink" title="Service"></a>Service</h3><p>一个 Service 在 Kubernetes 中是一个 REST 对象，和 Pod 类似。 像所有的 REST 对象一样， Service 定义可以基于 POST 方式，请求 apiserver 创建新的实例。 例如，假定有一组 Pod，它们对外暴露了 9376 端口，同时还被打上 “app=MyApp” 标签。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">kind: Service</span><br><span class="line">apiVersion: v1</span><br><span class="line">metadata:</span><br><span class="line">  name: my-service</span><br><span class="line">spec:</span><br><span class="line">  selector:</span><br><span class="line">    app: MyApp</span><br><span class="line">  ports:</span><br><span class="line">    - protocol: TCP</span><br><span class="line">      port: 80</span><br><span class="line">      targetPort: 9376</span><br></pre></td></tr></table></figure>
+
+<p>上述配置将创建一个名称为 “my-service” 的 Service 对象，它会将请求代理到使用 TCP 端口 9376，并且具有标签 “app=MyApp” 的 Pod 上。 这个 Service 将被指派一个 IP 地址（通常称为 “Cluster IP”），它会被服务的代理使用（见下面）。 该 Service 的 selector 将会持续评估，处理结果将被 POST 到一个名称为 “my-service” 的 Endpoints 对象上。</p>
+<h3 id="kubectl"><a href="#kubectl" class="headerlink" title="kubectl"></a>kubectl</h3><p>kubectl (kubenetes control) 是用于针对Kubernetes集群运行命令的命令行接口。本概述涵盖kubectl语法，描述命令操作，并提供常见的示例。有关每个命令的详细信息，包括所有支持的flags和子命令</p>
+<h3 id="kubelet"><a href="#kubelet" class="headerlink" title="kubelet"></a>kubelet</h3><p>Kubelet负责每个节点的运行状态（即确保节点上的所有容器都正常运行）。它按照控制面板的指示来处理启动，停止和维护应用程序容器。</p>
+<p>Kubelet会监视pod的状态，如果不处于所需状态，则pod将被重新部署到同一个节点。节点状态每隔几秒就会传递消息至中继主机。主控器检测到节点故障后，复制控制器将观察此状态更改，并在其他健康节点上启动pod。</p>
+<h3 id="kubeadm"><a href="#kubeadm" class="headerlink" title="kubeadm"></a>kubeadm</h3><p>Kubeadm 是一个工具，通过提供 kubeadm init 和 kubeadm join 来作为创建 Kubernetes 集群的最佳实践“快速路径”。</p>
+<p>kubeadm 执行必要的操作来启动并运行一个最小可行集群。按照设计，它只关心引导，而不关心配置机器。同样，安装各种不同的插件，如 Kubernetes Dashboard、监控解决方案以及云特定的插件，都不在范围之内。</p>
+<p>相反，我们期望用户能够基于 kubeadm 构建更高级别和更加定制化的工具，理想情况下，使用 kubeadm 作为所有部署的基础，可以更容易地创建一致的集群。</p>
+<h3 id="minikube"><a href="#minikube" class="headerlink" title="minikube"></a>minikube</h3><p>Minikube 是一个可以在本地轻松运行 Kubernetes 的工具。Minikube 会在您的笔记本电脑中的虚拟机上运行一个单节点的 Kubernetes 集群，以便用户对 Kubernetes 进行试用或者在之上进行 Kubernetes 的日常开发。</p>
+<h2 id="Kubernetes-集群部署"><a href="#Kubernetes-集群部署" class="headerlink" title="Kubernetes 集群部署"></a>Kubernetes 集群部署</h2><h2 id="安装docker"><a href="#安装docker" class="headerlink" title="安装docker"></a>安装docker</h2><blockquote>
+<p>$ wget -qO- https:get.docker.io/ | sh</p>
+</blockquote>
+<h2 id="安装kubelet-kubeadm-kubectl"><a href="#安装kubelet-kubeadm-kubectl" class="headerlink" title="安装kubelet kubeadm kubectl"></a>安装kubelet kubeadm kubectl</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ apt update &amp;&amp; apt install -y apt-transport-https</span><br><span class="line"></span><br><span class="line">$ sudo curl -s https://mirrors.aliyun.com/kubernetes/apt/doc/apt-key.gpg | sudo apt-key add -</span><br><span class="line"></span><br><span class="line">$ sudo tee /etc/apt/sources.list.d/kubernetes.list &lt;&lt;-&apos;EOF&apos;</span><br><span class="line">deb https://mirrors.aliyun.com/kubernetes/apt kubernetes-xenial main</span><br><span class="line">EOF</span><br><span class="line"></span><br><span class="line">$ apt update</span><br><span class="line">$ apt install -y kubelet kubeadm kubectl</span><br></pre></td></tr></table></figure>
+
+<p>刚安装完的时候使用<code>systemctl status kubelet</code> 查看<code>kubelet</code>状态时kubelet是没有正常启动的</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># ---输出信息---</span><br><span class="line"></span><br><span class="line">● kubelet.service - kubelet: The Kubernetes Node Agent</span><br><span class="line">   Loaded: loaded (/lib/systemd/system/kubelet.service; enabled; vendor preset: enabled)</span><br><span class="line">  Drop-In: /etc/systemd/system/kubelet.service.d</span><br><span class="line">           └─10-kubeadm.conf</span><br><span class="line">   Active: activating (auto-restart) (Result: exit-code) since Thu 2019-09-26 09:45:36 CST; 6s ago</span><br><span class="line">     Docs: https://kubernetes.io/docs/home/</span><br><span class="line">  Process: 23979 ExecStart=/usr/bin/kubelet $KUBELET_KUBECONFIG_ARGS $KUBELET_CONFIG_ARGS $KUBELET_KUBEADM_ARGS $KUBELET</span><br><span class="line"> Main PID: 23979 (code=exited, status=255)</span><br></pre></td></tr></table></figure>
+<p>原因是没有配置文件,不过不用担心待会使用<code>kubeadm</code>创建集群时会自动生成配置<br>可以使用 <code>sudo journalctl -f -u kubelet</code>查看log分析原因 (<em>注意sudo</em>)</p>
+<h2 id="下载docker镜像"><a href="#下载docker镜像" class="headerlink" title="下载docker镜像"></a>下载docker镜像</h2><p>由于国内无法访问到 google 相关的镜像仓库,因此需要先下载对应的docker镜像</p>
+<blockquote>
+<p>$ kubeadm config images list</p>
+</blockquote>
+<p>得到创建集群所需要的images</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># ---输出信息---</span><br><span class="line">W0926 01:12:48.539605  110892 version.go:101] could not fetch a Kubernetes version from the internet: unable to get URL &quot;https://dl.k8s.io/release/stable-1.txt&quot;: Get https://dl.k8s.io/release/stable-1.txt: net/http: request canceled while waiting for connection (Client.Timeout exceeded while awaiting headers)</span><br><span class="line">W0926 01:12:48.539672  110892 version.go:102] falling back to the local client version: v1.16.0</span><br><span class="line">k8s.gcr.io/kube-apiserver:v1.16.0</span><br><span class="line">k8s.gcr.io/kube-controller-manager:v1.16.0</span><br><span class="line">k8s.gcr.io/kube-scheduler:v1.16.0</span><br><span class="line">k8s.gcr.io/kube-proxy:v1.16.0</span><br><span class="line">k8s.gcr.io/pause:3.1</span><br><span class="line">k8s.gcr.io/etcd:3.3.15-0</span><br><span class="line">k8s.gcr.io/coredns:1.6.2</span><br></pre></td></tr></table></figure>
+
+<p>然后编写一个shell脚本, 从阿里云镜像仓库下载对应镜像后重新打tag实现</p>
+<p><strong>get-k8s-images.sh</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line">APISERVER=v1.16.0</span><br><span class="line">MANAGER=v1.16.0</span><br><span class="line">SCHEDULER=v1.16.0</span><br><span class="line">PROXY=v1.16.0</span><br><span class="line">PAUSE=3.1</span><br><span class="line">ETCD=3.3.15-0</span><br><span class="line">COREDNS=1.6.2</span><br><span class="line"></span><br><span class="line">docker pull registry.cn-hangzhou.aliyuncs.com/google_containers/kube-apiserver:<span class="variable">$APISERVER</span> </span><br><span class="line">docker pull registry.cn-hangzhou.aliyuncs.com/google_containers/kube-controller-manager:<span class="variable">$MANAGER</span></span><br><span class="line">docker pull registry.cn-hangzhou.aliyuncs.com/google_containers/kube-scheduler:<span class="variable">$SCHEDULER</span> </span><br><span class="line">docker pull registry.cn-hangzhou.aliyuncs.com/google_containers/kube-proxy:<span class="variable">$PROXY</span></span><br><span class="line">docker pull registry.cn-hangzhou.aliyuncs.com/google_containers/pause:<span class="variable">$PAUSE</span></span><br><span class="line">docker pull registry.cn-hangzhou.aliyuncs.com/google_containers/etcd:<span class="variable">$ETCD</span></span><br><span class="line">docker pull registry.cn-hangzhou.aliyuncs.com/google_containers/coredns:<span class="variable">$COREDNS</span></span><br><span class="line">docker tag registry.cn-hangzhou.aliyuncs.com/google_containers/kube-apiserver:<span class="variable">$APISERVER</span> k8s.gcr.io/kube-apiserver:<span class="variable">$APISERVER</span></span><br><span class="line">docker tag registry.cn-hangzhou.aliyuncs.com/google_containers/kube-controller-manager:<span class="variable">$MANAGER</span> k8s.gcr.io/kube-controller-manager:<span class="variable">$MANAGER</span></span><br><span class="line">docker tag registry.cn-hangzhou.aliyuncs.com/google_containers/kube-scheduler:<span class="variable">$SCHEDULER</span> k8s.gcr.io/kube-scheduler:<span class="variable">$SCHEDULER</span></span><br><span class="line">docker tag registry.cn-hangzhou.aliyuncs.com/google_containers/kube-proxy:<span class="variable">$PROXY</span> k8s.gcr.io/kube-proxy:<span class="variable">$PROXY</span></span><br><span class="line">docker tag registry.cn-hangzhou.aliyuncs.com/google_containers/pause:<span class="variable">$PAUSE</span> k8s.gcr.io/pause:<span class="variable">$PAUSE</span></span><br><span class="line">docker tag registry.cn-hangzhou.aliyuncs.com/google_containers/etcd:<span class="variable">$ETCD</span> k8s.gcr.io/etcd:<span class="variable">$ETCD</span></span><br><span class="line">docker tag registry.cn-hangzhou.aliyuncs.com/google_containers/coredns:<span class="variable">$COREDNS</span> k8s.gcr.io/coredns:<span class="variable">$COREDNS</span></span><br></pre></td></tr></table></figure>
+
+<p>然后给脚本赋予执行权限</p>
+<blockquote>
+<p>$ chmod u+x get-k8s-images.sh<br>$ ./get-k8s-images</p>
+</blockquote>
+<p>然后耐心等待 … </p>
+<h3 id="创建k8s集群"><a href="#创建k8s集群" class="headerlink" title="创建k8s集群"></a>创建k8s集群</h3><p>先关闭 <strong>swap</strong></p>
+<p>临时关闭  <code>sudo swapoff -a</code><br>永久关闭 <code>sudo vim /etc/fstab</code> 把 <code>/swapfile</code> 对应的行 使用<code>#</code> 注释掉  重启后生效</p>
+<p>然后就可以使用<code>kubeadm</code>创建<code>master</code>节点了</p>
+<blockquote>
+<p>$ sudo kubeadm init –pod-network-cidr 10.244.0.0/16 # –kubernetes-version 1.16.0</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"># ---输出信息----</span><br><span class="line"></span><br><span class="line">[preflight] Pulling images required for setting up a Kernetes cluster</span><br><span class="line">[preflight] This might take a minute or two, dependingn the speed of your internet connection</span><br><span class="line">.............. 这里需要稍等一会</span><br><span class="line">the control plane as static Pods from directory &quot;/etc/bernetes/manifests&quot;. This can take up to 4m0s</span><br><span class="line">[kubelet-check] Initial timeout of 40s passed.</span><br><span class="line">[apiclient] All control plane components are healthy aer 80.100064 seconds</span><br><span class="line">[upload-config] Storing the configuration used in ConfMap &quot;kubeadm-config&quot; in the &quot;kube-system&quot; Namespace   </span><br><span class="line"> ............................</span><br><span class="line"></span><br><span class="line">Your Kubernetes control-plane has initialized successfly!</span><br><span class="line"></span><br><span class="line">To start using your cluster, you need to run the follong as a regular user:</span><br><span class="line"></span><br><span class="line">  mkdir -p $HOME/.kube</span><br><span class="line">  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/coig</span><br><span class="line">  sudo chown $(id -u):$(id -g) $HOME/.kube/config     </span><br><span class="line"></span><br><span class="line">You should now deploy a pod network to the cluster.   </span><br><span class="line">Run &quot;kubectl apply -f [podnetwork].yaml&quot; with one of t options listed at:</span><br><span class="line">  https://kubernetes.io/docs/concepts/cluster-administtion/addons/</span><br><span class="line"></span><br><span class="line">Then you can join any number of worker nodes by runnin</span><br><span class="line">the following on each as root:</span><br><span class="line"></span><br><span class="line">kubeadm join 172.16.80.140:6443 --token d4bj0d.8v2f2a8br82tzq \</span><br><span class="line">    --discovery-token-ca-cert-hash sha256:543feab975c7d43821abadfd02a8a718b84b11ff108a18e894a66c372358f8</span><br></pre></td></tr></table></figure>
+
+<p>安装结束后会有提示设置普通用户权限,否则无法在普通用户下使用 <code>kubectl</code>相关的命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir -p <span class="variable">$HOME</span>/.kube</span><br><span class="line">$ sudo cp -i /etc/kubernetes/admin.conf <span class="variable">$HOME</span>/.kube/config</span><br><span class="line">$ sudo chown $(id -u):$(id -g) <span class="variable">$HOME</span>/.kube/config</span><br></pre></td></tr></table></figure>
+
+<p>此时 使用<code>kubectl get pods --all-namespaces</code> 是除了 <code>coredns</code> 之外的pods全都处于 <code>1/1</code> <code>ready</code> 状态的<br>大概是这样 :</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">$  kubectl get pods --all-namespaces -o wide</span><br><span class="line"></span><br><span class="line">NAMESPACE     NAME                           READY   STATUS    RESTARTS   AGE   IP              NODE     NOMINATED NODE   READINESS GATES</span><br><span class="line">kube-system   coredns-5644d7b6d9-fl7h8       0/1     Pending   0          25m   &lt;none&gt;          &lt;none&gt;   &lt;none&gt;           &lt;none&gt;</span><br><span class="line">kube-system   coredns-5644d7b6d9-rvh6q       0/1     Pending   0          25m   &lt;none&gt;          &lt;none&gt;   &lt;none&gt;           &lt;none&gt;</span><br><span class="line">kube-system   etcd-pr02                      1/1     Running   0          24m   178.xxx.xxx.xxx   pr02     &lt;none&gt;           &lt;none&gt;</span><br><span class="line">kube-system   kube-apiserver-pr02            1/1     Running   0          24m   178.xxx.xxx.xxx   pr02     &lt;none&gt;           &lt;none&gt;</span><br><span class="line">kube-system   kube-controller-manager-pr02   1/1     Running   0          24m   178.xxx.xxx.xxx   pr02     &lt;none&gt;           &lt;none&gt;</span><br><span class="line">kube-system   kube-flannel-ds-amd64-wwsm7    1/1     Running   0          20m   178.xxx.xxx.xxx   pr02     &lt;none&gt;           &lt;none&gt;</span><br><span class="line">kube-system   kube-proxy-4c9n4               1/1     Running   0          25m   178.xxx.xxx.xxx   pr02     &lt;none&gt;           &lt;none&gt;</span><br><span class="line">kube-system   kube-scheduler-pr02            1/1     Running   0          24m   178.xxx.xxx.xxx   pr02     &lt;none&gt;           &lt;none&gt;</span><br></pre></td></tr></table></figure>
+
+<p>原因是我们还未设置网络方案 </p>
+<p>这里我们选择 <a href="https://github.com/coreos/flannel" target="_blank" rel="noopener"><code>flannel</code></a> 方案</p>
+<h4 id="应用flannel网路"><a href="#应用flannel网路" class="headerlink" title="应用flannel网路"></a>应用flannel网路</h4><blockquote>
+<p>$ kubectl apply -f <a href="https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml" target="_blank" rel="noopener">https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml</a></p>
+</blockquote>
+<p>如果get pods时 <code>flannel</code> 相关的pods显示<code>Error: ErrImagePull</code>或者<code>Init:ImagePullBackOff</code> 说明由于网络原因 flannel docker image 下载未成功. 所以需要手动自行<code>pull</code>镜像然后修改<code>tag</code></p>
+<p>首先获取到所需要的 <code>flannel image</code></p>
+<blockquote>
+<p>$ kubectl get pods –all-namespaces<br>拿到 下载镜像失败的pod的<code>Name</code>,类似于 <strong>kube-flannel-ds-amd64-5njgh</strong>,然后<br>$ kubectl describe pods kube-flannel-ds-amd64-5njgh –namespace kube-system<br>在 <code>Event</code> 中可以看到类似信息</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Events:</span><br><span class="line"></span><br><span class="line">Type     Reason     Age                 From                Message</span><br><span class="line"></span><br><span class="line">----     ------     ----                ----                -------</span><br><span class="line">Normal   BackOff    108s                kubelet, k8s-node2  Back-off pulling image &quot;quay.io/coreos/flannel:v0.11.0-amd64&quot;</span><br></pre></td></tr></table></figure>
+<p>然后既可以去 <strong>阿里云镜像仓库</strong> 或者 <strong>docker hub</strong> 下载对应的镜像</p>
+<p>例如这里我在<a href="https://cr.console.aliyun.com/images/cn-hangzhou/wy18301/flannel-v0.11.0-amd64/detail" target="_blank" rel="noopener"><strong>阿里云镜像仓库</strong></a> 找到了对应版本的镜像</p>
+<blockquote>
+<p>$ docker pull registry.cn-hangzhou.aliyuncs.com/wy18301/flannel-v0.11.0-amd64<br>重新打 tag<br>$ docker tag registry.cn-hangzhou.aliyuncs.com/wy18301/flannel-v0.11.0-amd64:v0.11.0-amd64 quay.io/coreos/flannel:v0.11.0-amd64</p>
+</blockquote>
+<p>然后还有一个巨大的坑. 困扰了我好久 最后在<a href="https://github.com/coredns/coredns/issues/3300" target="_blank" rel="noopener"><strong>github issue</strong></a>找到的解决方法</p>
+<p>在 <strong>/etc/cni/net.d/10-flannel.conflist</strong>中加入 <code>&quot;cniVersion&quot;: &quot;0.2.0&quot;,</code></p>
+<p><img src="https://image-1252310512.cos.ap-beijing.myqcloud.com/img/gap.png" alt="坑"></p>
+<p>稍等一会,再使用 <code>kubectl get pods --all-namespaces</code> 查看pod状态就是全部<code>ready</code>了<br>使用 <code>kubectl get nodes</code>查看<code>master</code>状态显示已就绪</p>
+<h3 id="Node加入集群"><a href="#Node加入集群" class="headerlink" title="Node加入集群"></a>Node加入集群</h3><p><code>master</code>节点创建完成之后会有一段提示</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Then you can join any number of worker nodes by runnin</span><br><span class="line">the following on each as root:</span><br><span class="line"></span><br><span class="line">kubeadm join 172.16.80.140:6443 --token d4bj0d.8v2f2a8br82tzq \</span><br><span class="line">    --discovery-token-ca-cert-hash sha256:543feab975c7d43821abadfd02a8a718b84b11ff108a18e894a66c372358f8</span><br></pre></td></tr></table></figure>
+<p>因此在安装好环境和下载好镜像的Node中执行master节点给出的命令即可</p>
+<p>如果<code>token过期</code> 可以使用<code>kubeadm token create --print-join-command</code>获得最新<code>token</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ kubeadm token create --print-join-command</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">kubeadm join 172.16.80.140:6443 --token 1ijd4x.r65ft5c42kvmd3tv     --discovery-token-ca-cert-hash sha256:543feab975c722d43821abadfd02a8a718b84b11ff108a18e894a66c372358f8</span><br></pre></td></tr></table></figure>
+<p><strong>值得注意的是 :</strong>  节点中也要在 <strong>/etc/cni/net.d/10-flannel.conflist</strong>中加入 <strong>“cniVersion”: “0.2.0”,</strong></p>
+<p>然后就可以使用 <code>kubectl get nodes</code> 查看集群状态了</p>
+<p><img src="https://image-1252310512.cos.ap-beijing.myqcloud.com/img/kubectl-get-nodes.png" alt="nodes"></p>
+<h3 id="todo-常用命令"><a href="#todo-常用命令" class="headerlink" title="todo 常用命令"></a>todo 常用命令</h3><h3 id="todo-部署"><a href="#todo-部署" class="headerlink" title="todo 部署"></a>todo 部署</h3><h3 id="todo-升级镜像"><a href="#todo-升级镜像" class="headerlink" title="todo 升级镜像"></a>todo 升级镜像</h3>
+                    
+                    <!-- Tags Bottom -->
+                    
+                        <div class="tags-container-bottom">
+                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/k8s/">#k8s</a> <a class="fw3 ph1 dib" href="/tags/kubernetes/">#kubernetes</a> <a class="fw3 ph1 dib" href="/tags/阿里云镜像/">#阿里云镜像</a>
+                        </div>
+                    
+
+                    <!-- Comments -->
+                    
+
+
+
+                </div>
+                <div class="fl w-100 w-30-l center fw3 lh-copy pl4-ns tl black-50">
+                    
+                    <hr class="dn-l mw4 black-50 mt5" />
+                    
+                    <!-- Widget 1: About -->
+                    <div class="mt5 mt0-l">
+    <article class="dt db-l mw8 mw8-m mw5-ns center ml0-l bg-white mv3">
+        <div class="dn dtc-m db-l v-mid tc pr4 pr0-l" style="min-width: 6rem;">
+            <img src="http://tachyons.io/img/avatar_1.jpg" class="mb4-l br-100 h3 w3 h4-l w4-l dib" title="John Doe">
+        </div>
+        <div class="dtc db-l v-mid lh-copy measure center f6 black-50 tj">
+            My name is Jonathan Klughertz and this is my blog.<br>I am a full stack software engineer with a strong front-end focus.<br> I currently live and work in Singapore, hit me up if you are in the region.
+        </div>
+    </article>
+</div>
+
+                    <hr class="dn-l mw4 black-50 mt5" />
+                    
+                    <!-- Widget 2: Categories -->
+                    
+
+                    <!-- Widget 3: Recent Posts -->
+                    <div class="mt5 tc tl-l">
+    <h3>Recent Posts</h3>
+    
+        <p>
+            <a href="/2019/10/04/asm/">Asm</a>
+        </p>
+    
+        <p>
+            <a href="/2019/10/03/jvm/">Jvm</a>
+        </p>
+    
+        <p>
+            <a href="/2019/09/01/compile-jdk11-and-debug-use-clion/">源码编译OpenJdk11并使用Clion调试</a>
+        </p>
+    
+        <p>
+            <a href="/2019/08/18/netty-sticky-pack/">Netty 粘包解决</a>
+        </p>
+    
+        <p>
+            <a href="/2019/08/04/red-black-tree/">红黑树学习</a>
+        </p>
+    
+</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Footer -->
+<div class="bg-1 ph2 ph5-ns pv5">
+        <div class="mv8">
+            <div class="center tc">
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://twitter.com/?lang=en" target="_blank">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://www.facebook.com/" target="_blank">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://dribbble.com/" target="_blank">
+                            <i class="fa fa-dribbble"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://github.com/klugjo/hexo-theme-anodyne" target="_blank">
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://plus.google.com/" target="_blank">
+                            <i class="fa fa-google-plus"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://www.behance.net/" target="_blank">
+                            <i class="fa fa-behance"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://500px.com/" target="_blank">
+                            <i class="fa fa-500px"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="mailto:test@example.com" target="_blank">
+                            <i class="fa fa-envelope"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="/#" target="_blank">
+                            <i class="fa fa-rss"></i>
+                        </a>
+                    </div>
+                
+            </div>
+            <div class="f6 f5-ns center tc white pt5 fw3">
+                @Untitled. All right reserved | Design & Hexo <a class="link dim white" href="http://www.codeblocq.com/" target="_blank" rel="noopener">Jonathan Klughertz</a>
+            </div>
+        </div>
+    </div>
+
+<!-- After Footer -->
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>

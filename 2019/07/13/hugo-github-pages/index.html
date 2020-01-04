@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="Hugo
+
+hugo是由Go语言编写的开源静态站点生成器,是世界上最快的静态网站引擎之一,旨在为网站用户提供最佳的浏览体验，并为网站作者提供理想的写作体验.
+
+Install Hugo  由于Hugo是Golang编写,可以在任何能运行Golang编译器工具链的机器上安装Hugo.
+  因此在Mac">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="John Doe">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="使用hugo+Github Pages搭建个人静态博客"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Hexo"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>使用hugo+Github Pages搭建个人静态博客 - Hexo</title>
+
+    <!-- Tachyons Core CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+<!-- Main Content -->
+<!-- Banner -->
+<!-- Banner -->
+<div class="w-100 bg-1 ph5-ns ph3 text-light">
+    
+    <nav class="db dt-l w-100 mw8 center border-box pv3">
+        <a class="db dtc-l v-mid link dim w-100 w-25-l tc tl-l mb2 mb0-l white" href="/" title="Hexo">
+            <img src="http://www.codeblocq.com/assets/projects/hexo-theme-anodyne/assets/anodyne.svg" class="dib h3" alt="Hexo">
+        </a>
+        <div class="db dtc-l v-mid w-100 w-75-l tc tr-l">
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/" 
+                    title="Home">
+                    Home
+                </a>
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/archives" 
+                    title="Archives">
+                    Archives
+                </a>
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/tags" 
+                    title="Tags">
+                    Tags
+                </a>
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/categories" 
+                    title="Categories">
+                    Categories
+                </a>
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/about.html" 
+                    title="About">
+                    About
+                </a>
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/contact.html" 
+                    title="Contact">
+                    Contact
+                </a>
+            
+        </div>
+    </nav>
+
+    <!-- Title -->
+    <div class="w-100 mw8 center vh-40 dt">
+        <div class="dtc v-mid white">
+            <h1 class="f1-l f2-m tc tc-m tl-ns">使用hugo+Github Pages搭建个人静态博客</h1>
+            <p class="f4 fw3 pab-100px tc tc-m tl-ns">2019-07-13</p>
+        </div>
+    </div>
+
+    <!-- Icon -->
+    <div class="relative w-100 mw8 center white dn dn-m db-ns">
+        <i class="header-icon fa fa-file-text-o"></i>
+    </div>
+</div>
+
+<!-- Content -->
+<div class="w-100 ph2 ph4-m ph5-l mv5 mv6-l">
+    <div class="content">
+        <div class="mw8 center">
+            <div class="cf">
+                <div class="fl w-100 w-70-l mw7 left fw3 lh-copy pr4-ns pr0-m post-content">
+                    <!-- Tags Vertical -->
+                    
+                        <div class="tags-container-vertical">
+                            <div class="tags-sub-container">
+                                <a class="fw3 ph1 dib" href="/tags/blog/">#blog</a> <a class="fw3 ph1 dib" href="/tags/GithubPages/">#GithubPages</a>
+                            </div>
+                        </div>
+                    
+
+                    <!-- Main Post Content -->
+                    <h1 id="Hugo"><a href="#Hugo" class="headerlink" title="Hugo"></a>Hugo</h1><p><img src="https://image-1252310512.cos.ap-beijing.myqcloud.com/img/hugo-logg.png" alt="hugo-logo" title="hugo-logo"></p>
+<blockquote>
+<p><a href="https://gohugo.io/" target="_blank" rel="noopener" title="Hugo">hugo</a>是由<a href="https://golang.org/" target="_blank" rel="noopener" title="Golang">Go语言</a>编写的开源静态站点生成器,是世界上最快的静态网站引擎之一,旨在为网站用户提供最佳的浏览体验，并为网站作者提供理想的写作体验.</p>
+</blockquote>
+<h3 id="Install-Hugo"><a href="#Install-Hugo" class="headerlink" title="Install Hugo"></a>Install Hugo</h3><p>  由于<strong>Hugo</strong>是<strong>Golang</strong>编写,可以在任何能运行Golang编译器工具链的机器上安装Hugo.</p>
+<p>  因此在MacOS、Windows、Linux、OpenBSD、FreeBSD都能够安装Hugo.</p>
+<h5 id="Homebrew-macOS"><a href="#Homebrew-macOS" class="headerlink" title="Homebrew (macOS)"></a><a href="https://brew.sh/" target="_blank" rel="noopener" title="Homebrew">Homebrew (macOS)</a></h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install hugo</span><br></pre></td></tr></table></figure>
+
+<h5 id="Debian-and-Ubuntu"><a href="#Debian-and-Ubuntu" class="headerlink" title="Debian and Ubuntu"></a>Debian and Ubuntu</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install hugo</span><br></pre></td></tr></table></figure>
+<h5 id="Archlinux"><a href="#Archlinux" class="headerlink" title="Archlinux"></a>Archlinux</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -Syu hugo</span><br></pre></td></tr></table></figure>
+<h5 id="Fedora-Red-Hat-and-CentOS"><a href="#Fedora-Red-Hat-and-CentOS" class="headerlink" title="Fedora, Red Hat and CentOS"></a>Fedora, Red Hat and CentOS</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dnf install hugo</span><br></pre></td></tr></table></figure>
+<h5 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h5><p>从<a href="https://github.com/gohugoio/hugo/releases" target="_blank" rel="noopener">Hugo Release</a>中下载对应的编译好的Windows版本的Hugo可执行文件,然后将其/bin目录添加到 <strong>环境变量</strong> 即可.</p>
+<p>安装完成后, 执行命令 <strong>hugo version</strong> 如果安装成功会输入类似信息:</p>
+<blockquote>
+<p>Hugo Static Site Generator v0.55.4/extended darwin/amd64 BuildDate: unknown</p>
+</blockquote>
+<h2 id="创建个人博客"><a href="#创建个人博客" class="headerlink" title="创建个人博客"></a>创建个人博客</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hugo new site &#123;BlogName&#125;</span><br></pre></td></tr></table></figure>
+
+<p>其中 <em>{YourBlogName}</em> 可以是 <strong>&lt;用户名&gt;.github.io</strong> 也可以 随意</p>
+<p>然后 :</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> &#123;BlogName&#125;</span><br></pre></td></tr></table></figure>
+<p>会看见如下目录结构:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── archetypes        </span><br><span class="line">│   └── default.md  <span class="comment"># 使用hugo new命令在hugo中创建新的内容模板</span></span><br><span class="line">├── config.toml     <span class="comment"># 配置文件,里面有丰富的配置信息</span></span><br><span class="line">├── content         <span class="comment"># 博客文章的 markdown文件</span></span><br><span class="line">├── data            <span class="comment"># 此目录用于存储生成网站时雨果可以使用的配置文件。</span></span><br><span class="line">├── layouts         <span class="comment"># 以.html文件的形式存储模板，指定如何将内容视图呈现到静态网站中。</span></span><br><span class="line">├── static          <span class="comment"># 静态资源包括 images, CSS, JavaScript 等</span></span><br><span class="line">└── themes          <span class="comment"># 主题文件</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="设置主题"><a href="#设置主题" class="headerlink" title="设置主题"></a>设置主题</h2><h3 id="选主题"><a href="#选主题" class="headerlink" title="选主题"></a>选主题</h3><p>  可以在<a href="https://themes.gohugo.io/" target="_blank" rel="noopener" title="hugo-theme">hugo-theme</a> 中选择心仪的主题,个人比较喜欢<a href="https://themes.gohugo.io/allinone/" target="_blank" rel="noopener" title="AllinOne-theme">AllinOne</a>,以 <strong>AllinOne</strong> 为例 :</p>
+<ul>
+<li>使用 git clone 到themes/下,这样可以自定义主题.</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/orianna-zzo/AllinOne.git themes/AllinOne</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>使用 git submodule 这样对自动部署比较方面  ( 前提是在cd <BlogName> 的时候 git init)</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git submodule add https://github.com/orianna-zzo/AllinOne.git themes/AllinOne</span><br></pre></td></tr></table></figure>
+
+<h3 id="配置主题"><a href="#配置主题" class="headerlink" title="配置主题"></a>配置主题</h3><p><strong>cd themes/AllinOne/</strong> 中会发现有一个 <strong>exampleSite</strong> 这里就是一个Demo,可以从demo的 <em>config.toml</em> 里面copy配置文件到我们的配置文件中.</p>
+<p>更多关于config.toml的配置,可以查阅官方文档 <a href="https://gohugo.io/getting-started/configuration/" target="_blank" rel="noopener" title="hugo-config">hugo-configuration</a>.</p>
+<h3 id="本地测试"><a href="#本地测试" class="headerlink" title="本地测试"></a>本地测试</h3><p>Hugo自带服务器，可以用命令行启动：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hugo server -D</span><br></pre></td></tr></table></figure>
+<p>服务启动后访问 <strong><a href="http://localhost:1313" target="_blank" rel="noopener">http://localhost:1313</a></strong>访问,自带的服务器可以热加载文件的改动,监控文章的改动从而自动去加载.</p>
+<h3 id="新建文章"><a href="#新建文章" class="headerlink" title="新建文章"></a>新建文章</h3><p>根据config.toml中的 </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[[menu.main]]</span><br><span class="line">     name                   = <span class="string">"Blog"</span></span><br><span class="line">     weight                 = -120</span><br><span class="line">     identifier             = <span class="string">"blog"</span></span><br><span class="line">     url                    = <span class="string">"blog/"</span></span><br></pre></td></tr></table></figure>
+<p>可知Blog是存放在 <strong>blog/</strong> 下,因此执行:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hugo new blog/HelloWorld.md</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>随后会输出 {BlogBaseDir}/content/blog/helloWord.md created</p>
+</blockquote>
+<p>同理我们可以从 <strong>exampleSite</strong> 的<strong>/content/blog</strong> copy一些文章内容信息,例如:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">date: <span class="string">"2018-08-18T20:14:59+08:00"</span></span><br><span class="line">publishdate: <span class="string">"2018-08-19+08:00"</span></span><br><span class="line">lastmod: <span class="string">"2018-08-18+08:00"</span></span><br><span class="line">draft: <span class="literal">false</span></span><br><span class="line">title: <span class="string">"Blog养成记(14) 让同页滚动更平滑"</span></span><br><span class="line">tags: [<span class="string">"前端"</span>, <span class="string">"js"</span>, <span class="string">"blog"</span>]</span><br><span class="line">series: [<span class="string">"Blog养成记"</span>]</span><br><span class="line">categories: [<span class="string">"杂技浅尝"</span>]</span><br><span class="line">img: <span class="string">"images/blog/2018-08/test1.jpg"</span></span><br><span class="line">toc: <span class="literal">true</span></span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<p>然后就可以愉快的写作了.</p>
+<h2 id="部署到-Github-Pages"><a href="#部署到-Github-Pages" class="headerlink" title="部署到 Github Pages"></a>部署到 Github Pages</h2><h4 id="Github-Pages"><a href="#Github-Pages" class="headerlink" title="Github Pages"></a>Github Pages</h4><blockquote>
+<p>Github Pages 是面向用户、组织和项目开放的公共静态页面搭建托管服务，站点可以被免费托管在Github 上，<br>你可以选择使用Github Pages 默认提供的域名github.io 或者自定义域名来发布站点。</p>
+</blockquote>
+<h4 id="新建git-repository"><a href="#新建git-repository" class="headerlink" title="新建git repository"></a>新建git repository</h4><p><img src="https://image-1252310512.cos.ap-beijing.myqcloud.com/img/github-new-repo.png" alt="github-new-repo" title="new-repository"></p>
+<p>在Github中新建名为 <strong>{用户名}.github.io</strong> 的仓库</p>
+<p>Github Pages 有三种发布方式</p>
+<blockquote>
+<p>You can configure GitHub Pages to publish your site’s source files from master, gh-pages, or a /docs folder<br>on your master branch for Project Pages and other Pages sites that meet certain criteria.</p>
+</blockquote>
+<p><img src="https://image-1252310512.cos.ap-beijing.myqcloud.com/img/github-pages-publish.png" alt="github-pages-publish" title="github-pages-publish"></p>
+<ul>
+<li><p>master分支   (如果仓库名是 <strong>{用户名}.github.io</strong> 那么只能通过此方式发布)</p>
+</li>
+<li><p>gh-pages分支</p>
+</li>
+<li><p>master分支的 /docs 目录</p>
+</li>
+</ul>
+<p>由于这里我选择使用master分支发布Github Pages</p>
+<p>在站点的根目录, (即 <strong>config.toml</strong> 所在的目录) 执行 :</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hugo</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">                   | EN</span><br><span class="line">+------------------+-----+</span><br><span class="line">  Pages            |  80</span><br><span class="line">  Paginator pages  |   3</span><br><span class="line">  Non-page files   |   0</span><br><span class="line">  Static files     | 108</span><br><span class="line">  Processed images |   0</span><br><span class="line">  Aliases          |   1</span><br><span class="line">  Sitemaps         |   1</span><br><span class="line">  Cleaned          |   0</span><br><span class="line"></span><br><span class="line">Total <span class="keyword">in</span> 137 ms</span><br></pre></td></tr></table></figure>
+<p>生成静态资源 </p>
+<p><strong>值得注意的是</strong> 如果 <em>.md</em> 文章中  <strong>draft: true</strong> 那么使用 <strong>hugo</strong>生成静态页面的时候不会生成这篇文章<br>如果需要把 <em>草稿</em> 一并生成可以使用<br>可以在 <em>hugo -h</em> 中看到 </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-D, --buildDrafts            include content marked as draft</span><br></pre></td></tr></table></figure>
+<p>因此使用</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hugo -D</span><br></pre></td></tr></table></figure>
+
+
+
+<p>然后 </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> public/ </span><br><span class="line"></span><br><span class="line">git init</span><br><span class="line"></span><br><span class="line">git add .</span><br><span class="line"></span><br><span class="line">git commit -m <span class="string">"first commit"</span></span><br><span class="line"></span><br><span class="line">git remote add origin  &#123;GitRepoURL&#125;</span><br><span class="line"></span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
+
+<p>成功之后稍等片刻,访问  <strong>https://{用户名}.github.io</strong> 即可呈现内容</p>
+<h4 id="docs-发布方式"><a href="#docs-发布方式" class="headerlink" title="/docs 发布方式"></a>/docs 发布方式</h4><p><em>使用此方式的前提是 仓库名称不是 {用户名}.github.io</em></p>
+<p>修改 <strong>config.toml</strong> 中的 <strong>publishdir</strong> </p>
+<blockquote>
+<p> publishdir  = “docs”</p>
+</blockquote>
+<p>那么使用 <strong>hugo -D</strong> 生成的静态页面就会在 <strong>docs/</strong> 中生成</p>
+<p>在仓库的 Settings-&gt;GitHub Pages-&gt;Source 选择 <strong>master branch /docs folder</strong> 即可</p>
+<p><em>页面发布成功后可以通过</em> <strong>https://{用户名}.github.io/{仓库名}</strong> <em>访问</em></p>
+
+                    
+                    <!-- Tags Bottom -->
+                    
+                        <div class="tags-container-bottom">
+                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/blog/">#blog</a> <a class="fw3 ph1 dib" href="/tags/GithubPages/">#GithubPages</a>
+                        </div>
+                    
+
+                    <!-- Comments -->
+                    
+
+
+
+                </div>
+                <div class="fl w-100 w-30-l center fw3 lh-copy pl4-ns tl black-50">
+                    
+                    <hr class="dn-l mw4 black-50 mt5" />
+                    
+                    <!-- Widget 1: About -->
+                    <div class="mt5 mt0-l">
+    <article class="dt db-l mw8 mw8-m mw5-ns center ml0-l bg-white mv3">
+        <div class="dn dtc-m db-l v-mid tc pr4 pr0-l" style="min-width: 6rem;">
+            <img src="http://tachyons.io/img/avatar_1.jpg" class="mb4-l br-100 h3 w3 h4-l w4-l dib" title="John Doe">
+        </div>
+        <div class="dtc db-l v-mid lh-copy measure center f6 black-50 tj">
+            My name is Jonathan Klughertz and this is my blog.<br>I am a full stack software engineer with a strong front-end focus.<br> I currently live and work in Singapore, hit me up if you are in the region.
+        </div>
+    </article>
+</div>
+
+                    <hr class="dn-l mw4 black-50 mt5" />
+                    
+                    <!-- Widget 2: Categories -->
+                    
+
+                    <!-- Widget 3: Recent Posts -->
+                    <div class="mt5 tc tl-l">
+    <h3>Recent Posts</h3>
+    
+        <p>
+            <a href="/2019/10/04/asm/">Asm</a>
+        </p>
+    
+        <p>
+            <a href="/2019/10/03/jvm/">Jvm</a>
+        </p>
+    
+        <p>
+            <a href="/2019/09/01/compile-jdk11-and-debug-use-clion/">源码编译OpenJdk11并使用Clion调试</a>
+        </p>
+    
+        <p>
+            <a href="/2019/08/18/netty-sticky-pack/">Netty 粘包解决</a>
+        </p>
+    
+        <p>
+            <a href="/2019/08/04/red-black-tree/">红黑树学习</a>
+        </p>
+    
+</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Footer -->
+<div class="bg-1 ph2 ph5-ns pv5">
+        <div class="mv8">
+            <div class="center tc">
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://twitter.com/?lang=en" target="_blank">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://www.facebook.com/" target="_blank">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://dribbble.com/" target="_blank">
+                            <i class="fa fa-dribbble"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://github.com/klugjo/hexo-theme-anodyne" target="_blank">
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://plus.google.com/" target="_blank">
+                            <i class="fa fa-google-plus"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://www.behance.net/" target="_blank">
+                            <i class="fa fa-behance"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://500px.com/" target="_blank">
+                            <i class="fa fa-500px"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="mailto:test@example.com" target="_blank">
+                            <i class="fa fa-envelope"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="/#" target="_blank">
+                            <i class="fa fa-rss"></i>
+                        </a>
+                    </div>
+                
+            </div>
+            <div class="f6 f5-ns center tc white pt5 fw3">
+                @Untitled. All right reserved | Design & Hexo <a class="link dim white" href="http://www.codeblocq.com/" target="_blank" rel="noopener">Jonathan Klughertz</a>
+            </div>
+        </div>
+    </div>
+
+<!-- After Footer -->
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
